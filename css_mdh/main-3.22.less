@@ -1,4 +1,4 @@
-/*
+/**
  * less.css
  */
 @background: #231815;
@@ -28,9 +28,6 @@ fieldset, img {
 em {
 	font-style: normal;
 }
-em {
-	font-style: normal;
-}
 ul, ol {
 	list-style: none;
 }
@@ -50,22 +47,17 @@ input,button {
 	resize: none;
 	border:none;
 }
-button{
-	cursor: pointer;
-}
 a {
 	color: #515151;
 	text-decoration: none;
 	border: none;
-	cursor: pointer;
 }
 a:hover {
 	color: #FFC800;
-	
 }
 body {
 	font-size: 12px;
-	font-family:微软雅黑Regular;
+	font-family: 黑体;
 	color: #333;
 }
 .white {
@@ -82,6 +74,7 @@ body {
 .clearfix {
 	zoom: 1;
 }
+
 
 /* 头部样式开始 */
 header{ 
@@ -228,13 +221,14 @@ header .nav ul li .innav ol li a:hover{
 }
 div.flicking_con {
 	position:absolute;
+	top:400px;
 	left:50%;
 	margin-left:-52px;
 	min-width: 104px;
 }
 div.flicking_con .flicking_inner {
 	left: 10px; 
-	top: 500px; 
+	top: 390px; 
 	width: 300px; 
 	height: 21px; 
 	position: absolute; 
@@ -456,14 +450,6 @@ h2 span a{
 	color:#EBA049;
 	float:right;
 }
-.moods button{
-	background: url(../images_mdh/icon/moods.png) no-repeat center center;
-	width: 22px;
-	height: 15px;
-	margin:50px auto;
-	display: block;
-	cursor:pointer;
-}
 /* 底部开始 */
 footer{
 	width: 100%;
@@ -474,7 +460,7 @@ footer ul{
 }
 footer ul li{
 	float: left;
-	margin:80px 10px;
+	margin:110px 10px;
 }
 footer ul li a{
 	font-size: 18px;
@@ -602,206 +588,4 @@ footer .copy p span a:last-child{
 	color:#3473700;
 	text-align: center;
 	float: left;
-}
-
-
-
-/* 登陆页面开始 */
-header.landing{
-	width:100%;
-	height: 95px;
-	background: #ffc900;
-}
-div.landing{
-	margin:0 auto;
-	width: 346px;
-	text-align: center;
-}
-div.landing h1{
-	background: url(../images_mdh/logo.png);
-	width: 346px;
-	height: 28px;
-	margin:100px 0 30px 0;
-	display: inline-block;
-}
-div.landing>span{
-	font-size: 18px;
-	line-height:80px;
-	color:#9FA0A0;
-}
-div.landing form{
-	width: 300px;
-	margin:0 auto;
-	font-size:@font;
-	color:#9FA0A0;
-	position:relative;
-}
-div.landing input.tet{
-	width:300px;
-	height: 40px;
-	line-height: 40px;
-	border-bottom:2px solid #cfd0d0; 
-	line-height: 40px;
-	margin-top: 15px;
-}
-div.landing .inlanding{
-	width: 300px;
-	height: 35px;
-	margin-top:20px;
-}
-div.landing button.landing{
-	width: 85px;
-	height: 30px;
-	border:1px solid #cfd0d0;
-	line-height: 30px;
-	text-align: center;
-	float: left;
-	font-size:@font;
-	color:#9FA0A0;
-	background: none;
-}
-div.landing .inlanding span{
-	background: url(../images_mdh/icon/code.png) no-repeat center center;
-	display: inline-block;
-	width: 85px;
-	height: 30px;
-	border:1px solid #cfd0d0;
-	float: right;
-}
-div.landing button.new{
-	line-height: 30px;
-	border:none;
-	background:none;
-	margin-left:258px;
-	font-size:@font;
-	color:#9FA0A0;
-}
-div.landing button.landings{
-	width: 300px;
-	height: 45px;
-	background:  #ffc900;
-	text-align:center;
-	line-height: 45px;
-	font-size:@font;
-	color:#fff;
-	font-weight: bold;
-	margin-top:20px;
-}
-div.landing p.pass{
-	width: 300px;
-	line-height: 30px;
-	margin:10px 0;
-	text-align: left;
-}
-div.landing p.pass input{
-	float: left;
-	margin:10px 5px 0 0;
-}
-div.landing p.pass a{
-	float:right;
-}
-div.landing p.pass a.last{
-	color: #ffc900;
-}
-div.landing .other{
-	width: 300px;
-	border-bottom:1px solid #666;
-	margin:30px auto;
-}
-div.landing .other h2{
-	text-indent: -9999px;
-	width: 60px;
-	height: 30px;
-	margin:0 auto;
-	margin-top:100px;
-	background:#fff url(../images_mdh/icon/weixin.png) no-repeat center center;
-	position:relative;
-	top:15px;
-}
-div.landing .other h2:hover{
-	background:#fff url(../images_mdh/icon/weixin1.png) no-repeat center center;
-}
-div.landing p{
-	text-align: center;
-	margin:20px auto;
-	font-size:@font;
-	color:#9FA0A0;
-}
-
-/* 注册页面开始 */ 
-button.register{
-	position:absolute;
-	top:190px;
-	right:0px;
-	width: 85px;
-	height: 30px;
-	border:1px solid #cfd0d0;
-	line-height: 30px;
-	text-align: center;
-	color:#9FA0A0;
-	background:none;
-}
-
-form p.register{
-	text-align: left;
-	margin:40px 0 20px 0;
-	line-height: 0;
-	cursor: pointer;
-}
-form .registered{
-	width: 300px;
-	height: 45px;
-	background:  #ffc900;
-	text-align:center;
-	line-height: 45px;
-	font-size:@font;
-	color:#fff;
-	font-weight: bold;
-}
-form p.last{
-	font-size:@font;
-	color:#9FA0A0;
-	line-height: 30px;
-	text-align: left;
-}
-form p.last a{
-	color:#ffc900;
-	cursor:pointer;
-}
-form p.last a.email{
-	float: right;
-	font-size:@font;
-	color:#9FA0A0;
-}
-form .register-fix{
-	width: 100px;
-	position:absolute;
-	top:105px;
-	right:-110px;
-}
-form .register-infix{
-	width: 90px;
-	padding:2px;
-	border:1px solid #9FA0A0;
-}
-form .register-infix span{
-	float: left;
-	width: 30px;
-	height: 10px;
-	background: #FFC700;
-	display: inline-block;
-}
-form .register-infix span.two{
-	background: #FF8C00;
-}
-form .register-infix span.three{
-	background: #FF5500;
-}
-form .register-fix p{
-	font-size:12px;
-	color:#9FA0A0;
-	letter-spacing: 17px;
-	text-align: center;
-	margin:5px 0;
-	padding-left: 13px;
 }

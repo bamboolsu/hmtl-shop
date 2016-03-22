@@ -95,7 +95,6 @@
     	$('.news ul li:nth-child(4n)').css('margin-right', 0);
     	$('.moods ul li:nth-child(4n)').css('margin-right', 0);
 
-    	$('[data-tag=news] ul li').
 	  }
 
 	});
