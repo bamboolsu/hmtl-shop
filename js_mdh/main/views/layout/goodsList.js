@@ -39,6 +39,18 @@
 			var text= $(this).html();
 			$(this).parents('span').html(text);
 		});
+
+
+		   // 窗口固定区域开始
+      $('.fix li').mouseenter(function(event) {
+        $(this).find('.infix').stop().animate({'right':46}, 300)
+      }).mouseleave(function(event) {
+        $(this).find('.infix').stop().animate({'right':-120}, 300)
+      });
+
+      $('.news ul li:nth-child(4n)').css('margin-right', 0);
+      $('.moods ul li:nth-child(4n)').css('margin-right', 0);
+
     }
   });
 
