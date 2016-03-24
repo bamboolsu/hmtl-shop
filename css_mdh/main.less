@@ -149,9 +149,12 @@ header .nav ul>li>a{
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
-	color:#fff;
+	color:#FFC800;
 	font-size: 16px;
 	display: block;
+}
+header .nav ul>li.fr{
+	float:right;
 }
 header .nav ul>li>a:hover{
 	border-bottom:5px solid #fff;
@@ -446,9 +449,6 @@ h2 span a{
 }
 .moods ul li:nth-child(4n){
 	margin-right: 0;
-}
-.moods ul li:hover .top{
-	display: block;
 }
 .moods ul li .top{
 	position:absolute;
@@ -1084,4 +1084,177 @@ form .register-fix p{
 			line-height: 20px;
 		}
 	}
+}
+
+/* 列表页开始 */
+.list-content{
+	width: 1100px;
+	margin:15px auto;
+}
+.list-nav{
+	width:150px; 
+	float:left;
+	font-size: 18px;
+	color:#505050;
+	text-align:center;
+	position:relative;
+}
+.list-twoCategory{
+	display: none;
+	width: 870px;
+	position:absolute;
+	top:-15px;
+	right:-905px;
+	background:#fff;
+	padding:30px;
+	border:1px solid #ccc;
+	text-align: left;
+}
+.list-twoCategory ul{
+	border-bottom:2px solid #c0c1c1;
+	width: 520px;
+	height: 40px;
+}
+.list-twoCategory ul li{
+	float: left;
+	height:20px;
+	text-align: center;
+	font-size: 16px;
+	color:#595757;
+	padding:10px 20px;
+}
+.list-twoCategory ul li.current{
+	border-bottom:2px solid #ffc900;
+}
+.list-twoCategory p{
+	padding-left:10px;
+	text-align: left;
+}
+.list-twoCategory img{
+	margin-right:15px;
+}
+.list-twoCategory p a{
+	font-size: 14px;
+	color:#595757;
+	margin:0 5px;
+	line-height: 50px;
+}
+.list-twoCategory p a:hover{
+	color: #ffc900;
+}
+.list-nav .category{
+	margin:45px 0;
+}
+.list-nav>li{
+	padding-bottom: 20px;
+	cursor:pointer;
+}
+.list-images{
+	float: right;
+	width: 910px;
+}
+.list-images li{
+	float: left;
+	margin:0 15px 15px 0;
+}
+.list-images .top{
+	margin-bottom:15px;
+}
+.list-images img{
+	display: block;
+}
+
+
+/* 商品列表页开始 */
+.goods-nav{
+	width: 1100px;
+	margin:0 auto;
+}
+.goods-left{
+	width: 800px;
+	float:left;
+}
+.goods-nav h2{
+	font-size: 18px;
+	color:#505050;
+	display: inline;
+	margin-right:30px;
+}
+.goods-nav a:hover{
+	color:#ffc900;
+}
+.goods-nav a,.goods-nav span{
+	font-size:14px;
+	color:#727171;
+	margin-right:30px;
+	cursor:pointer;
+}
+.goods-nav span{
+	margin-right:10px;
+	padding-right:15px;
+	background:url(../images_mdh/icon/goods-1.png) no-repeat right center;
+	position:relative;
+}
+.goods-nav span .goods-opt{
+	position:absolute;
+	width: 100px;
+	top:20px;
+	left:0;
+	z-index: 999;
+	background: #fff;
+	display: none;
+}
+.goods-nav span .goods-opt a{
+	display: block;
+	line-height: 30px;
+	margin-right:0;
+}
+.goods-key {
+	width: 100px;
+	display:block;
+	float:right;
+	padding-top:20px;
+}
+.goods-key a.lf,.goods-key a.rg{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin:0 5px;
+	background: url(../images_mdh/icon/goods-up.png) no-repeat center center;
+}
+.goods-key a.rg{
+	background: url(../images_mdh/icon/goods-down.png) no-repeat center center;
+}
+.number{
+	text-align: right;
+	width: 1100px;
+	margin:60px auto;
+	color:#727171;
+}
+.number a{
+	font-size: 14px;
+	color:#727171;
+	margin-right:10px;
+}
+.number a:hover{
+	color: #ffc900;
+}
+.number a.page{
+	margin-left:20px;
+}
+.number a.next{
+	margin-right:20px;
+}
+.number input{
+	width: 50px;
+	height: 20px;
+	border:1px solid #ccc;
+	margin:0 5px;
+}
+.number button{
+	color:#727171;
+	text-align: center;
+	padding:5px 10px;
+	background: #cfcfcf;
+	margin:0 30px;
 }
