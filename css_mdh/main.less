@@ -8,10 +8,6 @@
 @itemBoxColor: #505050;
 @itemBoxPColor: #727171;
 
-article,aside,dialog,footer,header,section,footer,nav,figure,menu {
-	display:block;
-}
-
 html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, input, button, fieldset, legend, img {
 	margin: 0;
 	padding: 0;
@@ -87,7 +83,7 @@ body {
 }
 
 /* 头部样式开始 */
-header{ 
+#header{ 
 		width: 1100px;
 		margin:0 auto;
 		padding-top:65px;
@@ -124,7 +120,7 @@ h1{
 	right:0;
 	cursor:pointer;
 }
-header .nav{
+#header .nav{
 	width: 1100px;
 	height: 50px;
 	background:@background;
@@ -133,18 +129,18 @@ header .nav{
 	top:0;
 	left:0;
 }
-header .nav.current{
+#header .nav.current{
 	position: fixed;
 	top:-57px;
 	left:50%;
 	margin-left:-550px;
 	z-index: 100;
 }
-header .nav ul li{
+#header .nav ul li{
 	float:left;
 	margin-right: 10px;
 }
-header .nav ul>li>a{
+#header .nav ul>li>a{
 	width: 100px;
 	height: 50px;
 	line-height: 50px;
@@ -153,14 +149,14 @@ header .nav ul>li>a{
 	font-size: 16px;
 	display: block;
 }
-header .nav ul>li.fr{
+#header .nav ul>li.fr{
 	float:right;
 }
-header .nav ul>li>a:hover{
+#header .nav ul>li>a:hover{
 	border-bottom:5px solid #fff;
 	height: 45px;
 }
-header .nav ul li .innav{
+#header .nav ul li .innav{
 	width: 1060px;
 	background: #000;
 	opacity:0.8;
@@ -172,29 +168,28 @@ header .nav ul li .innav{
 	padding:0 20px 20px 20px;
 	display: none;
 }
-header .nav ul li .innav ol li{
+#header .nav ul li .innav ol li{
 	float: left;
 	width: 100px;
 }
-header .nav ul li .innav ol li h2{
+#header .nav ul li .innav ol li h2{
 	font-size: 16px;
 	color:#fff;
 	line-height: 40px;
 }
-header .nav ul li .innav ol li h2:hover{
+#header .nav ul li .innav ol li h2:hover{
 	color:#FFC800;
 }
-header .nav ul li .innav ol li a{
+#header .nav ul li .innav ol li a{
 	font-size: 14px;
 	color:#ccc;
 	line-height: 30px;
 	display: block;
 
 }
-header .nav ul li .innav ol li a:hover{
+#header .nav ul li .innav ol li a:hover{
 	color:#FFC800;
 }
-/** 轮播 */
 /* 轮播图开始 */
 .banner{
 	width: 1100px;
@@ -248,89 +243,7 @@ header .nav ul li .innav ol li a:hover{
 	background: #000 url(../images_mdh/icon/right.png) no-repeat center center;
 	left:1030px;
 }
-.main_visual {
-	margin: 0 auto;
-	width: 1100px;
-}
-.main_image {
-	margin: 0px auto; 
-	width: 100%; 
-	height: 551px; 
-	overflow: hidden; 
-	// border-top-color: rgb(215, 215, 215); 
-	// border-top-width: 1px; 
-	// border-top-style: solid; 
-	position: relative;
-}
-.main_image ul {
-	left: 0px; 
-	top: 0px;
-	width: 9999px; 
-	height: 551px; 
-	overflow: hidden; 
-	position: absolute;
-}
-.main_image li {
-	width: 100%; 
-	height: 551px; 
-	float: left;
-}
-.main_image li span {
-	width: 100%; 
-	height: 551px; 
-	display: block;
-}
-.main_image li a {
-	width: 100%; 
-	height: 551px; 
-	display: block;
-}
-div.flicking_con {
-	position:absolute;
-	left:50%;
-	margin-left:-52px;
-	min-width: 104px;
-}
-div.flicking_con .flicking_inner {
-	left: 10px; 
-	top: 500px; 
-	width: 300px; 
-	height: 21px; 
-	position: absolute; 
-	z-index: 999;
-	text-indent:-9999px;
-}
-div.flicking_con a {
-	width: 10px;
-	height: 10px;
-	border-radius:5px;
-	background:#fff;
-	float:left; 
-	margin: 2px 5px;
-}
-div.flicking_con a.on {
-	background:#FFC800;
-	background-position: 0px -21px;
-}
-#btn_prev, #btn_next {
-	width: 50px !important;
-	height: 100px !important;
-	opacity:0.6;
-	filter:alpha(opacity=60);
-	position:absolute;
-	top:50%;
-	margin-top:-50px;
-	display: none;
-	z-index: 11111;
-}
-#btn_prev {
-	background:#000 url(../images_mdh/icon/left.png) no-repeat center center;
-	left:20px;
-}
-#btn_next {
-	background: #000 url(../images_mdh/icon/right.png) no-repeat center center;
-	left:1030px;
-}
+
 /* 正文内容开始 */
 .main{
 	width: 1100px;
@@ -338,7 +251,7 @@ div.flicking_con a.on {
 	margin: 20px auto;
 }
 .main ul li:first-child{
-	margin-left: 20px;
+	margin-left: 18px;
 }
 .main ul li.right{
 	float: right;
@@ -521,18 +434,18 @@ h2 span a{
 	cursor:pointer;
 }
 /* 底部开始 */
-footer{
+#footer{
 	width: 100%;
 }
-footer ul{
+#footer ul{
 	width: 1100px;
 	margin:0 auto;
 }
-footer ul li{
+#footer ul li{
 	float: left;
 	margin:80px 10px;
 }
-footer ul li a{
+#footer ul li a{
 	font-size: 18px;
 	color:#454545;
 	padding-left:150px;
@@ -541,45 +454,45 @@ footer ul li a{
 	height: 40px;
 	background:url(../images_mdh/icon/foot1.png) no-repeat center center;
 }
-footer ul li a.two{
+#footer ul li a.two{
 	background: url(../images_mdh/icon/foot2.png) no-repeat center center;
 }
-footer ul li a.three{
+#footer ul li a.three{
 	background: url(../images_mdh/icon/foot3.png) no-repeat center center;
 }
-footer ul li a.fore{
+#footer ul li a.fore{
 	background: url(../images_mdh/icon/foot4.png) no-repeat center center;
 }
-footer ol{
+#footer ol{
 	width: 1100px;
 	margin:0 auto;
 }
-footer ol li{
+#footer ol li{
 	float: left;
 	line-height: 20px;
 	color:#888888;
 	margin:0 60px;
 }
-footer ol li:last-child{
+#footer ol li:last-child{
 	margin-right:0;
 	height: 100%;
 	margin-top: 25px;
 }
-footer ol li h4{
+#footer ol li h4{
 	font-size: 14px;
 }
-footer ol li a{
+#footer ol li a{
 	font-size: 12px;
 	display: block;
 	color:#888888;
 }
-footer .copy{
+#footer .copy{
 	width: 100%;
 	background: #000;
 	height: 65px;
 	margin-top: 80px;
 }
-footer .copy p{
+#footer .copy p{
 	width: 1020px;
 	margin:0 auto;
 	font-size: 12px;
@@ -587,18 +500,18 @@ footer .copy p{
 	color:#919191;
 	padding:0 40px;
 }
-footer .copy p span{
+#footer .copy p span{
 	float: right;
 	text-align:center;
 }
-footer .copy p span a:first-child{
+#footer .copy p span a:first-child{
 	background: url(../images_mdh/icon/copy1.png);
 	width: 34px;
 	height: 42px;
 	display:inline-block;
 	margin-top: 0px;
 }
-footer .copy p span a:last-child{
+#footer .copy p span a:last-child{
 	background: url(../images_mdh/icon/copy2.png);
 	width: 32px;
 	height: 32px;
@@ -663,7 +576,7 @@ footer .copy p span a:last-child{
 
 
 /* 登陆页面开始 */
-header.landing{
+#header.landing{
 	width:100%;
 	height: 95px;
 	background: #ffc900;

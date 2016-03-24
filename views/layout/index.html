@@ -7,23 +7,13 @@
 		<meta name="keywords" content="test" />
 		<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta name="flexible" content="initial-dpr=2,maximum-dpr=3" />
-		<script data-tag="jsPath" src = "../../js_mdh/main/config/common.js"></script>
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
-		<script>
-			common.loading.mainJs("layout/index");
-		</script>
-		<!--[if lt IE 9]>
-      <script src="../../css_mdh/ie/html5shiv.min.js"></script>
-      <script src="../../css_mdh/ie/flexie.js"></script>
-      <script src="../../css_mdh/ie/selectivizr.js"></script>
-      <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
-		<![endif]-->
+		<script src = "../../js_mdh/third/jquery.js"></script>
+		<script src = "../../js_mdh/main/views/base.js"></script>
 	</head>
 	<body>
 	<!-- 头部开始 -->
-		<header>
+		<div id = "header">
 			<a href = "/">
 				<h1>买德好</h1>
 			</a>
@@ -91,28 +81,40 @@
 					</li>
 				</ul>
 			</div>			
-		</header>
-			<div class="main_visual">
-				<div class="flicking_con">
-					<div class="flicking_inner">
-						<a href="javascript:void 0;">1</a>
-						<a href="javascript:void 0;">2</a>
-						<a href="javascript:void 0;">3</a>
-						<a href="javascript:void 0;">4</a>
-					</div>
-				</div>
-				<div class="main_image">
-					<ul>
-						<li><a href=""><img src="../../images_mdh/banner.png" width = "1100" height = "550" alt = "banner"></a></li>
-						<li><a href=""><img src="../../images_mdh/banner1.jpg" width = "1100" height = "550" alt = "banner"></a></li>
-						<li><a href=""><img src="../../images_mdh/banner2.jpg" width = "1100" height = "550" alt = "banner"></a></li>
-						<li><a href=""><img src="../../images_mdh/banner3.jpg" width = "1100" height = "550" alt = "banner"></a></li>
-					</ul>
-					<a id="btn_prev" href="javascript:;"></a>
-					<a id="btn_next" href="javascript:;"></a>
-				</div>
-			</div>
-	
+		</div>
+			<!-- 轮播图开始 -->
+		<div class="banner">
+			<ul class="inbanner clearfix">
+				<li>
+					<a href="">
+						<img src="../../images_mdh/banner.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../../images_mdh/banner1.jpg">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../../images_mdh/banner2.jpg">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../../images_mdh/banner3.jpg">
+				   	</a>
+				</li>
+			</ul>  
+			<ol class="clearfix">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<button class="left"></button>
+			<button class="right"></button>
+		</div>
 		<!-- 图片一区开始 -->
 		<div class="main">
 			<ul class="clearfix">
@@ -666,7 +668,7 @@
 			<button></button>
 		</div>
 		<!-- 底部开始 -->
-		<footer>
+		<div id = "footer">
 			<ul class="clearfix">
 				<li>
 					<a class="one" href="">德国直采</a>
@@ -730,7 +732,7 @@
 					</span>
 				</P>
 			</div>
-		</footer>
+		</div>
 		<!-- 窗口固定区开始 -->
 			<ul class="fix">
 				<li class="one">
