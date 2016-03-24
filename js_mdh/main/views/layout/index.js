@@ -95,6 +95,13 @@
     	$('.news ul li:nth-child(4n)').css('margin-right', 0);
     	$('.moods ul li:nth-child(4n)').css('margin-right', 0);
 
+    	// 人气商品开始
+		$('.moods ul li').hover(function(){
+			$(this).find('.top').stop().slideDown(500);
+		},function(){
+			$(this).find('.top').stop().slideUp(500);
+		});
+
 	  }
 
 	});
