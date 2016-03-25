@@ -192,8 +192,40 @@ if ($.validator != null) {
       agreement: {
         required: "必须接受条款",
       }
-    },
+    }
+
+  })
     submitHandler: function(form) {
+      $.ajax({        url: "/jshop/common/public_key.jhtml",
+        type: "GET",
+        dataType: "json",
+        cache: false,
+        beforeSend: function() {
+          $submit.prop("disabled", true);
+        },
+        success: function(data) {
+          var rsaKey = new RSAKey();
+          rsaKey.setPublic(b64tohex(data.modulus), b64tohex(data.exponent));
+          var enPassword = hex2b64(rsaKey.encrypt($password.val()));
+          $.ajax({
+            url: $registerForm.attr("action"),
+            type: "POST",
+            data: {
+              username: $username.val(),
+              enPassword: enPassword, 
+              email: $email.val(),
+              code: $code.val()
+            },
+            dataType: "json",
+            cache: false,
+            success: function(message) {
+              $.message(message);
+              if (message.type == "success") {
+                setTimeout(function() {
+                  $submit.prop("disabled", false);
+                  location.href = "/jshop/";
+                }, 3000);
+              } else {
         $.ajax({
           url: $registerForm.attr("action"),
           type: "POST",
@@ -219,6 +251,7 @@ if ($.validator != null) {
           }
       });
     }
+  });
 
   });
   // 获取手机验证码按钮倒计时
@@ -249,5 +282,4 @@ if ($.validator != null) {
               .removeAttr('disabled')
               .removeClass('clickBackground');
   }
-
 });
