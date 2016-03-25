@@ -657,7 +657,6 @@ div.landing button.landing{
 	background: none;
 }
 div.landing .inlanding span{
-	background: url(../images_mdh/icon/code.png) no-repeat center center;
 	display: inline-block;
 	width: 85px;
 	height: 30px;
@@ -711,7 +710,7 @@ div.landing .other{
 	border-bottom:1px solid #666;
 	margin:30px auto;
 }
-div.landing .other h2{
+div.landing .other a {
 	text-indent: -9999px;
 	width: 60px;
 	height: 30px;
@@ -720,6 +719,7 @@ div.landing .other h2{
 	background:#fff url(../images_mdh/icon/weixin.png) no-repeat center center;
 	position:relative;
 	top:15px;
+	display: inline-block;
 }
 div.landing .other h2:hover{
 	background:#fff url(../images_mdh/icon/weixin1.png) no-repeat center center;
@@ -729,6 +729,26 @@ div.landing p{
 	margin:20px auto;
 	font-size:@font;
 	color:#9FA0A0;
+}
+.login .username,
+.login .password,
+.login .inlanding {
+	position: relative;
+	text-align: left;
+}
+.login .username label,
+.login .password label,
+.login .inlanding label {
+	position: absolute;
+	top: 18px;
+	left: 305px;
+	line-height: 30px;
+	color: red;
+	display: inline-block;
+	width: 200px;
+}
+.login .inlanding label {
+	top: -5px;
 }
 
 /* 注册页面开始 */ 

@@ -192,9 +192,10 @@ if ($.validator != null) {
       agreement: {
         required: "必须接受条款",
       }
-    },
+    }
+
+  })
     submitHandler: function(form) {
-<<<<<<< HEAD
       $.ajax({        url: "/jshop/common/public_key.jhtml",
         type: "GET",
         dataType: "json",
@@ -225,7 +226,6 @@ if ($.validator != null) {
                   location.href = "/jshop/";
                 }, 3000);
               } else {
-=======
         $.ajax({
           url: $registerForm.attr("action"),
           type: "POST",
@@ -240,7 +240,6 @@ if ($.validator != null) {
             $.message(message);
             if (message.type == "success") {
               setTimeout(function() {
->>>>>>> 897a3139e42f27db93f76ac3898bf9d48620755e
                 $submit.prop("disabled", false);
                 location.href = "/jshop/";
               }, 3000);
@@ -252,10 +251,7 @@ if ($.validator != null) {
           }
       });
     }
-<<<<<<< HEAD
   });
-    
-=======
 
   });
   // 获取手机验证码按钮倒计时
@@ -286,6 +282,4 @@ if ($.validator != null) {
               .removeAttr('disabled')
               .removeClass('clickBackground');
   }
-
->>>>>>> 897a3139e42f27db93f76ac3898bf9d48620755e
 });
