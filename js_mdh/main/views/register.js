@@ -121,7 +121,7 @@ if ($.validator != null) {
       return ;
     }
     $.ajax({
-      url: 'http://www.maidehao.com/test/register.json',
+      url: '../../test/test.php',
       type: "POST",
       data: {
         username: $username.val()
@@ -230,7 +230,7 @@ if ($.validator != null) {
           url: $registerForm.attr("action"),
           type: "POST",
           data: {
-            username: $username.val(),
+            phone: $username.val(),
             enPassword: $password.val(),
             code: $code.val()
           },
