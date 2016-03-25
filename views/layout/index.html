@@ -10,6 +10,7 @@
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
+		<script src = "../../js_mdh/main/views/index.js"></script>
 	</head>
 	<body>
 	<!-- 头部开始 -->
@@ -89,38 +90,26 @@
 			</div>			
 		</div>
 			<!-- 轮播图开始 -->
-		<div class="banner">
-			<ul class="inbanner clearfix">
-				<li>
-					<a href="">
-						<img src="../../images_mdh/banner.png">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="../../images_mdh/banner1.jpg">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="../../images_mdh/banner2.jpg">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="../../images_mdh/banner3.jpg">
-				   	</a>
-				</li>
-			</ul>  
-			<ol class="clearfix">
-				<li class="current"></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ol>
-			<button class="left"></button>
-			<button class="right"></button>
-		</div>
+		<div class="main_visual">
+				<div class="flicking_con">
+					<div class="flicking_inner">
+						<a href="javascript:void 0;">1</a>
+						<a href="javascript:void 0;">2</a>
+						<a href="javascript:void 0;">3</a>
+						<a href="javascript:void 0;">4</a>
+					</div>
+				</div>
+				<div class="main_image">
+					<ul>
+						<li><a href=""><img src="../../images_mdh/banner.png" width = "1100" height = "550" alt = "banner"></a></li>
+						<li><a href=""><img src="../../images_mdh/banner1.jpg" width = "1100" height = "550" alt = "banner"></a></li>
+						<li><a href=""><img src="../../images_mdh/banner2.jpg" width = "1100" height = "550" alt = "banner"></a></li>
+						<li><a href=""><img src="../../images_mdh/banner3.jpg" width = "1100" height = "550" alt = "banner"></a></li>
+					</ul>
+					<a id="btn_prev" href="javascript:;"></a>
+					<a id="btn_next" href="javascript:;"></a>
+				</div>
+			</div>
 		<!-- 图片一区开始 -->
 		<div class="main">
 			<ul class="clearfix">
