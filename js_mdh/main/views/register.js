@@ -249,5 +249,4 @@ if ($.validator != null) {
               .removeAttr('disabled')
               .removeClass('clickBackground');
   }
-
 });
