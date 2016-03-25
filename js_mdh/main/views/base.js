@@ -41,9 +41,9 @@
 
       // 人气商品开始
       $('.moods ul li').hover(function() {
-        $(this).find('.top').stop().slideDown(500);
+        $(this).find('.top').stop().fadeIn(400);
       }, function() {
-        $(this).find('.top').stop().slideUp(500);
+        $(this).find('.top').stop().fadeOut(400);
       });
 
       // 图片区域初始化

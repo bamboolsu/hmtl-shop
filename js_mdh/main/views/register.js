@@ -42,8 +42,7 @@
       }
     },
     submitHandler: function(form) {
-      $.ajax({
-        url: "/jshop/common/public_key.jhtml",
+      $.ajax({        url: "/jshop/common/public_key.jhtml",
         type: "GET",
         dataType: "json",
         cache: false,
@@ -59,7 +58,7 @@
             type: "POST",
             data: {
               username: $username.val(),
-              enPassword: enPassword,
+              enPassword: enPassword, 
               email: $email.val(),
               code: $code.val()
             },
@@ -83,6 +82,5 @@
       });
     }
   });
-
-
+    
 });
