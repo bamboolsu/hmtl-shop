@@ -142,6 +142,3 @@ function getCookie(name) {
 function removeCookie(name, options) {
   addCookie(name, null, options);
 }
-
-
-
