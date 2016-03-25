@@ -191,32 +191,59 @@ h1{
 	color:#FFC800;
 }
 /* 轮播图开始 */
-.banner{
+.main_visual {
+	margin: 0 auto;
 	width: 1100px;
-	height: 551px;
-	margin:0 auto;
-	overflow:hidden;
-	position:relative;
 }
-.banner .inbanner{
-	width: 8800px;
-	height: 551px;
+.main_image {
+	margin: 0px auto; 
+	width: 100%; 
+	height: 551px; 
+	overflow: hidden; 
+	// border-top-color: rgb(215, 215, 215); 
+	// border-top-width: 1px; 
+	// border-top-style: solid; 
+	position: relative;
 }
-.banner .inbanner li{
+.main_image ul {
+	left: 0px; 
+	top: 0px;
+	width: 9999px; 
+	height: 551px; 
+	overflow: hidden; 
+	position: absolute;
+}
+.main_image li {
+	width: 100%; 
+	height: 551px; 
 	float: left;
 }
-.banner .inbanner li img{
-	width: 1100px;
-	height: 551px;
+.main_image li span {
+	width: 100%; 
+	height: 551px; 
+	display: block;
 }
-.banner ol{
+.main_image li a {
+	width: 100%; 
+	height: 551px; 
+	display: block;
+}
+div.flicking_con {
 	position:absolute;
-	top:510px;
 	left:50%;
 	margin-left:-52px;
 	min-width: 104px;
 }
-.banner ol li{
+div.flicking_con .flicking_inner {
+	left: 10px; 
+	top: 500px; 
+	width: 300px; 
+	height: 21px; 
+	position: absolute; 
+	z-index: 999;
+	text-indent:-9999px;
+}
+div.flicking_con a {
 	width: 10px;
 	height: 10px;
 	border-radius:5px;
@@ -224,22 +251,26 @@ h1{
 	float:left; 
 	margin: 2px 5px;
 }
-.banner ol li.current{
+div.flicking_con a.on {
 	background:#FFC800;
+	background-position: 0px -21px;
 }
-.banner button{
-	width: 50px;
-	height: 100px;
-	background:#000 url(../images_mdh/icon/left.png) no-repeat center center;
+#btn_prev, #btn_next {
+	width: 50px !important;
+	height: 100px !important;
 	opacity:0.6;
 	filter:alpha(opacity=60);
 	position:absolute;
-	left:20px;
 	top:50%;
 	margin-top:-50px;
 	display: none;
+	z-index: 11111;
 }
-.banner button.right{
+#btn_prev {
+	background:#000 url(../images_mdh/icon/left.png) no-repeat center center;
+	left:20px;
+}
+#btn_next {
 	background: #000 url(../images_mdh/icon/right.png) no-repeat center center;
 	left:1030px;
 }
@@ -568,7 +599,7 @@ h2 span a{
 	background: #FFC800;
 	line-height: 45px;
 	font-size: 16px;
-	color:#3473700;
+	color: #347370;
 	text-align: center;
 	float: left;
 }

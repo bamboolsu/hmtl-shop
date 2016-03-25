@@ -10,7 +10,6 @@
       }else{ $('.nav').removeClass('current');}
     });
   }
-  
 
   $('.nav ul li').hover(function() {
     $(this).find('.innav').stop().slideDown(300);
