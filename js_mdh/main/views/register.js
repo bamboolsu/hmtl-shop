@@ -7,32 +7,6 @@
 
   // 验证
 if ($.validator != null) {
-  // 扩展validator
-  $.extend($.validator.messages, {
-      required: '必填',
-      email: 'E-mail格式错误',
-      url: '网址格式错误',
-      date: '日期格式错误',
-      dateISO: '日期格式错误',
-      pointcard: '信用卡格式错误',
-      number: '只允许输入数字',
-      digits: '只允许输入零或正整数',
-      minlength: $.validator.format('长度不允许小于{0}'),
-      maxlength: $.validator.format('长度不允许大于{0}'),
-      rangelength: $.validator.format('长度必须在{0}-{1}之间'),
-      min: $.validator.format('不允许小于{0}'),
-      max: $.validator.format('不允许大于{0}'),
-      range: $.validator.format('必须在{0}-{1}之间'),
-      accept: '输入后缀错误',
-      equalTo: '两次输入不一致',
-      remote: '输入错误',
-      integer: '只允许输入整数',
-      positive: '只允许输入正数',
-      negative: '只允许输入负数',
-      decimal: '数值超出了允许范围',
-      pattern: '格式错误',
-      extension: '文件格式错误'
-    });
     
     $.validator.setDefaults({
       errorClass: "fieldError",
@@ -172,15 +146,11 @@ if ($.validator != null) {
       username: {
         required: true,
         pattern: /1[3|4|5|7|8|9]\d{9}/,
-        minlength: 11,
-        remote: {
-          url: "/jshop/register/check_username.jhtml",
-          cache: false
-        }
+        minlength: 11
       },
       password: {
         required: true,
-        pattern: /.{6}/,
+        pattern: /.{4}/,
       },
       rePassword: {
         required: true,
@@ -224,15 +194,12 @@ if ($.validator != null) {
       }
     },
     submitHandler: function(form) {
-        var rsaKey = new RSAKey();
-        rsaKey.setPublic(b64tohex(data.modulus), b64tohex(data.exponent));
-        var enPassword = hex2b64(rsaKey.encrypt($password.val()));
         $.ajax({
           url: $registerForm.attr("action"),
           type: "POST",
           data: {
             username: $username.val(),
-            enPassword: enPassword,
+            enPassword: $password.val(),
             code: $code.val()
           },
           dataType: "json",
