@@ -919,13 +919,18 @@ button.register{
 
 .item-main-detail .item-left li {
 	margin-top: 15px;
-	width: 122px;
-	height: 122px;
+	width: 120px;
+	height: 120px;
 	overflow: hidden;
+	padding: 1px;
 	img {
 		width: 122px;
 		height: 122px;
 	}
+}
+.item-main-detail .item-left .tb-selected {
+	padding: 0px;
+	border: 1px solid red;
 }
 
 .item-main-detail .item-left li:first-child {
@@ -1046,14 +1051,18 @@ button.register{
 			font-size: @font;
 			text-align: center;
 		}
-		span {
+		input {
 			display: inline-block;
 			width: 27px;
+			max-width: 27px;
 			height: 27px;
 			font-size: @font;
 			text-align: center;
 			background: #FFF;
 			line-height: 27px;
+			border: 0px;
+			padding: 0px;
+			margin: 0px;
 		}
 	}
 	.share{
@@ -1068,6 +1077,7 @@ button.register{
 	.button {
 		font-size: 0px;
 		margin-top: 15px;
+		position: relative;
 		button {
 			border: 0px;
 			margin: 0px;
