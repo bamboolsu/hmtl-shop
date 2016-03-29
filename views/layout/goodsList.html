@@ -10,6 +10,55 @@
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
+		<script type="text/javascript">
+			$().ready(function() {
+
+				var $addCart = $('[data-tag="addCart"]');  // 产品购物车document
+				var $headerCart = $('#headerCart');        // 右边固定购物车
+				// 加入购物车
+				$addCart.click(function() {
+					var $this = $(this);
+					var productId = $this.closest("li").attr("productId");  // 产品id
+					 $.ajax({
+					 	url: "../../test/add.php",  //jshop/cart/add.jhtml
+					 	type: "POST",
+					 	data: {productId: productId, num: 1}, // 产品id，数量
+					 	dataType: "json",
+					 	cache: false,
+					 	success: function(message) {
+					 		if (message.type == "success") {
+								var $image = $this.closest("li").find("img");
+								var cartOffset = $headerCart.offset();
+								var imageOffset = $image.offset();
+								$image.clone().css({
+									width: 270,
+									height: 265,
+									position: "absolute",
+									"z-index": 20,
+									top: imageOffset.top,
+									left: imageOffset.left,
+									opacity: 0.8,
+									border: "1px solid #dddddd",
+									"background-color": "#eeeeee"
+								}).appendTo("body").animate({
+									width: 30,
+									height: 30,
+									top: cartOffset.top,
+									left: cartOffset.left,
+									opacity: 0.2
+								}, 1000, function() {
+									$(this).remove();
+								});
+								// 右边固定栏购物车显示
+								$headerCart.find('span').html(message.content);
+							}
+						}
+					});
+					return false;
+				});
+
+			});
+		</script>
 	</head>
     <body>
     	<!-- 头部开始 -->
@@ -115,8 +164,8 @@
 		</div>
 		<div class="moods">
 			<ul class="clearfix" >
-				<li>
-					<a href="">
+				<li productId = "123456" >
+					<a href="javascript:;">
 						<img src="../../images_mdh/r1.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -129,13 +178,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r2.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -148,13 +197,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r3.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -167,13 +216,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r4.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -186,13 +235,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r5.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -205,13 +254,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r1.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -224,13 +273,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r2.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -243,13 +292,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r3.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -262,13 +311,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r4.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -281,13 +330,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r5.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -300,13 +349,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r1.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -319,13 +368,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r2.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -338,13 +387,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r3.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -357,13 +406,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r4.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -376,13 +425,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r5.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -395,13 +444,13 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
 				</li>
-				<li>
-					<a href="">
+				<li productId = "123456">
+					<a href="javascript:;">
 						<img src="../../images_mdh/r1.png" height="270" width="265">
 					</a>
 					<P>运动设备
@@ -414,7 +463,7 @@
 							穿梭街头，做一个城市骑行家！
 						</p>
 						<div class="collect">
-							<a href=""></a>
+							<a href="javascript:;" data-tag="addCart" ></a>
 							<a class="last" href=""></a>
 						</div>
 					</div>
@@ -516,7 +565,9 @@
           <a href="">注册</a>
         </div>
       </li>
-      <li class="two"></li>
+      <li class="two" id="headerCart">
+      	<span>100</span>
+      </li>
       <li class="three"></li>
       <li class="fore"></li>
       <li class="five"></li>
