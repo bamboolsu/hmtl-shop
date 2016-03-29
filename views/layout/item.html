@@ -36,7 +36,6 @@
                 var $image = $this.parent().find("img");
                 var cartOffset = $headerCart.offset();
                 var imageOffset = $image.offset();
-                console.log($image);
                 $image.clone().css({
                   width: 120,
                   height: 120,
@@ -64,7 +63,7 @@
            });
            return false;
          });
-
+        // 放大图片
         $jqzoom.jqzoom({
           zoomWidth:300,
           zoomHeight:300,
@@ -101,6 +100,11 @@
           var num = $(this).val();
           var param = /^[1-9]{1}[0-9]*$/;
           if (!param.test(num)) $(this).val(parseInt(num) || '1');
+        });
+
+        // 尺码
+        $('[data-tag="size"]').bind('click', function () {
+          $(this).addClass('tb-selected').siblings().removeClass('tb-selected');
         });
 
       });
@@ -231,20 +235,22 @@
               <dt>尺码</dt>
               <dd>
                 <ul>
-                  <li class = "tb-selected">
+                  <li class = "tb-selected" data-tag="size">
                     <a href = "javascript:void(0)" >
                       <span>120ml</span>
                       <i></i>
                     </a>
                   </li>
-                  <li>
+                  <li data-tag="size">
                     <a href = "javascript:void(0)" >
                       <span>240ml</span>
+                      <i></i>
                     </a>
                   </li>
-                  <li>
+                  <li data-tag="size">
                     <a href = "javascript:void(0)" >
                       <span>360ml</span>
+                      <i></i>
                     </a>
                   </li>
                 </ul>
@@ -256,7 +262,7 @@
               <dt>颜色</dt>
               <dd>
                 <ul>
-                  <li class = "tb-selected">
+                  <li class = "tb-selected" data-tag="color">
                     <a href = "javascript:void(0)" >
                       <span>灰色</span>
                       <i></i>
@@ -265,11 +271,13 @@
                   <li class = "white">
                     <a href = "javascript:void(0)" >
                       <span>灰色</span>
+                      <i></i>
                     </a>
                   </li>
                   <li class = "yellow">
                     <a href = "javascript:void(0)" >
                       <span>灰色</span>
+                      <i></i>
                     </a>
                   </li>
                 </ul>
