@@ -145,7 +145,7 @@ if ($.validator != null) {
     rules: {
       username: {
         required: true,
-        pattern: /1[3|4|5|7|8|9]\d{9}/,
+        pattern: /^1[3|4|5|7|8|9]{1}\d{9}$/g,
         minlength: 11
       },
       password: {

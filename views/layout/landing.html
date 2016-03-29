@@ -44,7 +44,11 @@
 			  // 表单验证、记住用户名
 			  $loginForm.validate({
 			    rules: {
-			      username: "required",
+			      username: {
+			      	required: true,
+			        pattern: /1[3|4|5|7|8|9]\d{9}/,
+			        minlength: 11
+			      },
 			      password: {
 			        required: true,
 			        pattern: /.{4,}/,
@@ -57,7 +61,8 @@
 
 			    messages: {
 			      username: {
-			        required : "请输入用户名"
+			        required : "请输入手机号码",
+        			pattern: "输入正确的手机号"
 			      },
 
 			      password: {
