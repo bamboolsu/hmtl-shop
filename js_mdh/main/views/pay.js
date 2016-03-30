@@ -56,6 +56,15 @@
 
   // 成功返回弹出窗口
   WechatPrompt.fn.getSuccess = function () {
+
+    // 弹出窗口随窗口改变
+    this.windowSize();
+    // 弹出窗口随窗口改变而改变
+    $(window).resize(this.windowSize);
+  };
+
+  // 弹出窗口的位置
+  PaySuccess.fn.windowSize = function () {
     var $wechatRefresh = $('[data-tag="wechatRefresh"]');
     var width = $wechatRefresh.outerWidth();
     var height = $wechatRefresh.outerHeight();
@@ -68,7 +77,10 @@
       display: 'block'
     });
 
-    $('[data-tag="shieldingLayer"]').show();
+    $('[data-tag="shieldingLayer"]').css({
+      width: windowWdith,
+      height: windowHeight
+    }).show();
   };
 
 
@@ -143,6 +155,15 @@
 
   // 成功返回弹出窗口
   PaySuccess.fn.getSuccess = function () {
+
+    // 弹出窗口随窗口改变
+    this.windowSize();
+    // 弹出窗口随窗口改变而改变
+    $(window).resize(this.windowSize);
+  };
+
+  // 弹出窗口的位置
+  PaySuccess.fn.windowSize = function () {
     var $popupLayer = $('[data-tag="popupLayer"]');
     var width = $popupLayer.outerWidth();
     var height = $popupLayer.outerHeight();
@@ -155,8 +176,11 @@
       display: 'block'
     });
 
-    $('[data-tag="shieldingLayer"]').show();
-  };
+    $('[data-tag="shieldingLayer"]').css({
+      width: windowWdith,
+      height: windowHeight
+    }).show();
+  },
 
 
 
