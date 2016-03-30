@@ -82,6 +82,12 @@ body {
 .clearfix {
 	zoom: 1;
 }
+.hidden {
+	visibility: hidden;
+}
+.visible {
+	visibility: visible;
+}
 
 /* 头部样式开始 */
 #header{ 
@@ -1480,9 +1486,12 @@ body.emailverification {
 	}
 }
 /* 找回密码开始 */
+body.retrievepassword {
+	background: #e6e6e6;
+}
 .retrieve{
 	width: 1100px;
-	margin:0 auto;
+	margin: 100px auto;
 	h1{
 		margin:120px auto;
 	}
@@ -1537,7 +1546,7 @@ body.emailverification {
 		.code{
 			width: 360px;
 			height:45px;
-			margin:20px auto;
+			margin:13px auto 11px;
 			text-align:left;
 			label{
 				float: left;
@@ -1552,12 +1561,12 @@ body.emailverification {
 				text-align:center;
 				margin-left:15px;
 				display: inline-block;
-				float: left;
-				span{
+				float: right;
+				img {
 					width: 90px;
 					height: 30px;
 					display:block;
-					background:#c8c8c8 url(../images_mdh/icon/code.png) no-repeat center center;
+					// background:#c8c8c8 url(../images_mdh/icon/code.png) no-repeat center center;
 				}
 				a{
 					font-size: 15px;
@@ -1565,13 +1574,83 @@ body.emailverification {
 				}
 			}
 		}
-		button{
+		.error {
+			width: 370px;
+			margin: 0 auto;
+			text-align: left;
+			font-size: 0px;
+			i {
+				margin-left: 78px;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background: url('../images_mdh/icon/error.png') no-repeat;
+				vertical-align: middle;
+			}
+			span {
+				font-size: 14px;
+				color: #b2340d;
+				vertical-align: middle;
+				display: inline-block;
+				padding-left: 5px;
+				line-height: 20px;
+			}
+		}
+		button.submit {
 			width: 290px;
 			height: 45px;
 			font-size: 18px;
-			color:#ffc900;
-			margin:30px 0 0 78px; 
-			background: #444444;
+			color:#f5a623;
+			margin: 11px 0 0 78px; 
+			background: #444;
+			line-height: 45px;
+			letter-spacing: 10px;
+		}
+		.code .phone-submit {
+			line-height: 45px;
+			height: 45px;
+			width: 108px;
+			background: #f5a623;
+			color: #444;
+			text-align: center;
+			font-size: 14px;
+		}
+	}
+	.reset {
+		input{
+			margin-left:0px;
+			margin-bottom: 12px;
+			padding-left:20px;
+		}
+		button.submit {
+			margin: 11px 0px 0px;
+		}
+		.error i {
+			margin-left: 40px;
+		}
+	}
+	.popup-finish {
+		width: 600px;
+		margin: 0px auto;
+		background: #e6e6e6;
+		text-align: center;
+		border: 1px solid #B1B1B1;
+		padding: 80px 0px;
+		position: absolute;
+		display: none;
+		h3 {
+			font-size: 18px;
+			color: #9fa0a0;
+			padding-bottom: 60px;
+		}
+		button {
+			width: 290px;
+			height: 45px;
+			font-size: 18px;
+			color:#f5a623;
+			margin: 0px auto;
+			background: #444;
+			line-height: 45px;
 		}
 	}
 }
