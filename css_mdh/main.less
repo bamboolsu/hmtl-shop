@@ -1420,3 +1420,238 @@ button.register{
 	background: #cfcfcf;
 	margin:0 30px;
 }
+/* 邮箱验证开始 */
+.validation{
+	width: 1100px;
+	margin:0 auto;
+	h1{
+		width: 345px;
+		height:30px;
+		margin:120px auto;
+		background: url(../images_mdh/logo.png) no-repeat center center;
+	}
+	.validation-nav{
+		width: 1100px;
+		text-align:center;
+		margin-bottom:100px;
+		a{
+			padding:0 20px;
+			border-right:1px solid #444444;
+			font-size:18px;
+			color:#444444;
+			&:hover{color:#ffc900}
+		}
+		a.last{border-right:none;}
+	}
+	.validationForm{
+		width:800px;
+		margin:0 auto;
+		.text{
+			position:relative;
+			margin-bottom:55px;
+			input{
+				width:800px;
+				border-bottom:1px solid #c3c3c3;
+				font-size:18px;
+				color:#444444;
+			}
+			a{
+				font-size:15px;
+				line-height: 30px;
+				color:#844736;
+				position:absolute;
+				right:0;
+				bottom:30px;
+			}
+			p{
+				font-size: 16px;
+				color:#a4a5a5;
+				line-height: 30px;
+			}
+		}
+		.email{
+			width: 400px;
+			height:205px;
+			border:1px solid #bfbfbf;
+			margin:150px auto;
+			text-align:center;
+			span{
+				width: 100%;
+				height: 40px;
+				display: block;
+				background: #444444;
+				margin-bottom: 30px;
+				position:relative;
+				strong{
+					font-size: 20px;
+					color:#fff;
+					position:absolute;
+					right:20px;
+					top:50%;
+					margin-top:-16px;
+					font-weight: normal;
+				}
+			}
+			input{
+				width: 270px;
+				height:45px;
+				background:#f7f6f6;
+				padding-left:10px;
+				margin:0 auto;
+				line-height: 45px;
+			}
+			button{
+				display: block;
+				width: 280px;
+				height: 45px;
+				background: #444444;
+				font-size: 18px;
+				color:#ffc900;
+				margin:20px auto;
+			}
+		}
+	}
+}
+/* 找回密码开始 */
+.retrieve{
+	width: 1100px;
+	margin:0 auto;
+	h1{
+		margin:120px auto;
+	}
+	.retrieve-nav{
+		text-align:center;
+		p{
+			display: inline-block;
+			*display: inline;
+			*zoom:1;
+			width:100px;
+			height: 75px;
+			font-size: 20px;
+			color:#fff;
+			margin-left:-20px;
+			line-height: 40px;
+			text-align:center;
+			background: url(../images_mdh/icon/password-2.png) no-repeat center top;
+			span{
+				display: block;
+				font-size: 18px;
+				color:#9fa0a0;
+			}
+		}
+		p.one{
+			background-image: url(../images_mdh/icon/password-1.png);
+		}
+		strong{
+			width: 240px;
+			height: 90px;
+			display: inline-block;
+			margin-left:-20px;
+			background: url(../images_mdh/icon/password-3.png) no-repeat center center;
+		}
+	}
+	.retrieveForm{
+		text-align:center;
+		margin-top:100px;
+		label{
+			font-size: 14px;
+			color:#828282;
+			line-height: 45px;
+		}
+		input{
+			width: 270px;
+			height: 45px;
+			margin-left:30px;
+			padding-left:20px;
+			font-size: 14px;
+			background:#f7f6f6;
+			line-height: 45px;
+		}
+		.code{
+			width: 360px;
+			height:45px;
+			margin:20px auto;
+			text-align:left;
+			label{
+				float: left;
+			}
+			input{
+				width: 160px;
+				float: left;
+			}
+			.codeImg{
+				width: 90px;
+				height: 45px;
+				text-align:center;
+				margin-left:15px;
+				display: inline-block;
+				float: left;
+				span{
+					width: 90px;
+					height: 30px;
+					display:block;
+					background:#c8c8c8 url(../images_mdh/icon/code.png) no-repeat center center;
+				}
+				a{
+					font-size: 15px;
+					color:#333;
+				}
+			}
+		}
+		button{
+			width: 290px;
+			height: 45px;
+			font-size: 18px;
+			color:#ffc900;
+			margin:30px 0 0 78px; 
+			background: #444444;
+		}
+	}
+}
+/* 支付页开始 */
+.pay{
+	width: 1100px;
+	margin:0 auto;
+	.order{
+		width: 1000px;
+		padding:50px 50px 20px 50px;
+		font-size:@font;
+		color:#828282;
+		line-height: 50px;
+		a{
+			color:#ffc900;
+		}
+	}
+	.message{
+		width: 960px;
+		margin:0 auto;
+		background: #f3f3f3;
+		padding:20px;
+		font-size: @font;
+		color: #828282;
+	}
+	.wechat{
+		text-align:center;
+		margin-top:30px;
+		p{
+			font-size: 18px;
+			color:#444444;
+			text-align:center;
+			line-height:60px;
+		}
+		span{
+			display: block;
+			width: 100px;
+			height: 36px;
+			margin:20px auto;
+			text-align:left;
+			padding-left:45px;
+			background: url(../images_mdh/icon/wechat-1.png) no-repeat left center;
+		}
+		a{
+			font-size:@font;
+			color:#00aaef;
+			margin-bottom:100px;
+		}
+	}
+}
