@@ -33,7 +33,7 @@ ul li, ol li {
 	float: right;
 	display: inline
 }
-input, button {
+input, button, select, option, textarea {
 	outline: 0;
 	resize: none;
 	border: none
@@ -53,7 +53,8 @@ a:hover {
 body {
 	font-size: 12px;
 	font-family: "Microsoft YaHei";
-	color: #333
+	color: #333;
+	background: #f3f3f3
 }
 .white {
 	background-color: #fff;
@@ -1348,10 +1349,11 @@ button.register {
 .validation .validationForm .email input {
 	width: 270px;
 	height: 45px;
-	background: #f7f6f6;
+	background: #e6e6e6;
 	padding-left: 10px;
 	margin: 0 auto;
-	line-height: 45px
+	line-height: 45px;
+	color: #8a8a8a
 }
 .validation .validationForm .email button {
 	display: block;
@@ -1415,8 +1417,9 @@ button.register {
 	margin-left: 30px;
 	padding-left: 20px;
 	font-size: 14px;
-	background: #f7f6f6;
-	line-height: 45px
+	background: #e6e6e6;
+	line-height: 45px;
+	color: #8a8a8a
 }
 .retrieve .retrieveForm .code {
 	width: 360px;
@@ -1502,4 +1505,406 @@ button.register {
 	font-size: 14px;
 	color: #00aaef;
 	margin-bottom: 100px
+}
+.buy {
+	width: 1100px;
+	margin: 65px auto
+}
+.buy .buyForm {
+	padding-left: 145px;
+	margin-bottom: 100px
+}
+.buy .buyForm div {
+	margin-top: 20px
+}
+.buy .buyForm div.city .provinciala {
+	width: 150px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	padding-left: 10px;
+	margin-right: 20px;
+	border: none;
+	background: #e6e6e6;
+	color: #8a8a8a
+}
+.buy .buyForm div.city .citya {
+	width: 150px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	padding-left: 10px;
+	border: none;
+	background: #e6e6e6;
+	color: #8a8a8a
+}
+.buy .buyForm label {
+	width: 80px;
+	height: 45px;
+	text-align: right;
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #8a8a8a;
+	line-height: 45px
+}
+.buy .buyForm input {
+	width: 310px;
+	height: 45px;
+	font-size: 14px;
+	padding-left: 10px;
+	line-height: 45px;
+	background: #e6e6e6;
+	color: #8a8a8a
+}
+.buy .buyForm button {
+	width: 200px;
+	height: 45px;
+	background: #444;
+	font-size: 18px;
+	color: #ffc900;
+	margin-left: 95px
+}
+.buy .buy-address {
+	width: 1000px;
+	margin: 0 auto
+}
+.buy .buy-address h5 {
+	font-size: 18px;
+	color: #444;
+	line-height: 50px;
+	border-bottom: 1px solid #B2B2B2
+}
+.buy .buy-address li {
+	width: 270px;
+	height: 250px;
+	padding: 20px;
+	margin: 50px 0 0 15px;
+	border: 1px solid #B2B2B2
+}
+.buy .buy-address li .information {
+	font-size: 14px;
+	color: #828282;
+	line-height: 30px;
+	border-bottom: 1px solid #B2B2B2
+}
+.buy .buy-address li strong {
+	font-weight: 400;
+	line-height: 40px;
+	font-size: 14px;
+	color: #828282;
+	display: block
+}
+.buy .buy-address li em {
+	color: #828282;
+	display: block;
+	font-size: 14px;
+	margin-left: 5px
+}
+.buy .buy-address li .about {
+	margin: 130px 0 0 5px
+}
+.buy .buy-address li .about a {
+	color: #828282;
+	font-size: 14px
+}
+.buy .buy-address li .about .editor {
+	margin: 0 25px 0 110px
+}
+.buy .buy-address .new {
+	text-align: center
+}
+.buy .buy-address .new a {
+	display: inline-block;
+	height: 30px;
+	padding-left: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	color: #828282;
+	margin-top: 110px;
+	background: url(../images_mdh/icon/buy.png) no-repeat center left;
+	text-align: center
+}
+.buy .details {
+	width: 1000px;
+	margin: 30px auto
+}
+.buy .details h5 {
+	font-size: 18px;
+	color: #444;
+	line-height: 50px
+}
+.buy .details button {
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: url(../images_mdh/icon/details.png) no-repeat center center;
+	margin: -35px 20px 0 0
+}
+.buy .details ul {
+	margin-top: 10px
+}
+.buy .details ul li.first {
+	border-top: 1px solid #b2b2b2
+}
+.buy .details ul li {
+	height: 100px;
+	border: 1px solid #b2b2b2;
+	border-top: none;
+	padding: 15px
+}
+.buy .details ul li .goods {
+	margin-left: 30px
+}
+.buy .details ul li .goods h6 {
+	font-size: 16px;
+	color: #828282;
+	margin-bottom: 60px
+}
+.buy .details ul li .goods span {
+	font-size: 14px;
+	color: #828282;
+	border: 1px solid #b2b2b2;
+	padding: 0 3px
+}
+.buy .details ul li p strong {
+	font-weight: 400;
+	font-size: 14px;
+	color: #828282;
+	line-height: 100px;
+	margin-left: 75px
+}
+.buy .note {
+	width: 1000px;
+	margin: 30px auto
+}
+.buy .note h5 {
+	font-size: 18px;
+	color: #444;
+	line-height: 50px
+}
+.buy .note textarea {
+	width: 760px;
+	padding: 20px;
+	min-height: 5px;
+	border: none;
+	background: #e6e6e6
+}
+.buy .settlement {
+	width: 1000px;
+	margin: 0 auto
+}
+.buy .settlement h5 {
+	font-size: 18px;
+	color: #444;
+	line-height: 50px
+}
+.buy .settlement h5 a {
+	font-size: 14px;
+	color: #828282;
+	text-decoration: underline
+}
+.buy .settlement .grey {
+	background: url(../images_mdh/buy-1.png) no-repeat center top
+}
+.buy .settlement .first {
+	margin-left: 0
+}
+.buy .settlement li {
+	width: 142px;
+	padding: 25px;
+	margin-left: 10px;
+	background: url(../images_mdh/buy.png) no-repeat center top
+}
+.buy .settlement li strong {
+	display: block;
+	font-size: 40px;
+	color: #fff;
+	text-align: center;
+	line-height: 60px;
+	font-weight: 400
+}
+.buy .settlement li span {
+	display: block;
+	font-size: 14px;
+	color: #fff;
+	line-height: 25px
+}
+.buy .settlement li em {
+	display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #B4B4B4;
+	margin: 40px auto;
+	cursor: pointer
+}
+.buy .settlement li em .small {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	*display: inline-block;
+	*zoom: 1;
+	background: #f5a623;
+	margin: 3px;
+	border: none
+}
+.buy .settlement li em .dn {
+	display: none
+}
+.buy .settlement p {
+	font-size: 18px;
+	color: #444;
+	text-align: center;
+	line-height: 50px
+}
+.buy .settlement p span {
+	font-size: 28px;
+	color: #f5a623
+}
+.buy .settlement .buy-pay {
+	width: 1000px;
+	text-align: center;
+	margin: 100px auto
+}
+.buy .settlement .buy-pay label {
+	display: inline-block;
+	font-size: 18px;
+	color: #444;
+	margin-right: 50px
+}
+.buy .settlement .buy-pay input {
+	margin-right: 30px
+}
+.buy .settlement .buy-pay img {
+	display: inline-block;
+	*display: inline-block;
+	*zoom: 1;
+	margin: -30px 30px 0 0;
+	vertical-align: -20px
+}
+.buy .settlement .buy-pay span {
+	display: block;
+	font-size: 18px;
+	color: #444;
+	text-align: center;
+	margin: 60px 0 30px
+}
+.buy .settlement .buy-pay .big {
+	display: block;
+	margin: 0 auto
+}
+.buy .settlement .buy-pay p {
+	width: 120px;
+	margin: 20px auto;
+	background: url(../images_mdh/icon/wechat-1.png) no-repeat left center;
+	padding-left: 46px;
+	font-size: 14px;
+	color: #828282;
+	line-height: 20px
+}
+.buy .settlement .buy-pay button {
+	width: 200px;
+	height: 45px;
+	margin: 40px auto;
+	font-size: 18px;
+	color: #444;
+	letter-spacing: 20px;
+	background: #f5a623
+}
+.nav .shoppingcart {
+	height: 50px;
+	padding-right: 100px;
+	position: relative;
+	*margin-top: -50px
+}
+.nav .shoppingcart a {
+	font-size: 14px;
+	line-height: 50px;
+	color: #f5a623;
+	padding: 0 5px
+}
+.nav .shoppingcart .list {
+	width: 340px;
+	height: 110px;
+	padding: 15px 15px 0;
+	background: #241714;
+	position: absolute;
+	top: 50px;
+	left: -60px
+}
+.nav .shoppingcart .list p {
+	font-size: 14px;
+	color: #c8c8c8;
+	line-height: 40px;
+	text-align: center
+}
+.nav .shoppingcart .list a {
+	display: block;
+	height: 60px;
+	margin-top: 10px;
+	background: url(../images_mdh/icon/shoppingcart.png) no-repeat 60px center;
+	font-size: 18px;
+	color: #f5a623;
+	text-align: center;
+	line-height: 60px;
+	border-top: 1px solid #c8c8c8
+}
+.nav .shoppingcart .list2 {
+	width: 340px;
+	padding: 15px 15px 0;
+	background: #241714;
+	position: absolute;
+	top: 200px;
+	left: -60px
+}
+.nav .shoppingcart .list2 img {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 20px;
+	vertical-align: top
+}
+.nav .shoppingcart .list2 p {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	font-size: 14px;
+	color: #c8c8c8
+}
+.nav .shoppingcart .list2 p span {
+	border: 1px solid #c8c8c8;
+	margin: 10px 0;
+	line-height: 40px;
+	padding: 0 3px
+}
+.nav .shoppingcart .list2 p strong {
+	font-weight: 400;
+	margin: 0 90px 0 0
+}
+.nav .shoppingcart .list2 a {
+	display: block;
+	height: 60px;
+	margin-top: 10px;
+	background: url(../images_mdh/icon/shoppingcart.png) no-repeat 60px center;
+	font-size: 18px;
+	color: #f5a623;
+	text-align: center;
+	line-height: 60px;
+	border-top: 1px solid #c8c8c8
+}
+.shoppingcart-list {
+	width: 1100px;
+	margin: 0 auto;
+	text-align: center
+}
+.shoppingcart-list .nav {
+	font-size: 16px;
+	color: #f5a623;
+	padding: 0 28px;
+	border-left: 1px solid #727171;
+	border-right: 1px solid #727171
+}
+.shoppingcart-list .last {
+	border-left: none
 }
