@@ -25,7 +25,6 @@
 			  var $captchaImage = $("#captchaImage");
 			  var $isRememberUsername = $("#isRememberUsername");
 			  var $submit = $("input:submit");
-			  
 			  // 记住用户名
 			  if (getCookie("memberUsername") != null) {
 			    $isRememberUsername.prop("checked", true);
@@ -35,12 +34,10 @@
 			    $isRememberUsername.prop("checked", false);
 			    $username.focus();
 			  }
-			  
 			  // 更换验证码
 			  $captchaImage.click(function() {
 			    $captchaImage.attr("src", "../../images_mdh/icon/code.png");
 			  });
-			  
 			  // 表单验证、记住用户名
 			  $loginForm.validate({
 			    rules: {
