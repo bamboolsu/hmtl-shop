@@ -9,9 +9,28 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
-		<script src = "../../js_mdh/main/views/base.js"></script>
+      <script src = "../../js_mdh/main/views/base.js"></script>
+		<script src = "../../js_mdh/main/views/emailverification.js"></script>
+      <script>
+        $(function () {
+            /**
+             * 邮箱验证
+             * emailverification.js    1-
+             */
+            EmailVerification({
+               urlEmailVerificationPost: '../../test/add.php',  // ajax 邮箱验证，message.success=>添加修改成功,刷新页面， message.error=>失败，message.content=>错误内容
+               data: {
+                  // 对象
+                  productId: '1234567'
+               }
+            });
+
+         });
+
+
+      </script>
 	</head>
-    <body>
+    <body class = "emailverification">
    		<div class="validation">
    			<h1>买德好</h1>
    			<div class="validation-nav">
@@ -21,30 +40,37 @@
    				<a href="javascript:;">我的订单</a>
    				<a class="last" href="javascript:;">邀请好友</a>
    			</div>
-   			<form class="validationForm">
+   			<div class="validationForm">
    				<div class="text">
-   					<input type="password" placeholder="登录密码">
+   					<!-- <input type="password" placeholder="登录密码"> -->
+                  <span>登录密码</span>
    					<a href="javascript:;">修改</a>
    					<p>您的密码由数字、符号以及大小写字母组成，其他将很难猜出您的密码</p>
    				</div>
    				<div class="text">
-   					<input type="text" placeholder="手机验证">
+                  <!-- <input type="text" placeholder="手机验证"> -->
+   					<span>手机验证</span>
    					<a href="javascript:;">修改</a>
    					<p>您验证的手机：152****8716</p>
    				</div>
    				<div class="text">
-   					<input type="text" placeholder="邮箱验证">
-   					<a href="javascript:;">添加邮箱</a>
-   					<p>xxxx@xxxx.com</p>
+                  <!-- <input type="text" placeholder="邮箱验证"> -->
+   					<span>邮箱验证</span>
+                  <a href="javascript:;" data-tag="emailClick">添加邮箱</a>
+   					<a href="javascript:;" data-tag="emailClick" style = "display:none;">修改邮箱</a>
+                  <p>设置并验证后，可用邮箱快速登录，也可方便找回密码！</p>
+   					<p style = "display:none;">xxxx@xxxx.com</p>
    				</div>
-   				<div class="email">
+   				<div class="email" data-tag="email">
    					<span>
-   						<strong>x</strong>
+   						<strong data-tag="close">x</strong>
    					</span>
-   					<input type="email" placeholder="请输入您正确的邮箱地址">
-   					<button type="submit">提&nbsp&nbsp&nbsp&nbsp交</button>
+   					<input type="email" data-tag="emailInput" placeholder="请输入您正确的邮箱地址">
+                  <p class = "error" data-tag="prompt"></p>
+   					<button type="button" data-tag="emailSubmit">提交</button>
    				</div>
-   			</form>
+   			</div>
    		</div>
+         <div class = "shielding-layer" data-tag="shieldingLayer"></div>
 	</body>
 </html>
