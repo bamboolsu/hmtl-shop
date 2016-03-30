@@ -25,7 +25,6 @@
 			  var $captchaImage = $("#captchaImage");
 			  var $isRememberUsername = $("#isRememberUsername");
 			  var $submit = $("input:submit");
-			  
 			  // 记住用户名
 			  if (getCookie("memberUsername") != null) {
 			    $isRememberUsername.prop("checked", true);
@@ -35,23 +34,25 @@
 			    $isRememberUsername.prop("checked", false);
 			    $username.focus();
 			  }
-			  
 			  // 更换验证码
 			  $captchaImage.click(function() {
 			    $captchaImage.attr("src", "../../images_mdh/icon/code.png");
 			  });
-			  
 			  // 表单验证、记住用户名
 			  $loginForm.validate({
 			    rules: {
 			      username: {
 			      	required: true,
-			        pattern: /1[3|4|5|7|8|9]\d{9}/,
-			        minlength: 11
+			        pattern: /1[3|4|5|7|8|9]\d{9}$/,
+			        minlength: 11,
+			        remote: {
+								url: "${base}/register/check_username.jhtml",
+								cache: false
+							}
 			      },
 			      password: {
 			        required: true,
-			        pattern: /.{4,}/,
+			        pattern: /.{6,}/,
 			      },
 			      captcha:  {
 			        required: true,
@@ -62,7 +63,8 @@
 			    messages: {
 			      username: {
 			        required : "请输入手机号码",
-        			pattern: "输入正确的手机号"
+        			pattern: "输入正确的手机号",
+        			remote: "手机号码不存在"
 			      },
 
 			      password: {
