@@ -1528,7 +1528,9 @@ button.register {
 }
 
 .goods-key a.lf,
-.goods-key a.rg {
+.goods-key a.rg,
+.goods-key a.previousPage,
+.goods-key a.nextPage {
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -1536,7 +1538,8 @@ button.register {
     background: url(../images_mdh/icon/goods-up.png) no-repeat center center
 }
 
-.goods-key a.rg {
+.goods-key a.rg,
+.goods-key a.nextPage {
     background: url(../images_mdh/icon/goods-down.png) no-repeat center center
 }
 
@@ -1712,7 +1715,7 @@ body.emailverification {
 }
 
 body.retrievepassword {
-    background: #e6e6e6
+    background: #FFF
 }
 
 .retrieve {
@@ -1864,6 +1867,11 @@ body.retrievepassword {
     font-size: 14px
 }
 
+.retrieve .retrieveForm .code .clickBackground {
+    background: #ffc900;
+    color: #FFF
+}
+
 .retrieve .reset input {
     margin-left: 0;
     margin-bottom: 12px;
@@ -1886,7 +1894,8 @@ body.retrievepassword {
     border: 1px solid #B1B1B1;
     padding: 80px 0;
     position: absolute;
-    display: none
+    display: none;
+    z-index: 99999
 }
 
 .retrieve .popup-finish h3 {
@@ -1895,14 +1904,15 @@ body.retrievepassword {
     padding-bottom: 60px
 }
 
-.retrieve .popup-finish button {
+.retrieve .popup-finish a {
     width: 290px;
     height: 45px;
     font-size: 18px;
     color: #f5a623;
     margin: 0 auto;
     background: #444;
-    line-height: 45px
+    line-height: 45px;
+    display: inline-block
 }
 
 .pay {

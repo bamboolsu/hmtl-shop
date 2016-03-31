@@ -90,7 +90,7 @@
 })(jQuery, window);
 
 /**
- * 微信过期提示
+ * 微信支付成功失败提示
  */
 ;(function ($, window) {
 

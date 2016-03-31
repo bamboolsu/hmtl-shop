@@ -1337,14 +1337,14 @@ button.register{
 	float:right;
 	padding-top:10px;
 }
-.goods-key a.lf,.goods-key a.rg{
+.goods-key a.lf,.goods-key a.rg, .goods-key a.previousPage, .goods-key a.nextPage{
 	width: 20px;
 	height: 20px;
 	display: inline-block;
 	margin:0 5px;
 	background: url(../images_mdh/icon/goods-up.png) no-repeat center center;
 }
-.goods-key a.rg{
+.goods-key a.rg, .goods-key a.nextPage{
 	background: url(../images_mdh/icon/goods-down.png) no-repeat center center;
 }
 .number{
@@ -1498,7 +1498,7 @@ body.emailverification {
 }
 /* 找回密码开始 */
 body.retrievepassword {
-	background: #e6e6e6;
+	background: #FFF;
 }
 .retrieve{
 	width: 1100px;
@@ -1618,14 +1618,20 @@ body.retrievepassword {
 			line-height: 45px;
 			letter-spacing: 10px;
 		}
-		.code .phone-submit {
-			line-height: 45px;
-			height: 45px;
-			width: 108px;
-			background: #f5a623;
-			color: #444;
-			text-align: center;
-			font-size: 14px;
+		.code {
+			.phone-submit {
+				line-height: 45px;
+				height: 45px;
+				width: 108px;
+				background: #f5a623;
+				color: #444;
+				text-align: center;
+				font-size: 14px;
+			}
+			.clickBackground {
+				background: #ffc900;
+				color: #FFF;
+			}
 		}
 	}
 	.reset {
@@ -1650,12 +1656,13 @@ body.retrievepassword {
 		padding: 80px 0px;
 		position: absolute;
 		display: none;
+		z-index: 99999;
 		h3 {
 			font-size: 18px;
 			color: #9fa0a0;
 			padding-bottom: 60px;
 		}
-		button {
+		a {
 			width: 290px;
 			height: 45px;
 			font-size: 18px;
@@ -1663,6 +1670,7 @@ body.retrievepassword {
 			margin: 0px auto;
 			background: #444;
 			line-height: 45px;
+			display: inline-block;
 		}
 	}
 }
