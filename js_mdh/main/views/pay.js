@@ -64,7 +64,7 @@
   };
 
   // 弹出窗口的位置
-  PaySuccess.fn.windowSize = function () {
+  WechatPrompt.fn.windowSize = function () {
     var $wechatRefresh = $('[data-tag="wechatRefresh"]');
     var width = $wechatRefresh.outerWidth();
     var height = $wechatRefresh.outerHeight();

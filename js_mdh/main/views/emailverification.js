@@ -19,7 +19,6 @@
 
  // 事件
  EmailVerification.fn.documentEvent = function () {
-   var self = this;
    // 点开页面
    $('[data-tag="emailClick"]').bind('click', $.proxy(this.emailClick, this));
 
