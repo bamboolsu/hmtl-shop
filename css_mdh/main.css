@@ -476,7 +476,7 @@ div.flicking_con a.on {
 .moods ul li {
     float: left;
     margin-right: 13.3px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     position: relative
 }
 
@@ -510,6 +510,7 @@ div.flicking_con a.on {
     font-size: 18px;
     color: #EDEDED;
     text-align: center;
+    padding-top: 38px;
     line-height: 40px;
     z-index: 5;
     position: relative
@@ -531,7 +532,21 @@ div.flicking_con a.on {
     z-index: 5
 }
 
+.moods ul li .top .collect button {
+    margin: 0;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #fff url(../images_mdh/icon/top1.png) no-repeat center center
+}
+
+.moods ul li .top .collect button.last {
+    background: #fff url(../images_mdh/icon/top2.png) no-repeat center center;
+    margin-left: 5px
+}
+
 .moods ul li .top .collect a {
+    margin: 0;
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -546,13 +561,15 @@ div.flicking_con a.on {
 .moods ul li p {
     font-size: 14px;
     color: #787777;
-    line-height: 30px
+    line-height: 30px;
+    padding-left: 5px
 }
 
 .moods ul li p span {
     font-size: 18px;
     color: #EBA049;
-    float: right
+    float: right;
+    padding-right: 25px
 }
 
 .moods button {
@@ -1460,7 +1477,9 @@ button.register {
 
 .goods-nav {
     width: 1100px;
-    margin: 0 auto
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-bottom: 8px
 }
 
 .goods-left {
@@ -1475,39 +1494,30 @@ button.register {
     margin-right: 30px
 }
 
-.goods-nav a:hover {
+.goods-nav a:hover,
+.goods-nav a.selected {
     color: #ffc900
 }
 
-.goods-nav a,
-.goods-nav span {
+.goods-nav a {
     font-size: 14px;
     color: #727171;
-    margin-right: 30px;
+    margin-right: 12px;
     cursor: pointer
 }
 
-.goods-nav span {
-    margin-right: 10px;
+.goods-nav a.default {
+    margin-right: 20px
+}
+
+.goods-nav a i {
     padding-right: 15px;
-    background: url(../images_mdh/icon/goods-1.png) no-repeat right center;
-    position: relative
+    background: url(../images_mdh/icon/goods-1.png) no-repeat right center
 }
 
-.goods-nav span .goods-opt {
-    position: absolute;
-    width: 100px;
-    top: 20px;
-    left: 0;
-    z-index: 999;
-    background: #fff;
-    display: none
-}
-
-.goods-nav span .goods-opt a {
-    display: block;
-    line-height: 30px;
-    margin-right: 0
+.goods-nav a.selected i {
+    padding-right: 15px;
+    background: url(../images_mdh/icon/goods-bottom.png) no-repeat right center
 }
 
 .goods-key {
