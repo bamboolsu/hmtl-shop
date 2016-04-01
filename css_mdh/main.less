@@ -128,6 +128,11 @@ h1{
 	right:0;
 	cursor:pointer;
 }
+#header .index-nav{
+	width: 1100px;
+	height: 50px;
+	margin:57px auto 10px auto;
+}
 #header .nav{
 	width: 1100px;
 	height: 50px;
@@ -665,8 +670,9 @@ div.landing form{
 	position:relative;
 }
 div.landing input.tet{
-	width:300px;
+	width:285px;
 	height: 40px;
+	padding-left:15px;
 	line-height: 40px;
 	border-bottom:2px solid #cfd0d0; 
 	line-height: 40px;
@@ -697,6 +703,7 @@ div.landing .inlanding span{
 }
 div.landing .inlanding input{
 	border:1px solid #ccc;
+	padding-left:15px;
 	height:30px;
 	line-height:30px;
 	width:120px;
@@ -2141,7 +2148,7 @@ body.retrievepassword {
 			font-size:16px;
 			color:#727171;
 			line-height: 100px;
-			text-align:center1; 
+			text-align:center; 
 		}
 	}
 }
@@ -2165,7 +2172,7 @@ body.retrievepassword {
 			background:#241714;
 			position:absolute;
 			top:50px;
-			left:-60px;
+			left:-130px;
 			p{
 				font-size: @font;
 				color:#c8c8c8;
@@ -2191,7 +2198,7 @@ body.retrievepassword {
 			background:#241714;
 			position:absolute;
 			top:200px;
-			left:-60px;
+			left:-130px;
 			img{
 				display: inline-block;
 				*display: inline;
@@ -2277,16 +2284,21 @@ body.retrievepassword {
 					span{
 						font-size: 14px;
 						color:#727171;
+						cursor:pointer;
 					}
 				}
 				.text{
 					text-align: left;
 					width: 250px;
 					h6{
+						width: 255px;
 						font-size: 16px;
 						color:#727171;
 						margin-top:-10px;
 						margin-bottom:47px;
+						overflow: hidden;
+						text-overflow:ellipsis;
+						white-space: nowrap;
 					}
 					strong{
 						font-size: 14px;
