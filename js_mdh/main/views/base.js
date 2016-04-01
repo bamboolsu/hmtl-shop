@@ -3,13 +3,14 @@
 ;$(function() {
       if ($('.nav').offset()) {
         var y = $('.nav').offset().top;
+
         $(window).scroll(function(event) {
-          var top = $(window).scrollTop()
-          if (top > y) {
-            $('.nav').addClass('current');
-          } else {
-            $('.nav').removeClass('current');
-          }
+            var top = $(window).scrollTop();
+            if (top >= y) {
+              $('.nav').addClass('current');
+            } else {
+              $('.nav').removeClass('current');
+            }
         });
       }
 

@@ -30,7 +30,7 @@
         ShoppingCart({
           shoppingForm: shoppingForm,    // 表单对象数据
           usernameId: 123,  //getCookie('usernameId');  // 用户cookie id
-          urlCartPost: '../../test/add.php',    // 购物车Ajax
+          urlCartPost: '../../test/item.json',    // 购物车Ajax
           urlLogin:    './landing.html',  // 登录链接
           data: {
             // 对象
@@ -45,9 +45,9 @@
         BuyImmediately({
           shoppingForm: shoppingForm,    // 表单对象数据
           usernameId: 123,  //getCookie('usernameId');  // 用户cookie id
-          urlBuyImmediatelyPost: '../../test/add.php',    // 购物车Ajax
+          urlBuyImmediatelyPost: '../../test/test.json',    // 购物车Ajax
           urlLogin:    './landing.html',   // 登录链接
-          urlOrder:    './order.html',     // 订单页面
+          urlOrder:    './ShoppingCart.html',     // 订单页面
           data: {
             // 对象
             productId: '1234567',
