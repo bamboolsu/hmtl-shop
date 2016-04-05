@@ -101,6 +101,9 @@
         });
       }
 
+      // list初始化
+      $('[data-items="list"]:nth-child(3n)').addClass('nth-child-three');
+
   });
 
 /**
@@ -142,3 +145,4 @@ function getCookie(name) {
 function removeCookie(name, options) {
   addCookie(name, null, options);
 }
+
