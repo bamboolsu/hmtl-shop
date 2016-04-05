@@ -101,7 +101,7 @@
   FindPassword.fn.code = function () {
     var $code = $('[data-tag="code"]');
     var code = $.trim($code.val());
-    var paramCode = /[0-9a-zA-Z]{4}/;
+    var paramCode = /^[0-9a-zA-Z]{4}$/;
 
     if (!paramCode.test(code)) {
       this.promptShow(true, '请输入正确的验证码');
@@ -215,7 +215,7 @@
   Authentication.fn.code = function () {
     var $code = $('[data-tag="code"]');
     var code = $.trim($code.val());
-    var paramCode = /[0-9a-zA-Z]{4}/;
+    var paramCode = /^[0-9a-zA-Z]{4}$/;
 
     if (!paramCode.test(code)) {
       this.promptShow(true, '请输入正确的验证码');
