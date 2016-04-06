@@ -588,3 +588,50 @@ $(function() {
 		}
 	})
 });
+
+
+/**
+ * order
+ * 订单页面效果和接口
+ */
+
+;(function ($, window) {
+
+  // 购物车
+  function Order (options) {
+    if (!(this instanceof Order)) return new Order(options);
+    this.init.apply(this, arguments);
+  };
+
+  Order.fn = Order.prototype;
+  // 初始化
+  Order.fn.init = function (options) {
+    this.options = options;
+    this.views();
+    this.documentClick();
+  };
+
+  // 初始化视图
+  Order.fn.views = function () {
+  	// 如果不存在地址显示
+  	var isShow = $('[data-address="items"] li').length || 0;
+  	if (!isShow) {
+  		$('[data-tag="addressForm"]').removeClass('dn');
+  	}
+  };
+
+  //绑定事件
+  Order.fn.documentClick = function () {
+  	// 显示添加地址栏
+  	$('[data-tag="addAddress"]').bind('click', $.proxy(this.addAddress, this));
+  };
+
+  // 添加地址
+  Order.fn.addAddress = function () {
+  	$('[data-tag="addressForm"]').removeClass('dn');
+  };
+
+
+  window.Order = Order;
+
+})(jQuery, window);

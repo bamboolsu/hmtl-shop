@@ -186,4 +186,4 @@
 
   window.PaySuccess = PaySuccess;
 
-})(jQuery, window)
+})(jQuery, window);
