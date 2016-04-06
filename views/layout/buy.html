@@ -11,7 +11,21 @@
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
-		<script type="text/javascript" src="../../js_mdh/main/views/buy.js"></script>
+		<script src="../../js_mdh/main/views/buy.js"></script>
+    <script>
+
+      $(function () {
+
+        /**
+         * order  592-
+         */
+        Order({
+
+        });
+
+      });
+
+    </script>
 	</head>
     <body>
     	<!-- 头部开始 -->
@@ -100,7 +114,7 @@
 		</div>
 		<!-- 主体部分开始 -->
 		<div class="buy">
-			<form class="buyForm">
+			<form class="buyForm" data-tag="addressForm">
 				<div class="username">
 					<label for="username">收货人姓名</label>
 					<input id="username" type="text" placeholder="请输入与身份证一致的姓名">
@@ -129,10 +143,11 @@
 				</div>
 			</form>
 			<!-- 收货地址开始 -->
-			<div class="buy-address">
-				<h5>收货地址</h5>
-				<ul class="clearfix">
+			<div class="buy-address " >
+				<h5 class = "clearfix">收货地址<a herf = "javascript:;" data-tag="addAddress" class = "fr">添加</a></h5>
+				<ul class="clearfix" data-address="items">
 					<button class="left" type="button"></button>
+					<button class="right" type="button"></button>
 					<li class="fl">
 						<P class="information">小明
 							<span class="fr">152xxxx5268</span>
@@ -250,10 +265,10 @@
 					<input id="buy" type="radio" checked="checked" name="pay">
 					<img src="../../images_mdh/icon/buy-pay-1.png" height="56" width="55">
 					<input type="radio" name="pay">
-					<img src="../../images_mdh/icon/buy-pay-2.png" height="56" width="56">
-					<span>微信支付</span>
+					<img src="../../images_mdh/icon/buy-pay-2.png" height="56" width="56"><br />
+				<!-- 	<span>微信支付</span>
 					<img class="big" src="../../images_mdh/wechat.png" height="186" width="189">
-					<P>请使用微信扫一扫<br>扫描二维码支付</P>
+					<P>请使用微信扫一扫<br>扫描二维码支付</P> -->
 					<button type="submit">结算</button>
 				</form>
 			</div>

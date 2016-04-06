@@ -20,7 +20,13 @@
 				 * 选，加，减，删，提交等功能
 				 * cart
 				 */
-				ShoppingCart();
+				ShoppingCart({
+					urlMinusPlusPost: '../../test/minusplus.json',
+					minusPlusData: {},
+
+					urlDeletePost: '../../test/delete.json',
+					deleteData: {}
+				});
 
 			});
 		</script>
@@ -151,7 +157,7 @@
 						<th>发货方式</th>
 						<th class="last">操作</th>
 					</tr>
-					<tr class="details">
+					<tr class="details" data-list="123456">
 						<td class="bl">
 							<input class="a" type="checkbox" data-tag="select">
 						</td>
@@ -167,7 +173,7 @@
 							<a href = "javascript:;" data-tag="plus">+</a>
 						</td>
 						<td>
-							<span data-tag="price">￥790.00</span>
+							<span>￥790.00</span>
 						</td>
 						<td>
 							<span>10%</span>
@@ -176,14 +182,15 @@
 							<span>￥10.00</span>
 						</td>
 						<td>
-							<span data-tag="typeAll">￥800.00</span>
+							<span>￥</span>
+							<span data-tag="priceAll">800.00</span>
 						</td>
 						<td>保税区发货</td>
 						<td class="br">
 							<a herf = "javascript:;" data-tag="del">删除</a>
 						</td>
 					</tr>
-					<tr class="details">
+					<tr class="details" data-list="123456">
 						<td class="bl">
 							<input class="a" type="checkbox" data-tag="select">
 						</td>
@@ -199,7 +206,7 @@
 							<a href = "javascript:;" data-tag="plus">+</a>
 						</td>
 						<td>
-							<span data-tag="price">￥790.00</span>
+							<span>￥790.00</span>
 						</td>
 						<td>
 							<span>10%</span>
@@ -208,39 +215,8 @@
 							<span>￥10.00</span>
 						</td>
 						<td>
-							<span data-tag="typeAll">￥800.00</span>
-						</td>
-						<td>保税区发货</td>
-						<td class="br">
-							<a herf = "javascript:;" data-tag="del">删除</a>
-						</td>
-					</tr>
-					<tr class="details">
-						<td class="bl">
-							<input class="a" type="checkbox" data-tag="select">
-						</td>
-						<td>
-						<img src="../../images_mdh/content8.png" height="93" width="93"></td>
-						<td class="text">
-							<h6>ladmirable香氛蜡烛(清新古龙水)</h6>
-							<strong>240ml</strong>
-						</td>
-						<td class="nbr">
-							<a href = "javascript:;" data-tag="minus">-</a>
-							<span data-tag="count">1</span>
-							<a href = "javascript:;" data-tag="plus">+</a>
-						</td>
-						<td>
-							<span data-tag="price">￥790.00</span>
-						</td>
-						<td>
-							<span>10%</span>
-						</td>
-						<td>
-							<span>￥10.00</span>
-						</td>
-						<td>
-							<span data-tag="typeAll">￥800.00</span>
+							<span>￥</span>
+							<span data-tag="priceAll">800.00</span>
 						</td>
 						<td>保税区发货</td>
 						<td class="br">
@@ -249,7 +225,7 @@
 					</tr>
 				</table>
 				<P class="total">
-					总价/<span data-tag=" totalPrice">￥0.00</span>
+					总价/<span>￥</span><span data-tag="totalPrice">0.00</span>
 				</P>
 				<button class="settlement" type  = "button" data-tag="submit" >立即结算</button>
 

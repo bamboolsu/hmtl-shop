@@ -98,7 +98,13 @@ $(function () {
   ShoppingForm.fn.numberProductClick = function () {
     var num = $(this).val();
     var param = /^[1-9]{1}[0-9]*$/;
-    if (!param.test(num)) $(this).val(parseInt(num) || '1');
+
+    if (!param.test(num)) {
+      if (parseInt(num) < 1)
+        $(this).val(1);
+      else
+        $(this).val(parseInt(num) || '1');
+    }
   };
 
   // 选择框选择
@@ -264,7 +270,7 @@ $(function () {
     // 判断用户是否登录,不存在跳到用户登录页面
     if (!self.options.usernameId)
       location.href = self.options.urlLogin;
-    
+
     var data = $.extend({}, this.options.shoppingForm.data(), self.options.data);
 
     console.log("BuyImmediatelyPost: ");
@@ -304,4 +310,3 @@ $(function () {
 
   window.BuyImmediately = BuyImmediately;
 })(jQuery, window);
-
