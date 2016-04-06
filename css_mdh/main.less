@@ -1921,65 +1921,58 @@ body.retrievepassword {
 			line-height: 50px;
 			border-bottom: 1px solid #B2B2B2;
 		}
-		li.left{
-			width: 12px;
-			border:none;
-			padding:0;
+		ul{
+			width: 940px;
+			padding:0 30px;
+			position:relative;
 			button{
-				width: 11px;
+				width: 12px;
 				height: 19px;
-				position:relative;
-				top:120px;
-				left:-10px;
-				background:url(../images_mdh/icon/buy-left.png) no-repeat center center; 
+				border:none;
+				background: url(../images_mdh/icon/buy-left.png) no-repeat center center;
+				position:absolute;
+				top:50%;
+				margin-top:-9px;
+				left:5px;
 			}
-		}
-		li.right{
-			width: 12px;
-			border:none;
-			padding:0;
-			button{
-				width: 11px;
-				height: 19px;
-				position:relative;
-				top:120px;
-				right:-10px;
-				background:url(../images_mdh/icon/buy-right.png) no-repeat center center; 
+			button.right{
+				background: url(../images_mdh/icon/buy-right.png) no-repeat center center;
+				left:985px;
 			}
-		}
-		li{
-			width: 260px;
-			height: 250px;
-			padding:20px;
-			margin:50px 0 0 10px;
-			border:1px solid #B2B2B2;
-			.information{
-				font-size:@font;
-				color:#828282;
-				line-height: 30px;
-				border-bottom:1px solid #B2B2B2;
-			}
-			strong{
-				font-weight: normal;
-				line-height: 40px;
-				font-size: @font;
-				color:#828282;
-				display: block;
-			}
-			em{
-				color:#828282;
-				display: block;
-				font-size: @font;
-				margin-left:5px;
-			}
-			.about{
-				margin:130px 0 0 5px;
-				a{
+			li{
+				width: 260px;
+				height: 250px;
+				padding:20px;
+				margin:50px 0 0 10px;
+				border:1px solid #B2B2B2;
+				.information{
+					font-size:@font;
 					color:#828282;
-					font-size: @font;
+					line-height: 30px;
+					border-bottom:1px solid #B2B2B2;
 				}
-				.editor{
-					margin:0 25px 0 110px;
+				strong{
+					font-weight: normal;
+					line-height: 40px;
+					font-size: @font;
+					color:#828282;
+					display: block;
+				}
+				em{
+					color:#828282;
+					display: block;
+					font-size: @font;
+					margin-left:5px;
+				}
+				.about{
+					margin:130px 0 0 5px;
+					a{
+						color:#828282;
+						font-size: @font;
+					}
+					.editor{
+						margin:0 25px 0 110px;
+					}
 				}
 			}
 		}
@@ -2304,6 +2297,7 @@ body.retrievepassword {
 	.last{
 		border-left:none;
 		text-align:left;
+		color:#727171;
 	}
 	.caption{
 			width: 1000px;
