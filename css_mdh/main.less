@@ -288,7 +288,7 @@ div.flicking_con a.on {
 	top:50%;
 	margin-top:-50px;
 	display: none;
-	z-index: 11111;
+	z-index: 111;
 }
 #btn_prev {
 	background:#000 url(../images_mdh/icon/left.png) no-repeat center center;
@@ -598,10 +598,21 @@ div.flicking_con a.on {
 	top:50%;
 	right:0;
 	margin-top: -115px;
-	background: #000;
 	z-index:9999;
 }
-.fix>a{
+.fix li {
+  position: relative;
+  display: block;
+  left: 0;
+  top: 0px;
+}
+.fix a.ico {
+	background: #000;
+	display: block;
+	position: relative;
+	z-index: 9999999;
+}
+.fix a.ico i{
 	width: 46px;
 	height: 45px;
 	display: block;
@@ -609,17 +620,16 @@ div.flicking_con a.on {
 	background: url(../images_mdh/icon/fix1.png) no-repeat center center;
 	cursor:pointer;
 }
-.fix a.two{
+.fix a.two i{
 	background: url(../images_mdh/icon/fix2.png) no-repeat center center;
-
 }
-.fix a.three{
+.fix a.three i{
 	background: url(../images_mdh/icon/fix3.png) no-repeat center center;
 }
-.fix a.fore{
+.fix a.fore i{
 	background: url(../images_mdh/icon/fix4.png) no-repeat center center;
 }
-.fix a.five{
+.fix a.five i{
 	width: 46px;
 	height: 45px;
 	background: url(../images_mdh/icon/fix5.png) no-repeat center center;
@@ -633,21 +643,23 @@ div.flicking_con a.on {
 	font-size: 14px;
 }
 .shopping-list{
-	width: 320px;
+	width: 200px;
 	height: 100%;
-	padding:30px 61px 0 15px;
-	background:#241714;
+	padding:30px 46px 0 15px;
+	background:#e6e6e6;
 	position:fixed;
 	top:0;
-	right:-396px;
-	z-index: 5;
+	right: 80px;
+	z-index: 99999;
+	visibility: hidden;
+	border-left: 1px solid #231815;
 	p{
 		font-size: @font;
-		color:#c8c8c8;
-		line-height:500px;
+		color:#666;
+		line-height: 100%;
 		text-align:center;
 	}
-	a{
+	a {
 		width: 100%;
 		height:60px;
 		position:absolute;
@@ -655,23 +667,36 @@ div.flicking_con a.on {
 		right:0;
 		cursor:pointer;
 		margin-top:15px;
-		background: url(../images_mdh/icon/shoppingcart.png) no-repeat 90px center;
 		font-size: 18px;
 		color:#f5a623;
 		text-align: center;
 		line-height:60px;
 		border-top:1px solid #c8c8c8;
+		background: #231815;
+		i{
+			width: 26px;
+			height: 22px;
+			background: url(../images_mdh/icon/shoppingcart.png) no-repeat;
+			display: inline-block;
+			vertical-align: middle;
+			padding-right: 10px;
+		}
+	}
+	a.no {
+		background: #666;
 	}
 }
 .shopping-list2{
-	width: 320px;
+	width: 246px;
 	height: 100%;
-	padding:15px 61px 0 15px;
-	background:#fff;
+	padding:15px 46px 0 0px;
 	position:fixed;
 	top:0px;
-	right:-396px;
 	z-index: 5;
+	right: -246px;
+	visibility: hidden;
+	background:#e6e6e6;
+	border-left: 1px solid #231815;
 	.warp{
 		background: #F3F3F3;
 		margin-bottom:10px;
@@ -719,39 +744,53 @@ div.flicking_con a.on {
 		width: 100%;
 		height:60px;
 		position:absolute;
-		bottom:30px;
+		bottom:15px;
 		right:0;
 		cursor:pointer;
 		margin-top:15px;
-		background: url(../images_mdh/icon/shoppingcart.png) no-repeat 90px center;
 		font-size: 18px;
 		color:#f5a623;
 		text-align: center;
 		line-height:60px;
 		border-top:1px solid #c8c8c8;
+		background: #231815;
+		i{
+			width: 26px;
+			height: 22px;
+			background: url(../images_mdh/icon/shoppingcart.png) no-repeat;
+			display: inline-block;
+			vertical-align: middle;
+			padding-right: 10px;
+		}
 	}
 }
 .fix .infix{
-	width: 120px;
-	height: 45px;
-	position:absolute;
-	top:0;
-	right: 46px;
-	z-index:5;
-	display: none;
+	  height: 38px;
+    line-height: 38px;
+    width: 120px;
+    position: absolute;
+    z-index: 2;
+    right: 80px;
+    top: 0;
+    background: #444851;
+    color: #d8d8d8;
+    text-align: center;
+    display: block;
+    visibility: hidden;
 }
 .fix .tell{
 	width: 120px;
 	height: 45px;
 	position:absolute;
-	top:90px;
-	right:-120px;
+	top: 0px;
+	right: 80px;
 	z-index:5;
 	font-size:16px;
 	background: @background;
 	color:#ffc900;
 	text-align: center;
 	line-height: 45px;
+	visibility: hidden;
 }
 .fix .images{
 	width: 200px;
@@ -759,10 +798,11 @@ div.flicking_con a.on {
 	padding-top:5px;
 	background: @background;
 	position:absolute;
-	top:135px;
-	right:-200px;
+	top: 0px;
+	right: 80px;
 	z-index:53;
 	text-align: center;
+	visibility: hidden;
 }
 .fix .infix a{
 	display: inline-block;
@@ -780,8 +820,9 @@ div.flicking_con a.on {
 	background: @background;
 	position:absolute;
 	top:0;
-	right:-180px;
+	right: 180px;
 	z-index: 5;
+	visibility: hidden;
 	h6{
 		height: 30px;
 		line-height: 30px;
