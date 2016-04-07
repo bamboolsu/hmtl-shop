@@ -147,6 +147,7 @@ h1{
 	position:relative;
 	top:0;
 	left:0;
+	z-index: 5;
 }
 #header .nav.current{
 	position: fixed;
@@ -158,6 +159,10 @@ h1{
 #header .nav ul li{
 	float:left;
 	margin-right: 20px;
+}
+#header .nav ul li a.current{
+	border-bottom:3px solid #ffc800;
+	color:#FFC800;
 }
 #header .nav ul>li>a{
 	width: 100px;
@@ -539,7 +544,7 @@ div.flicking_con a.on {
 }
 #footer ol li{
 	float: left;
-	line-height: 30px;
+	line-height: 40px;
 	color:#505050;
 	margin:0 55px;
 }
@@ -555,6 +560,7 @@ div.flicking_con a.on {
 	font-size: 12px;
 	display: block;
 	color:#505050;
+	line-height:25px;
 }
 #footer .copy{
 	width: 100%;
@@ -594,40 +600,137 @@ div.flicking_con a.on {
 	margin-top: -115px;
 	background: #000;
 }
-.fix li{
+.fix>a{
 	width: 46px;
 	height: 45px;
+	display: block;
 	border-bottom:1px solid #666;
 	background: url(../images_mdh/icon/fix1.png) no-repeat center center;
-	position:relative;
 	cursor:pointer;
 }
-.fix li.two{
+.fix a.two{
 	background: url(../images_mdh/icon/fix2.png) no-repeat center center;
 
 }
-.fix li.three{
+.fix a.three{
 	background: url(../images_mdh/icon/fix3.png) no-repeat center center;
 }
-.fix li.fore{
+.fix a.fore{
 	background: url(../images_mdh/icon/fix4.png) no-repeat center center;
 }
-.fix li.five{
-	display: block;
+.fix a.five{
 	width: 46px;
 	height: 45px;
 	background: url(../images_mdh/icon/fix5.png) no-repeat center center;
+	border-bottom:none;
 }
-.fix li.two span {
+.fix a.two span {
 	position: absolute;
 	color: red;
 	top: 27px;
 	right: 5px;
 	font-size: 14px;
 }
+.shopping-list{
+	width: 320px;
+	height: 100%;
+	padding:30px 61px 0 15px;
+	background:#241714;
+	position:fixed;
+	top:0;
+	right:-396;
+	z-index: -5;
+	p{
+		font-size: @font;
+		color:#c8c8c8;
+		line-height:500px;
+		text-align:center;
+	}
+	a{
+		width: 100%;
+		height:60px;
+		position:absolute;
+		bottom:30px;
+		right:0;
+		cursor:pointer;
+		margin-top:15px;
+		background: url(../images_mdh/icon/shoppingcart.png) no-repeat 90px center;
+		font-size: 18px;
+		color:#f5a623;
+		text-align: center;
+		line-height:60px;
+		border-top:1px solid #c8c8c8;
+	}
+}
+.shopping-list2{
+	width: 320px;
+	height: 100%;
+	padding:15px 61px 0 15px;
+	background:#fff;
+	position:fixed;
+	top:0px;
+	right:-396px;
+	z-index: -5;
+	.warp{
+		background: #F3F3F3;
+		margin-bottom:10px;
+		position:relative;
+		img{
+			margin-right:40px;
+			vertical-align:top;
+		}
+		span{
+			width: 20px;
+			height: 20px;
+			margin-top:20px;
+			border:1px solid #ccc;
+			cursor: pointer;
+			text-align: center;
+			line-height: 18px;
+			font-size:18px;
+			color:#666;
+		}
+		strong{
+			width: 20px;
+			line-height: 60px;
+			text-align: center;
+			color:#666;
+			font-weight: normal;
+
+		}
+		p{
+			font-weight: 16px;
+			color:#666;
+			line-height: 60px;
+			margin-right:10px;
+		}
+		b{
+			position:absolute;
+			top:0;
+			right:10px;
+			font-weight:normal;
+			font-size:14px;
+			cursor: pointer;
+			color:#666;
+		}
+	}
+	a{
+		width: 100%;
+		height:60px;
+		position:absolute;
+		bottom:30px;
+		right:0;
+		cursor:pointer;
+		margin-top:15px;
+		background: url(../images_mdh/icon/shoppingcart.png) no-repeat 90px center;
+		font-size: 18px;
+		color:#f5a623;
+		text-align: center;
+		line-height:60px;
+		border-top:1px solid #c8c8c8;
+	}
+}
 .fix .infix{
-	width: 120px;
-	z-index: 30;
 	width: 120px;
 	height: 45px;
 	position:absolute;
@@ -645,6 +748,38 @@ div.flicking_con a.on {
 	color:#ffc900;
 	text-align: center;
 	float: left;
+}
+.fix .logged{
+	width: 180px;
+	background: @background;
+	position:absolute;
+	top:0;
+	right:-180px;
+	z-index: -5;
+	h6{
+		height: 30px;
+		line-height: 30px;
+		font-size:16px;
+		color:#ffc900;
+		text-align: center;
+		border-bottom:1px solid #ccc;
+	}
+	a{
+		display: block;
+		line-height: 30px;
+		text-align: center;
+		color:#f8f8f8;
+	}
+	span{
+		display: block;
+		line-height: 30px;
+		font-size:15px;
+		letter-spacing: 5px;
+		color:#f8f8f8;
+		cursor: pointer;
+		text-align: center;
+		border-top:1px solid #ccc;
+	}
 }
 
 
@@ -1877,7 +2012,7 @@ body.retrievepassword {
 				line-height: 45px;
 				font-size: @font;
 				padding-left:10px;
-				margin-right:20px;
+				margin-right:18px;
 				border:none;
 				background:@inputBackground; 
 				color:@inputColor;
@@ -2000,68 +2135,63 @@ body.retrievepassword {
 				margin-right: 10px;
 			}
 		}
-		li.left{
-			width: 12px;
-			border:none;
-			padding:0;
+		ul{
+			width: 940px;
+			padding:0 30px;
+			position:relative;
 			button{
-				width: 11px;
+				width: 12px;
 				height: 19px;
-				position:relative;
-				top:120px;
-				left:-10px;
-				background:url(../images_mdh/icon/buy-left.png) no-repeat center center; 
+				border:none;
+				background: url(../images_mdh/icon/buy-left.png) no-repeat center center;
+				position:absolute;
+				top:50%;
+				margin-top:-9px;
+				left:5px;
 			}
-		}
-		li.right{
-			width: 12px;
-			border:none;
-			padding:0;
-			button{
-				width: 11px;
-				height: 19px;
-				position:relative;
-				top:120px;
-				right:-10px;
-				background:url(../images_mdh/icon/buy-right.png) no-repeat center center; 
+		
+			li.selected {
+				border: 1px solid #F5A623;
 			}
-		}
-		li.selected {
-			border: 1px solid #F5A623;
-		}
-		li{
-			width: 260px;
-			height: 250px;
-			padding:20px;
-			margin:50px 0 0 10px;
-			border:1px solid #B2B2B2;
-			.information{
-				font-size:@font;
-				color:#828282;
-				line-height: 30px;
-				border-bottom:1px solid #B2B2B2;
+
+			button.right{
+				background: url(../images_mdh/icon/buy-right.png) no-repeat center center;
+				left:985px;
 			}
-			strong{
-				font-weight: normal;
-				line-height: 40px;
-				font-size: @font;
-				color:#828282;
-				display: block;
-			}
-			em{
-				color:#828282;
-				display: block;
-				font-size: @font;
-				margin-left:5px;
-			}
-			.about{
-				margin:130px 0 0 5px;
-				a{
+			li{
+				width: 260px;
+				height: 250px;
+				padding:20px;
+				margin:50px 0 0 10px;
+				border:1px solid #B2B2B2;
+				.information{
+					font-size:@font;
 					color:#828282;
-					font-size: @font;
+					line-height: 30px;
+					border-bottom:1px solid #B2B2B2;
 				}
-				.editor{
-					margin:0 25px 0 110px;
+				strong{
+					font-weight: normal;
+					line-height: 40px;
+					font-size: @font;
+					color:#828282;
+					display: block;
+				}
+				em{
+					color:#828282;
+					display: block;
+					font-size: @font;
+					margin-left:5px;
+				}
+				.about{
+					margin:130px 0 0 5px;
+					a{
+						color:#828282;
+						font-size: @font;
+					}
+					.editor{
+						margin:0 25px 0 110px;
+					}
 				}
 			}
 		}
@@ -2332,28 +2462,32 @@ body.retrievepassword {
 			position:absolute;
 			top:200px;
 			left:-130px;
-			img{
+			.warp{
+				border:1px solid #ccc;
+				margin-bottom:10px;
+				img{
+					display: inline-block;
+					*display: inline;
+					*zoom:1;
+					margin-right:20px;
+					vertical-align:top;
+				}
+				p{
 				display: inline-block;
 				*display: inline;
 				*zoom:1;
-				margin-right:20px;
-				vertical-align:top;
-			}
-			p{
-			display: inline-block;
-			*display: inline;
-			*zoom:1;
-			font-size: 14px;
-			color:#c8c8c8;
-			span{
-				border:1px solid #c8c8c8;
-				margin:10px 0;
-				line-height: 40px;
-				padding:0 3px;
-				}
-			strong{
-				font-weight: normal;
-				margin:0 90px 0 0;
+				font-size: 14px;
+				color:#c8c8c8;
+				span{
+					border:1px solid #c8c8c8;
+					margin:10px 0;
+					line-height: 40px;
+					padding:0 3px;
+					}
+				strong{
+					font-weight: normal;
+					margin:0 90px 0 0;
+					}
 				}
 			}
 			button{
@@ -2386,6 +2520,7 @@ body.retrievepassword {
 	.last{
 		border-left:none;
 		text-align:left;
+		color:#727171;
 	}
 	.caption{
 			width: 1000px;
@@ -2446,7 +2581,7 @@ body.retrievepassword {
 				}
 				.br{
 					border-right:1px solid #AFAFAF;
-					span{
+					a{
 						text-indent: -9999px;
 						display: inline-block;
 						margin-left:-40px;
