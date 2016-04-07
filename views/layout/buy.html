@@ -17,10 +17,20 @@
       $(function () {
 
         /**
-         * order  592-
+         * 地址验证和提交
          */
-        Order({
-
+        addressValidation({
+          urlAddAddress: '../../test/address.json',
+          addAddressData: function () {
+            return {
+              userName: $('[data-tag="userName"]').val(),
+              province: $('[data-tag="province"]').find(':selected').html(),
+              city: $('[data-tag="city"]').find(':selected').html(),
+              address: $('[data-tag="address"]').val(),
+              idCard: $('[data-tag="idCard"]').val(),
+              mobile: $('[data-tag="mobile"]').val()
+            }
+          } 
         });
 
       });
@@ -114,42 +124,50 @@
 		</div>
 		<!-- 主体部分开始 -->
 		<div class="buy">
-			<form class="buyForm dn" data-tag="addressForm">
+			<div class="buyForm dn" data-tag="addressForm">
+        <div class = "title clearfix" >
+          <span class = "fl">新增地址</span>
+          <strong class = "fr" data-tag="popupClose">x</strong>
+        </div>
 				<div class="username">
 					<label for="username">收货人姓名</label>
-					<input id="username" type="text" placeholder="请输入与身份证一致的姓名">
+					<input id="username" data-tag = "userName" type="text" placeholder="请输入与身份证一致的姓名">
 				</div>
 				<div class="city">
 					<label for="city">省/市</label>
-					<select class="provinciala"></select>
-     				<select class="citya">
-     				   <option>所在市区</option>
-     				</select>
+					<select class="provinciala" data-tag="province"></select>
+   				<select class="citya" data-tag="city">
+   				   <option>所在市区</option>
+   				</select>
 				</div>
 				<div class="address">
 					<label for="address">详细地址</label>
-					<input id="address" type="text" placeholder="请输入与身份证一致的姓名">
+          <textarea id="address" data-tag = "address" placeholder="请输入详细地址"></textarea>
 				</div>
 				<div class="identity">
 					<label for="identity">身份信息</label>
-					<input id="identity" type="text" placeholder="海关清关所需，请填入18位身份证号码">
+					<input id="identity" type="text" data-tag="idCard" placeholder="海关清关所需，请填入18位身份证号码">
 				</div>
 				<div class="mobile">
 					<label for="mobile">手机号码</label>
-					<input id="mobile" type="text" placeholder="请输入与身份证一致的姓名">
+					<input id="mobile" type="text" data-tag="mobile" placeholder="请输入收货的手机号码">
 				</div>
+        <div class = "error hidden" data-tag="error">
+          <i></i><span></span>
+        </div>
 				<div class="btn">
-					<button>保存地址</button>
+					<button type = "button" data-tag="addressSubmit">保存地址</button>
 				</div>
-			</form>
+			</div>
+      <div class = "shielding-layer" data-tag="shieldingLayer"></div>
 			<!-- 收货地址开始 -->
-			<div class="buy-address dn" >
-				<h5 class = "clearfix">收货地址<a herf = "javascript:;" data-tag="addAddress" class = "fr">添加</a></h5>
+			<div class="buy-address dn" data-tag="butAddress">
+				<h5 class = "clearfix">收货地址<a href = "javascript:;" class= "fr" data-tag="addAddress">新增地址</a></h5>
 				<ul class="clearfix" data-address="items">
 					<div class="fl left">
 						<button></button>
-					</li>
-					<li class="fl">
+					</div>
+					<li class="fl" data-id="123">
 						<P class="information">小明
 							<span class="fr">152xxxx5268</span>
 						</P>
@@ -161,7 +179,7 @@
 							<a href="javascript:;">删除</a>
 						</p>
 					</li>
-					<li class="fl">
+					<li class="fl" data-id="456">
 						<P class="information">小明
 							<span class="fr">152xxxx5268</span>
 						</P>
@@ -173,17 +191,17 @@
 							<a href="javascript:;">删除</a>
 						</p>
 					</li>
-					<li class="fl new">
-						<a href="javascript:;">新增收货地址</a>
-					</li>
-					<li class="fl right">
+					<!-- <li class="fl new">
+						<a href="javascript:;" data-tag="addAddress" >新增收货地址</a>
+					</li> -->
+					<div class="fl right">
 						<button></button>
-					</li>
+					</div>
 				</ul>
 			</div>
 			<div class="details clearfix">
 				<h5>订单详情</h5>
-				<button class="fr"></button>
+				<!-- <button class="fr"></button> -->
 				<ul class="order">
 					<li class="clearfix first">
 						<img class="fl" src="../../images_mdh/content8.png" height="95" width="95">
@@ -218,7 +236,7 @@
 				<textarea placeholder="您可在此写下订单备注，不得超过350字符"></textarea> 
 			</form>
 			<div class="settlement">
-				<h5>激活代金劵
+				<!-- <h5>激活代金劵
 					<a href="javascript:;">代金劵使用方法</a>
 				</h5>
 				<ul class="clearfix">
@@ -257,11 +275,11 @@
 							<em class="small dn"></em>
 						</em>
 					</li>
-				</ul>
+				</ul> -->
 				<p>
-					代金券减免：-10.00元<br>
+				<!-- 	代金券减免：-10.00元<br> -->
 					付款总额:<span>￥800.00</span><br>
-					为您节省：10.00元
+					<!-- 为您节省：10.00元 -->
 				</p>
 				<form class="buy-pay">
 					<label for="buy">结算方式</label>
@@ -275,10 +293,10 @@
 					<button type="submit">结算</button>
 				</form>
 			</div>
-			<div class="pop">
+			<!-- <div class="pop">
 				<h5>买德好</h5>
 				<p>请选择收货地址</p>
-			</div>
+			</div> -->
 		</div>
 		<!-- 底部开始 -->
 		<div id="footer">
