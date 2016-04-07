@@ -160,6 +160,10 @@
       // list初始化
       $('[data-items="list"]:nth-child(3n)').addClass('nth-child-three');
 
+      // 注册页
+      $('.form .password input').focus(function(event) {
+        $('.form .register-fix').css('display', 'block');
+      });
   });
 
 /**

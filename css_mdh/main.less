@@ -608,6 +608,7 @@ div.flicking_con a.on {
 	border-bottom:1px solid #666;
 	background: url(../images_mdh/icon/fix1.png) no-repeat center center;
 	cursor:pointer;
+	z-index: 9999;
 }
 .fix a.two{
 	background: url(../images_mdh/icon/fix2.png) no-repeat center center;
@@ -628,8 +629,8 @@ div.flicking_con a.on {
 .fix a.two span {
 	position: absolute;
 	color: red;
-	top: 27px;
-	right: 5px;
+	top: 75px;
+	right: 0;
 	font-size: 14px;
 }
 .shopping-list{
@@ -762,6 +763,7 @@ div.flicking_con a.on {
 	right:-200px;
 	z-index:53;
 	text-align: center;
+	z-index: 5;
 }
 .fix .infix a{
 	display: inline-block;
@@ -773,6 +775,7 @@ div.flicking_con a.on {
 	color:#ffc900;
 	text-align: center;
 	float: left;
+	z-index:5;
 }
 .fix .logged{
 	width: 180px;
@@ -810,11 +813,11 @@ div.flicking_con a.on {
 
 
 /* 登陆页面开始 */
-#header.landing{
+/* #header.landing{
 	width:100%;
 	height: 95px;
 	background: #ffc900;
-}
+} */
 div.landing{
 	margin:0 auto;
 	width: 346px;
@@ -824,7 +827,7 @@ div.landing h1{
 	background: url(../images_mdh/logo.png) no-repeat center center;
 	width: 346px;
 	height: 28px;
-	margin:100px 0 30px 0;
+	margin:200px 0 30px 0;
 	display: inline-block;
 }
 div.landing>span{
@@ -836,33 +839,22 @@ div.landing form{
 	width: 300px;
 	margin:0 auto;
 	font-size:@font;
-	color:#9FA0A0;
+	color:#828282;
 	position:relative;
 }
 div.landing input.tet{
 	width:285px;
-	height: 40px;
+	height: 45px;
 	padding-left:15px;
-	line-height: 40px;
+	line-height: 45px;
 	border-bottom:2px solid #cfd0d0; 
 	line-height: 40px;
-	margin-top: 15px;
+	margin-top: 35px;
 }
 div.landing .inlanding{
 	width: 300px;
 	height: 35px;
-	margin-top:20px;
-}
-div.landing button.landing{
-	width: 85px;
-	height: 30px;
-	border:1px solid #cfd0d0;
-	line-height: 30px;
-	text-align: center;
-	float: left;
-	font-size:@font;
-	color:#9FA0A0;
-	background: none;
+	margin-top:35px;
 }
 div.landing .inlanding span{
 	display: inline-block;
@@ -925,13 +917,13 @@ div.landing .other a {
 	height: 30px;
 	margin:0 auto;
 	margin-top:100px;
-	background:#fff url(../images_mdh/icon/weixin.png) no-repeat center center;
+	background:#f3f3f3 url(../images_mdh/icon/weixin.png) no-repeat center center;
 	position:relative;
 	top:15px;
 	display: inline-block;
 }
-div.landing .other h2:hover{
-	background:#fff url(../images_mdh/icon/weixin1.png) no-repeat center center;
+div.landing .other a:hover{
+	background:#f3f3f3 url(../images_mdh/icon/weixin1.png) no-repeat center center;
 }
 div.landing p{
 	text-align: center;
@@ -949,7 +941,7 @@ div.landing p{
 .login .password label,
 .login .inlanding label {
 	position: absolute;
-	top: 50px;
+	top: 85px;
 	left: 0px;
 	line-height: 30px;
 	color: red;
@@ -957,7 +949,7 @@ div.landing p{
 	font-size: 12px;
 }
 .login .inlanding label {
-	top: 24px;
+	top: 40px;
 }
 
 /* 注册页面开始 */ 
@@ -968,17 +960,26 @@ div.landing .form {
     color: #9FA0A0;
     position: relative;
 }
-button.register{
-	position:absolute;
-	top:10px;
-	right: -95px;
-	width: 85px;
-	height: 30px;
-	border:1px solid #cfd0d0;
-	line-height: 30px;
-	text-align: center;
-	color:#9FA0A0;
-	background:none;
+.form .code{
+	.tet{
+		width: 185px;
+		margin-right: 12px;
+	}
+	.register{
+		width: 88px;
+		height: 30px;
+		margin-top:35px;
+		color:#828282;
+		background: #c8c8c8;
+	}
+	span{
+		width: 88px;
+		display: inline-block;
+		line-height: 15px;
+		font-size: 12px;
+		color:#444;
+		text-align: center;
+	}
 }
 
 .form p.register{
@@ -1009,7 +1010,7 @@ button.register{
 	text-align: left;
 }
 .form p.last a{
-	color:#ffc900;
+	color:#844736;
 	cursor:pointer;
 }
 .form p.last a.email{
@@ -1020,7 +1021,7 @@ button.register{
 .form .register-fix{
 	width: 100px;
 	position:absolute;
-	top:105px;
+	top:205px;
 	right:-110px;
 }
 .form .register-infix{
@@ -1032,19 +1033,19 @@ button.register{
 	float: left;
 	width: 30px;
 	height: 10px;
-	background: #FFC700;
+	background: #ffc900;
 	visibility: hidden;
 	
 }
 .form .register-infix span.two{
-	background: #FF8C00;
+	background: #ff4800;
 }
 .form .register-infix span.three{
-	background: #FF5500;
+	background: #444444;
 }
 .form .register-fix p{
 	font-size:12px;
-	color:#9FA0A0;
+	color:#444444;
 	letter-spacing: 17px;
 	text-align: center;
 	margin:5px 0;
@@ -1067,7 +1068,7 @@ button.register{
 .form .agreement label,
 .form .code label {
 	position: absolute;
-	top: 50px;
+	top: 85px;
 	left: 0px;
 	line-height: 30px;
 	font-size: 12px;
