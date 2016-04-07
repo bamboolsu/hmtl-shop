@@ -1,0 +1,13 @@
+{
+  "type": "success",
+  "content": {
+    "userName": "xiaokang",
+    "province": "福建省",
+    "city": "溶于水",
+    "address": "大山脚下",
+    "idCard": "3345*****234",
+    "mobile": "158xxxx2341",
+    "id": "777",
+    "default": "ture"
+  }
+}
