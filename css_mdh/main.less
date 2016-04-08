@@ -508,17 +508,17 @@ div.flicking_con a.on {
 #footer{
 	width: 100%;
 }
-#footer ul{
+#footer .features{
 	width: 1100px;
 	margin:0 auto;
 	margin-bottom:50px;
 	border-bottom:1px solid #DDDDDD;
 }
-#footer ul li{
+#footer .features li{
 	float: left;
 	margin:50px 20px;
 }
-#footer ul li a{
+#footer .features li a{
 	font-size: 18px;
 	color:#454545;
 	padding:0 70px 0 80px;
@@ -528,13 +528,13 @@ div.flicking_con a.on {
 	border-right:1px solid #DDDDDD;
 	background:url(../images_mdh/icon/foot1.png) no-repeat 20px center;
 }
-#footer ul li a.two{
+#footer .features li a.two{
 	background: url(../images_mdh/icon/foot2.png) no-repeat 20px center;
 }
-#footer ul li a.three{
+#footer .features li a.three{
 	background: url(../images_mdh/icon/foot3.png) no-repeat 20px center;
 }
-#footer ul li a.fore{
+#footer .features li a.fore{
 	background: url(../images_mdh/icon/foot4.png) no-repeat 20px center;
 	border-right:none;
 }
@@ -869,7 +869,7 @@ div.landing h1{
 	background: url(../images_mdh/logo.png) no-repeat center center;
 	width: 346px;
 	height: 28px;
-	margin:200px 0 30px 0;
+	margin:100px 0 5px 0;
 	display: inline-block;
 }
 div.landing>span{
@@ -888,8 +888,7 @@ div.landing input.tet{
 	width:285px;
 	height: 45px;
 	padding-left:15px;
-	line-height: 45px;
-	border-bottom:2px solid #cfd0d0; 
+	line-height: 45px;; 
 	line-height: 40px;
 	margin-top: 35px;
 }
@@ -924,11 +923,11 @@ div.landing button.new{
 div.landing button.landings{
 	width: 300px;
 	height: 45px;
-	background:  #ffc900;
+	background:  #444;
 	text-align:center;
 	line-height: 45px;
-	font-size:@font;
-	color:#fff;
+	font-size:18px;
+	color:#f5a623;
 	font-weight: bold;
 	margin-top:20px;
 }
@@ -938,6 +937,9 @@ div.landing p.pass{
 	margin:10px 0;
 	text-align: left;
 }
+div.landing p.pass label{
+	color:#444;
+}
 div.landing p.pass input{
 	float: left;
 	margin: 9px 5px 0 0;
@@ -946,7 +948,7 @@ div.landing p.pass a{
 	float:right;
 }
 div.landing p.pass a.last{
-	color: #ffc900;
+	color: #444;
 }
 div.landing .other{
 	width: 300px;
@@ -1038,11 +1040,11 @@ div.landing .form {
 .form .registered{
 	width: 300px;
 	height: 45px;
-	background:  #ffc900;
+	background:  #444;
 	text-align:center;
 	line-height: 45px;
-	font-size:@font;
-	color:#fff;
+	font-size:18px;
+	color:#f5a623;
 	font-weight: bold;
 }
 .form p.last{
@@ -1919,14 +1921,30 @@ body.retrievepassword {
 .pay{
 	width: 1100px;
 	margin:0 auto;
-	.order{
+	.pay-order{
 		width: 1000px;
 		padding:50px 50px 20px 50px;
-		font-size:@font;
-		color:#828282;
-		line-height: 50px;
+		p{
+			font-size:@font;
+			color:#828282;
+			line-height: 50px;
+		}
+		strong{
+			font-size:@font;
+			color:#828282;
+			line-height: 50px;
+			font-weight: normal;
+		}
+		span{
+			font-size:@font;
+			color:#828282;
+			line-height: 50px;
+		}
+		.order{
+			margin-right:25px;
+		}
 		a{
-			color:#ffc900;
+			color:#844736;
 		}
 	}
 	.message{
@@ -2701,11 +2719,10 @@ body.retrievepassword {
 		}
 	}
 	.null-cart{
-		width: 600px;
-		height: 150px;
-		margin:0 auto;
-		padding:0 50px 50px 350px;
-		text-align: left;
+		width: 1000px;
+		height: 100px;
+		margin:50px auto;
+		text-align:center;
 		img{
 			display: inline-block;
 			vertical-align:middle;
@@ -2714,7 +2731,7 @@ body.retrievepassword {
 			display: inline-block;
 			font-size: 16px;
 			line-height: 30px;
-			padding-left:100px;
+			padding-left:50px;
 			a{
 			text-align: center;
 			font-size: 16px;
