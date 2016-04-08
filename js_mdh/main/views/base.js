@@ -8,16 +8,18 @@
             var top = $(window).scrollTop();
             if (top >= y) {
               $('.nav').addClass('current');
+              $('#header .search').css('margin-bottom', 50);
             } else {
               $('.nav').removeClass('current');
+              $('#header .search').css('margin-bottom', 0);
             }
         });
       }
 
 
-      $('.nav ul li').hover(function() {
+      $('.nav ul li').mouseenter(function() {
         $(this).find('.innav').stop().slideDown(300);
-      }, function() {
+      }).mouseleave(function() {
         $(this).find('.innav').stop().slideUp(300);
       });
       // 返回顶部
