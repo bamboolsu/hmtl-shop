@@ -11,16 +11,28 @@
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
+    <script>
+      // 地址json
+      var addressJson = [
+        {
+          id: 123,
+          userName: "xiaokang",
+          province: "黑龙江省",
+          city: "哈尔滨",
+          address: "xiao xiao xiao",
+          idCard: "350821198904143912",
+          mobile: "15801930241"
+        }
+      ]
+    </script>
 		<script src="../../js_mdh/main/views/buy.js"></script>
     <script>
-
       $(function () {
-
         /**
          * 地址验证和提交
          */
         addressValidation({
-          urlAddAddress: '../../test/address.json',
+          urlAddAddress: '../../test/address.json', // 添加
           addAddressData: function () {
             return {
               userName: $('[data-tag="userName"]').val(),
@@ -29,8 +41,25 @@
               address: $('[data-tag="address"]').val(),
               idCard: $('[data-tag="idCard"]').val(),
               mobile: $('[data-tag="mobile"]').val()
-            }
-          } 
+            };
+          },
+
+          urlEditAddress: '../../test/address.json', // 编辑
+          editAddressData: function () {
+            return {
+              id: $('[data-tag="addressForm"]').attr('data-id'),
+              userName: $('[data-tag="userName"]').val(),
+              province: $('[data-tag="province"]').find(':selected').html(),
+              city: $('[data-tag="city"]').find(':selected').html(),
+              address: $('[data-tag="address"]').val(),
+              idCard: $('[data-tag="idCard"]').val(),
+              mobile: $('[data-tag="mobile"]').val()
+            };
+          },
+
+          urlDeleteAddressPost: '../../test/delete.json',   // 删除地址
+          urlDefaultAddressPost: '../../test/default.json'   // 默认地址
+
         });
 
       });
@@ -106,11 +135,11 @@
 		</div>
 		<!-- 主体部分开始 -->
 		<div class="buy">
-			<div class="buyForm dn" data-tag="addressForm">
-        		<div class = "title clearfix" >
-         			 <span class = "fl">新增地址</span>
-          			<strong class = "fr" data-tag="popupClose">x</strong>
-        		</div>
+			<div class="buyForm dn" data-tag="addressForm" >
+    		<div class = "title clearfix" >
+     			<span class = "fl" data-tag="title">新增地址</span>
+      		<strong class = "fr" data-tag="popupClose">x</strong>
+    		</div>
 				<div class="username">
 					<label for="username">收货人姓名</label>
 					<input id="username" data-tag = "userName" type="text" placeholder="请输入与身份证一致的姓名">
@@ -141,43 +170,76 @@
 					<button type = "button" data-tag="addressSubmit">保存地址</button>
 				</div>
 			</div>
-      		<div class = "shielding-layer" data-tag="shieldingLayer"></div>
+      <div class = "shielding-layer" data-tag="shieldingLayer"></div>
 			<!-- 收货地址开始 -->
 			<div class="buy-address dn" data-tag="butAddress" >
 				<h5 class = "clearfix">收货地址<a herf = "javascript:;" data-tag="addAddress" class = "fr">添加</a></h5>
-				<ul class="clearfix" data-address="items">
-					<button class="left" type="button"></button>
-					<button class="right" type="button"></button>
-					<li class="fl" data-id="123">
-						<P class="information">小明
-							<span class="fr">152xxxx5268</span>
-						</P>
-						<strong>410183198509055311</strong>
-						<em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
-						<p class="about">
-							<a href="javascript:;">默认地址</a>
-							<a class="editor" href="javascript:;">编辑</a>
-							<a href="javascript:;">删除</a>
-						</p>
-					</li>
-					<li class="fl" data-id="456">
-						<P class="information">小明
-							<span class="fr">152xxxx5268</span>
-						</P>
-						<strong>410183198509055311</strong>
-						<em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
-						<p class="about">
-							<a href="javascript:;">默认地址</a>
-							<a class="editor" href="javascript:;">编辑</a>
-							<a href="javascript:;">删除</a>
-						</p>
-					</li>
-
-					<!-- <li class="fl new">
-						<a href="javascript:;">新增收货地址</a>
-					</li> -->
-					<button class="right" type="button"></button>
-				</ul>
+        <button class="left" type="button" data-tag="scrollLeft"></button>
+        <button class="right" type="button" data-tag="scrollRight"></button>
+        <div class = "scroll-address" data-tag="scroll-address" >
+  				<ul class="clearfix" data-address="items">
+  					<li class="fl selected" data-id="123">
+  						<p class="information">小明1
+  							<span class="fr" >152xxxx5268</span>
+  						</P>
+  						<strong>410183198509055311</strong>
+  						<em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+  						<p class="about">
+  							<a href="javascript:;" class = "default" data-address="default">默认地址</a>
+  							<a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+  							<a href="javascript:;" data-address="delete">删除</a>
+  						</p>
+  					</li>
+            <li class="fl" data-id="12">
+              <p class="information">小明2
+                <span class="fr" >152xxxx5268</span>
+              </P>
+              <strong>410183198509055311</strong>
+              <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+              <p class="about">
+                <a href="javascript:;" class = "default" data-address="default">默认地址</a>
+                <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+                <a href="javascript:;" data-address="delete">删除</a>
+              </p>
+            </li>
+            <li class="fl" data-id="1">
+              <p class="information">小明3
+                <span class="fr" >152xxxx5268</span>
+              </P>
+              <strong>410183198509055311</strong>
+              <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+              <p class="about">
+                <a href="javascript:;" class = "default" data-address="default">默认地址</a>
+                <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+                <a href="javascript:;" data-address="delete">删除</a>
+              </p>
+            </li>
+            <li class="fl" data-id="4">
+              <p class="information">小明4
+                <span class="fr" >152xxxx5268</span>
+              </P>
+              <strong>410183198509055311</strong>
+              <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+              <p class="about">
+                <a href="javascript:;" class = "default" data-address="default">默认地址</a>
+                <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+                <a href="javascript:;" data-address="delete">删除</a>
+              </p>
+            </li>
+            <li class="fl" data-id="5">
+              <p class="information">小明5
+                <span class="fr" >152xxxx5268</span>
+              </P>
+              <strong>410183198509055311</strong>
+              <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+              <p class="about">
+                <a href="javascript:;" class = "default" data-address="default">默认地址</a>
+                <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+                <a href="javascript:;" data-address="delete">删除</a>
+              </p>
+            </li>
+  				</ul>
+        </div>
 			</div>
 			<div class="details clearfix">
 				<h5>订单详情</h5>
@@ -211,10 +273,10 @@
 					</li>
 				</ul>
 			</div>
-			<form class="note">
+			<div class="note">
 				<h5>备注</h5>
-				<textarea placeholder="您可在此写下订单备注，不得超过350字符"></textarea> 
-			</form>
+				<textarea data-tag="note" placeholder="您可在此写下订单备注，不得超过350字符"></textarea> 
+			</div>
 			<div class="settlement">
 				<!-- <h5>激活代金劵
 					<a href="javascript:;">代金劵使用方法</a>
@@ -261,16 +323,15 @@
 					付款总额:<span>￥800.00</span><br>
 					<!-- 为您节省：10.00元 -->
 				</p>
-				<form class="buy-pay">
+				<form class="buy-pay" action = "./pay.html" method = "post">
+          <input type = "hidden" value = "" name = "note" data-tag="inputNote" />
+          <input type = "hidden" value = "" name = "addressId" data-tag="inputAddressId" />
 					<label for="buy">结算方式</label>
 					<input id="buy" type="radio" checked="checked" name="pay">
 					<img src="../../images_mdh/icon/buy-pay-1.png" height="56" width="55">
 					<input type="radio" name="pay">
 					<img src="../../images_mdh/icon/buy-pay-2.png" height="56" width="56"><br />
-				<!-- 	<span>微信支付</span>
-					<img class="big" src="../../images_mdh/wechat.png" height="186" width="189">
-					<P>请使用微信扫一扫<br>扫描二维码支付</P> -->
-					<button type="submit">结算</button>
+					<button type="button" data-tag="formSubmit">结算</button>
 				</form>
 			</div>
 			<!-- <div class="pop">
