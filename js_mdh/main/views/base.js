@@ -8,11 +8,13 @@
         var top = $(window).scrollTop();
         if (top >= y) {
           $('.nav').addClass('current');
-        } else {
-          $('.nav').removeClass('current');
-        }
-    });
-  }
+              $('#header .search').css('margin-bottom', 50);
+            } else {
+              $('.nav').removeClass('current');
+              $('#header .search').css('margin-bottom', 0);
+            }
+        });
+      }
 
 
   $('.nav ul li').hover(function() {
