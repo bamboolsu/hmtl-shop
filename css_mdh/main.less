@@ -2164,6 +2164,12 @@ body.retrievepassword {
 		div {
 			margin: 0px 145px 30px;
 		}
+		.error {
+			margin: 10px 145px 10px;
+		}
+		.mobile {
+			margin-bottom: 0px;
+		}
 		.title {
 			display: block;
 			width: 100%;
@@ -2191,6 +2197,7 @@ body.retrievepassword {
 	.buy-address{
 		width:1000px;
 		margin:0 auto;
+		position: relative;
 		h5{
 			font-size: 18px;
 			color:#444444;
@@ -2203,28 +2210,41 @@ body.retrievepassword {
 				margin-right: 10px;
 			}
 		}
-		ul{
-			width: 940px;
-			padding:0 30px;
-			position:relative;
-			button{
+		button{
 				width: 12px;
 				height: 19px;
 				border:none;
 				background: url(../images_mdh/icon/buy-left.png) no-repeat center center;
 				position:absolute;
 				top:50%;
-				margin-top:-9px;
-				left:5px;
+				left: 5px;
+				margin-top: 20px;
+				z-index: 999;
 			}
-		
-			li.selected {
-				border: 1px solid #F5A623;
-			}
-
 			button.right{
 				background: url(../images_mdh/icon/buy-right.png) no-repeat center center;
 				left:985px;
+				z-index: 999;
+			}
+		.scroll-address {
+			width: 940px;
+			height: 342px;
+			overflow: hidden;
+			margin:0 30px;
+			position: relative;
+		}
+		ul{
+			//position:relative;
+			height: 342px;
+			top:0px; 
+			left:0px; 
+			position:absolute; 
+			
+			li.selected {
+				border: 1px solid #F5A623;
+				.default {
+					color: #F5A623;
+				}
 			}
 			li{
 				width: 260px;
@@ -2232,6 +2252,7 @@ body.retrievepassword {
 				padding:20px;
 				margin:50px 0 0 10px;
 				border:1px solid #B2B2B2;
+				position: relative;
 				.information{
 					font-size:@font;
 					color:#828282;

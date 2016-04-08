@@ -572,8 +572,7 @@ $(function() {
 
 	}
 	$(".provinciala,.provincialb").change(function() {
-		switch ($(this).attr("class")) //用switch语句 判断改变的class
-		{
+		switch ($(this).attr("class")) {
 			case 'provinciala':
 				var city = "citya";
 				break;
@@ -609,6 +608,10 @@ $(function() {
     this.options = options;
     this.views();
     this.documentClick();
+
+    // 防止快速多次提交数据默认值
+    this.isAddPost = false;
+    this.isChangePerform = false;  
   };
 
   // 初始化视图
@@ -624,17 +627,7 @@ $(function() {
   	this.addAddress = $('[data-tag="addAddress"]');
   	this.popupClose = $('[data-tag="popupClose"]');
 
-  	// 显示收货地址还是显示输入地址
-  	var $addressForm = $('[data-tag="addressForm"]'),
-  		  $butAddress = $('[data-tag="butAddress"]');
-  	// 如果不存在地址显示
-  	var isShow = $('[data-address="items"] li').length || 0;
-  	if (isShow <= 1) {
-  		$addressForm.removeClass('dn');
-  	}
-  	else {
-  		$butAddress.removeClass('dn');
-  	}
+  	this.isShowAddress();
   };
 
   //绑定事件
@@ -643,7 +636,7 @@ $(function() {
   	this.addAddress.bind('click', $.proxy(this.addAddressClick, this));
 
   	// 关闭弹出框
-  	this.popupClose.bind('click', this.closeClick);
+  	this.popupClose.bind('click', $.proxy(this.closeClick, this));
 
   	//  绑定验证用户名失去焦点事件
   	this.$userName.bind('blur', $.proxy(this.checkUserName, this));
@@ -662,11 +655,56 @@ $(function() {
   	// 地址提交事件
   	this.$addressSubmit.bind('click', $.proxy(this.addressSubmitClick, this));
 
+  	// 设置默认地址
+  	$('[data-tag="butAddress"]').delegate('[data-address="default"]', 'click', $.proxy(this.defaultClick, this));
+
+  	// 删除地址
+  	$('[data-tag="butAddress"]').delegate('[data-address="delete"]', 'click', $.proxy(this.deleteClick, this));
+
+  	// 编辑地址
+  	$('[data-tag="butAddress"]').delegate('[data-address="edit"]','click', $.proxy(this.editClick, this));
+
+  	// 左右滚动
+  	$('[data-tag="scrollLeft"]').bind('click', $.proxy(this.scrollLeftClick, this));
+  	$('[data-tag="scrollRight"]').bind('click', $.proxy(this.scrollRightClick, this));
+
+  	// 提交表单绑定事件
+  	$('[data-tag="formSubmit"]').bind('click', $.proxy(this.formSubmit, this));
   };
+
+  // 是否显示地址输入框
+  Klass.fn.isShowAddress = function () {
+  	// 显示收货地址还是显示输入地址
+  	var $addressForm = $('[data-tag="addressForm"]'),
+  		  $butAddress = $('[data-tag="butAddress"]');
+  	// 如果不存在地址显示
+  	var isShow = $('[data-address="items"] li').length || 0;
+  	if (isShow < 1) {
+  		$addressForm.removeClass('dn layer');
+  		$butAddress.addClass('dn');
+  	}
+  	else {
+  		$butAddress.removeClass('dn');
+  		$addressForm.addClass('dn');
+  		this.itemsWidth();
+  	}
+  };
+
+  // 修改items的框
+  Klass.fn.itemsWidth = function () {
+  	var $items = $('[data-address="items"]');
+  	var liLen = $items.find('li').length;
+  	var liWdith = $items.find('li').outerWidth();
+  	$items.css({
+  		width: (liWdith+10)*liLen,
+  		left: 0
+  	})
+  };
+
   // 用户姓名验证
   Klass.fn.checkUserName = function () {
   	this.prompt('username', false);
-  	var patternUser = /^[a-zA-Z\u4e00-\u9fa5_\-]{2,20}$/;
+  	var patternUser = /^[\s\S]{2,60}$/;
   	var user = $.trim(this.$userName.val()) || '';
   	if (!user || !patternUser.test(user)) {
   		this.prompt('username', true, '请输入正确的用户名(2-20字符)');
@@ -689,10 +727,10 @@ $(function() {
   // 详细地址验证
   Klass.fn.checkAddress = function () {
   	this.prompt('address', false);
-  	var patternAddress = /^[0-9a-zA-Z\u4e00-\u9fa5_\-]{4,60}$/;
+  	var patternAddress = /^[\s\S]{5,60}$/;
   	var address = $.trim(this.$address.val()) || '';
   	if (!address || !patternAddress.test(address)) {
-  		this.prompt('address', true, '请输入正确的地址，4-60个字');
+  		this.prompt('address', true, '请输入正确的地址，5-60个字');
   		return false;
   	}
   	return true;
@@ -762,7 +800,9 @@ $(function() {
   	// 弹出窗口随窗口改变
     this.windowSize();
     // 弹出窗口随窗口改变而改变
-    $(window).resize(this.windowSize);
+    $(window).bind('resize', this.windowSize);
+
+    $('[data-tag="title"]').html('新增地址');
   };
 
   // 弹出窗口的位置
@@ -776,8 +816,7 @@ $(function() {
     $addressForm.css({
       top: (windowHeight-height)/2,
       left: (windowWdith-width)/2,
-      display: 'block'
-    }).show().addClass('layer');;
+    }).addClass('layer').removeClass('dn');
 
     $('[data-tag="shieldingLayer"]').css({
       width: windowWdith,
@@ -787,8 +826,12 @@ $(function() {
 
   // 关闭窗口
   Klass.fn.closeClick = function () {
-    $('[data-tag="addressForm"]').hide();
+  	var $addAddressForm = $('[data-tag="addressForm"]');
+  	$addAddressForm.find('input, textarea').val('');
+    $addAddressForm.addClass('dn');
     $('[data-tag="shieldingLayer"]').hide();
+    $(window).unbind('resize', this.windowSize);
+    this.itemsWidth();
   };
 
   /**
@@ -822,26 +865,33 @@ $(function() {
   // 新增，添加地址提交
   Klass.fn.addressSubmitClick = function () {
   	var self = this;
+  	var url = this.options.urlAddAddress;
+  	var postData = this.options.addAddressData();
+  	var id = $('[data-tag="addressForm"]').attr('data-id');
   	// 验证输入是否正确
   	if (!this.checkUserName() || !this.checkProvince() 
   		|| !this.checkAddress() || !this.checkIdCard() 
   		|| !this.checkMobile()) return false;
 
-  	console.log('post edit-add address: ');
-  	console.log(self.options.addAddressData());
+  	if (self.isAddPost) return false;
+
+  	if ($.trim(id)) {
+  		url = this.options.urlEditAddress;
+  		postData = this.options.editAddressData();
+  	}
+  	self.isAddPost = true;
 
   	$.ajax({
-  		url: this.options.urlAddAddress,
+  		url: url,
   		type: "POST",
-  		data: this.options.addAddressData(),
+  		data: postData,
   		dataType: "json",
   		cache: false,
   		success: function (message) {
-  			console.log('edit-add address message: ');
-  			console.log(message);
-
+  			self.isAddPost = false;
   			if (message.type == 'success') {
-  				self.getAddAddressSuccess(message.content);
+  				self.getAddAddressSuccess(message.content, id);
+  				self.isShowAddress();
   			}
   			else {
   				self.prompt('all', true, 'message.content');
@@ -851,7 +901,7 @@ $(function() {
   };
 
   // 数据返回后成功处理,添加
-  Klass.fn.getAddAddressSuccess = function (context) {
+  Klass.fn.getAddAddressSuccess = function (context, id) {
   	var hl = '<li class="fl selected" data-id = "'+context.id+'">'
 						+'<p class="information">'+context.userName
 							+'<span class="fr">'+context.mobile+'</span>'
@@ -859,11 +909,15 @@ $(function() {
 						+'<strong>'+context.idCard+'</strong>'
 						+'<em>'+context.province+'&nbsp;'+context.city+'<br>'+context.address+'</em>'
 						+'<p class="about">'
-							+'<a href="javascript:;" data-tag="defaultClick">默认地址</a>'
-							+'<a class="editor" href="javascript:;" data-tag="editClick">编辑</a>'
-							+'<a href="javascript:;" data-tag="deleteClick">删除</a>'
+							+'<a href="javascript:;" class = "default" data-address="default">默认地址</a>'
+							+'<a class="editor" href="javascript:;" data-address="edit">编辑</a>'
+							+'<a href="javascript:;" data-address="delete">删除</a>'
 						+'</p>'
 					+'</li>';
+		if (id) {
+			$('[data-tag="butAddress"]').find('[data-id="'+id+'"]').remove();
+			$('[data-tag="addressForm"]').removeAttr('data-id');
+		}
 		$('[data-address="items"]')
 			.prepend(hl)
 			.siblings('li')
@@ -871,7 +925,150 @@ $(function() {
 		// 关闭弹出框
 		//$('[data-tag="addressForm"]').removeClass('layer').addClass('dn');
 		this.closeClick();
-  }
+  };
+
+  // 设置默认的地址
+  Klass.fn.defaultClick = function (e) {
+  	var self = this;
+  	var $target = $(e.target).parents('[data-id]');
+  	var isChange = $target.hasClass('selected');
+  	if (isChange) return false;
+  	if (self.isChangePerform) return false;
+  	var data = {
+  		id: $target.attr('data-id')
+  	}
+  	self.isChangePerform = true;
+
+  	$.ajax({
+  		url: this.options.urlDefaultAddressPost,
+  		type: "POST",
+  		data: data,
+  		dataType: "json",
+  		cache: false,
+  		success: function (message) {
+  			console.log(message);
+  			self.isChangePerform = false;
+  			if (message.type == 'success') {
+  				$target
+  					.addClass('selected')
+  					.siblings('li')
+  					.removeClass('selected');
+  				$('[data-address="items"]').prepend($target.clone());
+  				$target.remove();
+  			}
+  			else {
+  				alert('设置默认的地址失败');
+  			}
+  		}
+  	})
+
+  };
+
+  // 删除地址
+  Klass.fn.deleteClick = function (e) {
+  	var self = this;
+  	var $target = $(e.target).parents('[data-id]');
+  	if (self.isDeletePerform) return false;
+
+  	var data = {
+  		id: $target.attr('data-id')
+  	}
+  	self.isDeletePerform = true;
+  	$.ajax({
+  		url: this.options.urlDeleteAddressPost,
+  		type: "POST",
+  		data: data,
+  		dataType: "json",
+  		cache: false,
+  		success: function (message) {
+
+  			self.isDeletePerform = false;
+  			if (message.type == 'success') {
+  				$target.remove();
+  				self.isShowAddress();
+  			}
+  			else {
+  				alert('删除地址失败');
+  			}
+  		}
+  	})
+  };
+
+  // 编辑
+  Klass.fn.editClick = function (e) {
+  	var self = this;
+  	var jn = addressJson;
+  	var $target = $(e.target).parents('[data-id]');
+  	var id = $target.attr('data-id');
+  	for (var i = 0, len = jn.length; i < len; i++) {
+  		if (jn[i]['id'] == id) {
+  			self.editViews(jn[i]);
+  		}
+  	}
+
+  	// 弹出窗口随窗口改变
+    self.windowSize();
+    // 弹出窗口随窗口改变而改变
+    $(window).resize(self.windowSize);
+    $('[data-tag="title"]').html('编辑地址');
+  };
+
+  Klass.fn.editViews = function (data) {
+  	$('[data-tag="addressForm"]').attr('data-id', data.id);
+  	this.$userName.val(data.userName);
+  	this.$province.find(':contains('+data.province+')').attr('selected', 'true');
+  	this.$province.change();
+  	this.$city.find(':contains('+data.city+')').attr('selected', 'true');
+  	this.$address.val(data.address);
+  	this.$idCard.val(data.idCard);
+  	this.$mobile.val(data.mobile);
+  };
+  // 地址栏左滑动
+  Klass.fn.scrollLeftClick = function () {
+  	var $items = $('[data-address="items"]');
+  	var $scroll = $('[data-tag="scroll-address"]');
+  	var width = $items.width();
+  	var positionWidth = $items.position();
+  	var scrollWidth = $scroll.width();
+  	var liWidth = $items.find('li').outerWidth()+10;
+  	if (width <= scrollWidth) return false;
+  	if (-positionWidth.left+scrollWidth >= width) return false;
+  	$items.css({
+  		'left': positionWidth.left-liWidth
+  	});
+  };
+  // 地址栏右滑动
+  Klass.fn.scrollRightClick = function () {
+  	var $items = $('[data-address="items"]');
+  	var $scroll = $('[data-tag="scroll-address"]');
+  	var width = $items.width();
+  	var positionWidth = $items.position();
+  	var scrollWidth = $scroll.width();
+  	var liWidth = $items.find('li').outerWidth()+10;
+  	if (width <= scrollWidth) return false;
+  	if (positionWidth.left >= 0) return false;
+  	$items.css({
+  		'left': positionWidth.left+liWidth
+  	});
+  };
+
+  // 提交表单
+  Klass.fn.formSubmit = function (e) {
+  	var addressId = $('[data-address="items"] li.selected').attr("data-id");
+  	var note = $('[data-tag="note"]').val();
+  	if (!addressId) {
+  		alert('请填写地址');
+  		return false;
+  	}
+  	else 
+  		$('[data-tag="inputAddressId"]').val(addressId);
+
+  	if (note)
+  		$('[data-tag="inputNote"]').val(note);
+
+  	$(e.target).parents('form').submit();
+
+  };
 
   window.addressValidation = Klass;
 
