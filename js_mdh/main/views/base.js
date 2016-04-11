@@ -8,11 +8,11 @@
         var top = $(window).scrollTop();
         if (top >= y) {
               $('.nav').addClass('current');
-              $('.search form').addClass('current')
+              $('.search form').addClass('current');
               $('#header .search').css('margin-bottom', 50);
             } else {
               $('.nav').removeClass('current');
-              $('.search form').removeClass('current')
+              $('.search form').removeClass('current');
               $('#header .search').css('margin-bottom', 0);
             }
         });

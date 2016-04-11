@@ -464,7 +464,7 @@
  * 收藏
  */
 ;(function ($, window) {
-  $('body').bind('[data-goods="enshrine"]', 'click' function(e) {
+  $('body').bind('[data-goods="enshrine"]', 'click', function(e) {
     var id = $(e.target).attr('goods');
     $.ajax({
       url: "${base}/member/favorite/add.jhtml",
