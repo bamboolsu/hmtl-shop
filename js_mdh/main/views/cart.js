@@ -16,6 +16,18 @@
     this.documentClick();
     this.oldShoppingId = 0;
     this.clearClick = 0;
+
+    if (this.options.disabled == 1)
+      this.views();
+  };
+
+  ShoppingCart.fn.views = function () {
+    $('[data-data="form"]')
+      .find('input[type="checkbox"]')
+      .attr({
+        checked: 'checked',
+        disabled: 'disabled'
+      });
   };
 
   //绑定事件
@@ -158,7 +170,7 @@
         cache: false,
         success: function(data) {
           if (data.isLowStock) {
-            
+            layer('库存不足')
           }
           if (data.message.type == "success") {
             $('[data-list="'+shoppingId+'"]')
