@@ -56,7 +56,10 @@
           },
 
           urlDeleteAddressPost: '../../test/delete.json',   // 删除地址
-          urlDefaultAddressPost: '../../test/default.json'   // 默认地址
+          urlDefaultAddressPost: '../../test/default.json',   // 默认地址
+
+          urlSubmitPost: '../',  // 提交地址
+          urlPayment: ''   // 跳转地址
 
         });
 
@@ -67,7 +70,7 @@
           province: '[data-tag="province"]',
           city: '[data-tag="city"]',
           town: '[data-tag="town"]',
-          urlPost: '../../test/add.json'   //  获取数据地址
+          urlPost: "${base}/common/area.jhtml"   //  获取数据地址
         });
 
       });
@@ -336,7 +339,7 @@
 					付款总额:<span>￥800.00</span><br>
 					<!-- 为您节省：10.00元 -->
 				</p>
-				<form class="buy-pay" action = "./pay.html" method = "post">
+				<form class="buy-pay" action = "#" method = "post">
           <input type = "hidden" value = "" name = "note" data-tag="inputNote" />
           <input type = "hidden" value = "" name = "addressId" data-tag="inputAddressId" />
 					<label for="buy">结算方式</label>
