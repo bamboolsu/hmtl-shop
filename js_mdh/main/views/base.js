@@ -36,13 +36,16 @@
   });
   $(".quick_links_panel li").mouseleave(function(){
     $(this).children(".mp_tooltip").css("visibility","hidden");
-    $(this).children(".mp_tooltip").animate({right: 80,queue:true});
+    $(this).children(".mp_tooltip").animate({right: -46,queue:true});
   });
  
-   $(".quick_links_panel li[data-cart='shoppingcart']").mouseenter(function(){
-     $(this).children(".tooltip").animate({right: 0,queue:true});
-     $(this).children(".tooltip").css("visibility","visible");
-   });
+    $(".quick_links_panel li[data-cart='shoppingcart']").mouseenter(function(){
+      var _this = this;
+      setTimeout(function () {
+        $(_this).children(".tooltip").animate({right: 0,queue:true});
+        $(_this).children(".tooltip").css("visibility","visible");
+      }, 100);
+    });
 
    $(".quick_links_panel li[data-cart='shoppingcart']").mouseleave(function(){
       $(this).children(".tooltip").css("visibility","hidden");
