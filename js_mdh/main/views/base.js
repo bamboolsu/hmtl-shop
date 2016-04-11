@@ -177,3 +177,85 @@ function removeCookie(name, options) {
   addCookie(name, null, options);
 }
 
+/**
+ * 弹出接口api
+ */
+
+;(function (window, $) {
+
+  function Layer (options) {
+    if (!(this instanceof Layer)) return new Layer(options);
+    this.init.apply(this, arguments);
+  };
+
+  Layer.prototype = {
+    constructor: Layer,
+
+    init: function (options) {
+      this.options = options;
+
+      this.views();
+      this.documentEvent();
+    },
+
+    views: function () {
+      if (!this.options) return false;
+      this.template(this.options);
+      // 弹出窗口随窗口改变
+      this.windowSize();
+      // 弹出窗口随窗口改变而改变
+      $(window).resize(this.windowSize);
+
+    },
+
+    documentEvent: function () {
+
+      // 关闭事件
+      $('body').delegate('[data-popup="closeEvent"]', 'click', this.closeEvent);
+    },
+
+    template: function (context) {
+      var hl = '<div class = "common-popup" data-popup="popup" >'
+        +'<div class = "title clearfix" >'
+          +'<h4>买德好</h4>'
+          +'<strong data-popup="closeEvent">x</strong>'
+        +'</div>'
+        +'<div class = "context" >'
+          +'<p>'+context+'</p>'
+        +'</div>'
+      +'</div>'
+      +'<div class = "common-shielding" data-popup="shieldingLayer"></div>';
+
+      $('body').append(hl);
+    },
+
+    closeEvent: function () {
+      $('[data-popup="popup"]').remove();
+      $('[data-popup="shieldingLayer"]').remove();
+    },
+
+    // 弹出窗口的位置
+    windowSize: function () {
+      var $wechatRefresh = $('[data-popup="popup"]');
+      var width = $wechatRefresh.outerWidth();
+      var height = $wechatRefresh.outerHeight();
+
+      var windowWdith = $(window).width();
+      var windowHeight = $(window).height();
+      $wechatRefresh.css({
+        top: (windowHeight-height)/2,
+        left: (windowWdith-width)/2
+      }).show();
+
+      $('[data-popup="shieldingLayer"]').css({
+        width: windowWdith,
+        height: windowHeight
+      }).show();
+    }
+
+
+  };
+
+  window.layer = Layer;
+})(window, jQuery);
+
