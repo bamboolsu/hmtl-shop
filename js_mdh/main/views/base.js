@@ -30,7 +30,7 @@
   });
 
   $(".quick_links_panel li").mouseenter(function(){
-    $(this).children(".mp_tooltip").animate({right :46,queue:true});
+    $(this).children(".mp_tooltip").animate({right :46});
     $(this).children(".mp_tooltip").css("visibility","visible");
 
   });
@@ -81,11 +81,20 @@
     $(this).find('.list-twoCategory').show();
     $(this).find('.list-twoCategory ul li').eq(num - 1).addClass('current').siblings().removeClass('current');
   }).mouseout(function() {
-    var num = $(this).index();
     $(this).find('.list-twoCategory').hide();
   });
 
+ $('.list-innav li').mouseover(function() {
+    var num=$(this).index();
+    event.stopPropagation();
+    $(this).addClass('current').siblings().removeClass('current');
+    $('.list-twoCategory').eq(num).show().siblings().hide();
+  });
+  $('.list-twoCategory').mouseout(function(event) {
+    $(this).hide();
+  });
   // 购买导航开始
+  // .list-twoCategory ul li
   // $('.goods-nav span').hover(function() {
   //   $(this).find('.goods-opt').stop().slideDown(300);
   // }, function() {
