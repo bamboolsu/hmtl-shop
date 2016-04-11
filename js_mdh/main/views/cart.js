@@ -84,8 +84,6 @@
 
     $.extend(data, {id: shoppingId}, self.options.deleteData);
 
-    console.log("urlDeletePost: ");
-    console.log(data);
     if (this.clearClick == shoppingId)
       return false;
     this.clearClick = shoppingId;
@@ -96,11 +94,15 @@
       dataType: "json",
       cache: false,
       success: function(message) {
-
-        if (message.type == "success") {
+        if (data.message.type == "success") {
           target.remove();
           self.clearClick = 0;
           if (checked) self.totalPrice();  // 重新计算总价
+          var list = $('[data-tag="select"]').length || 0;
+          if (!list) {
+            $('[data-data="form"]').hide();
+            $('[data-null="cart"]').show();
+          }
         }
       }
     });
@@ -112,7 +114,7 @@
     if (len)
       $form.submit();
     else
-      alert('请选择产品提交');
+      layer('请选择产品');
   };
 
   // 结算总价
@@ -155,10 +157,13 @@
         dataType: "json",
         cache: false,
         success: function(data) {
-          if (data.type == "success") {
+          if (data.isLowStock) {
+            
+          }
+          if (data.message.type == "success") {
             $('[data-list="'+shoppingId+'"]')
               .find('[data-tag="priceAll"]')
-              .html(message.data.priceAll);
+              .html('￥'+data.effectivePrice);
             self.totalPrice();
           }
         }
