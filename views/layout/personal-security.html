@@ -79,65 +79,67 @@
 			</div>			
 		</div>
 		<!-- 主体内容开始 -->
-			<!-- 个人中心左侧导航开始 -->
 		<div class="personal clearfix">
+			<!-- 个人中心左侧导航开始 -->
 			<ul class="personal-nav fl">
-				<li class="current"><a href="javascript:;">我的信息</a></li>
+				<li><a href="./personal.html">我的信息</a></li>
 				<li><a href="./personal-item.html">我的订单</a></li>
 				<li><a href="javascript:;">我的收藏</a></li>
 				<li><a href="./personal-address.html">收件地址</a></li>
-				<li><a href="./personal-security.html">安全中心</a></li>
+				<li  class="current"><a href="javascript:;">安全中心</a></li>
 			</ul>
-			<!-- 个人信息详情开始 -->
-			<div class="personal-item fr">
-				<div class="title">
-					<p>亲爱的【<span>慕冰玉</span>】，欢迎来到买德好。</p>
-					<p>您已和买德相识<span>120天</span>，买过<span>68</span>件德国好物，超越了<span>55%</span>的用户。</p>
-				</div>
-				<div class="personal-integral about din">
-					<p>您的积分</p>
-					<span>258</span>
-				</div>
-				<div class="personal-wx about din">
-					<p>绑定微信</p>
-					<span></span>
-				</div>
-				<div class="personal-service about din">
-					<p>您的专享服务</p>
-					<span class="one"></span>
-					<span class="two"></span>
-					<span class="three"></span>
-					<span class="four"></span>
-				</div>
-				<div class="personal-orde">
-					<p class="orde">最近订单</p>
-					<ul class="personal-orde-list">
-						<li class="first">
-							<img class="din" src="../../images_mdh/content8.png" height="95" width="95">
-							<div class="content din">
-								<h6>ladmirable香氛蜡烛（清新古龙水）</h6>
-								<p>您的快件已由日月光集团招聘中心(家乐福店)菜鸟驿站代收。请注意查收</p>
-								<span>2016-03-29 <em>12:36:05</em></span>
-								<a href="javascript:;">查看物流明细</a>
-							</div>
-							<button type="button">确认收货</button>
-							<strong>x3</strong>
-						</li>
-						<li>
-							<img class="din" src="../../images_mdh/content8.png" height="95" width="95">
-							<div class="content din">
-								<h6>ladmirable香氛蜡烛（清新古龙水）</h6>
-								<p>您的快件已由日月光集团招聘中心(家乐福店)菜鸟驿站代收。请注意查收</p>
-								<span>2016-03-29 <em>12:36:05</em></span>
-								<a href="javascript:;">查看物流明细</a>
-							</div>
-							<button type="button">确认收货</button>
-							<strong>x3</strong>
-						</li>
-					</ul>
-				</div>
+			<!-- 安全中心开始 -->
+			<div class="personal-security fr">
+				<form>
+					<div class="current password">
+						<input type="password" placeholder="请输入当前登录密码">
+						<label>请输入2-16位密码</label>
+					</div>
+					<div class="new password">
+						<input type="password" placeholder="请输入新的登录密码">
+						<label>新旧密码不能相同，请重新输入</label>
+					</div>
+					<div class="news password">
+						<input type="password" placeholder="请再次输入新的登陆密码">
+						<label>两次输入的密码不一致，请重新输入</label>
+					</div>
+					<button class="confirm" type="submit">确认修改</button>
+					<div class="phone pattern">
+						<label class="din" for="mobile">验证方式</label>
+						<select>
+							<option value="mobile" selected="selected">手机短信验证</option>
+							<option value="email">
+								通过邮箱验证
+							</option>
+						</select>
+					</div>
+					<div class="phoneVerification">
+						<div class="phone number">
+							<label class="din" for="number">手机号</label>
+							<input type="text" class="mobileNumber" id="number" placeholder="请输入您的手机号码">
+						</div>
+						<div class="phone code clearfix">
+							<label class="din fl" for="code">手机验证码</label>
+							<input class="mobileCode fl" type="text" id="code" placeholder="请填写手机验证码">
+							<button type="button" class="codeButton fl">获取验证码</button>
+							<span class="send fl">验证码已发送</span>
+						</div>
+						<div class="phone newNumber">
+							<label class="din" for="newNumber">新手机号</label>
+							<input type="text" id="newNumber" placeholder="请输入新的手机号码">
+						</div>
+						<div class="phone newCode clearfix">
+							<label class="din fl" for="newCode">新手机验证码</label>
+							<input class="mobileCode fl" type="text" id="newCode" placeholder="请填写新手机验证码">
+							<button type="button" class="codeButton fl">获取验证码</button>
+							<span class="send fl">验证码已发送</span>
+						</div>
+					</div>
+					<button class="confirm sub" type="submit">提交</button>
+				</form>
 			</div>
 		</div>
+
 		<!-- 底部开始 -->
 		<div id="footer">
       		<ul class="clearfix features">
