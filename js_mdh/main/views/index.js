@@ -460,23 +460,3 @@
   });
 });
 
-/**
- * 收藏
- */
-;(function ($, window) {
-  $('body').bind('[data-goods="enshrine"]', 'click', function(e) {
-    var id = $(e.target).attr('goods');
-    $.ajax({
-      url: "${base}/member/favorite/add.jhtml",
-      type: "POST",
-      data: {goodsId: id},
-      dataType: "json",
-      cache: false,
-      success: function(message) {
-        //$.message(message);
-        layer(message);
-      }
-    });
-    return false;
-  });
-})(jQuery, window);
