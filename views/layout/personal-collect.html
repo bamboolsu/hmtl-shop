@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+   <head>
         <meta charset = "utf-8" />
 		<title>买德好</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -9,6 +9,7 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
+        <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
     </head>
     <body>
@@ -84,61 +85,70 @@
 			<ul class="personal-nav fl">
 				<li><a href="./personal.html">我的信息</a></li>
 				<li><a href="./personal-item.html">我的订单</a></li>
-				<li><a href="./personal-collect.html">我的收藏</a></li>
+				<li class="current"><a href="javascript:;">我的收藏</a></li>
 				<li><a href="./personal-address.html">收件地址</a></li>
-				<li  class="current"><a href="javascript:;">安全中心</a></li>
+				<li><a href="./personal-security.html">安全中心</a></li>
 			</ul>
-			<!-- 安全中心开始 -->
-			<div class="personal-security fr">
-				<form>
-					<div class="current password">
-						<input type="password" placeholder="请输入当前登录密码">
-						<label>请输入2-16位密码</label>
-					</div>
-					<div class="new password">
-						<input type="password" placeholder="请输入新的登录密码">
-						<label>新旧密码不能相同，请重新输入</label>
-					</div>
-					<div class="news password">
-						<input type="password" placeholder="请再次输入新的登陆密码">
-						<label>两次输入的密码不一致，请重新输入</label>
-					</div>
-					<button class="confirm" type="submit">确认修改</button>
-					<div class="phone pattern">
-						<label class="din" for="mobile">验证方式</label>
-						<select>
-							<option value="mobile" selected="selected">手机短信验证</option>
-							<option value="email">
-								通过邮箱验证
-							</option>
-						</select>
-					</div>
-					<div class="phoneVerification">
-						<div class="phone number">
-							<label class="din" for="number">手机号</label>
-							<input type="text" class="mobileNumber" id="number" placeholder="请输入您的手机号码">
-						</div>
-						<div class="phone code clearfix">
-							<label class="din fl" for="code">手机验证码</label>
-							<input class="mobileCode fl" type="text" id="code" placeholder="请填写手机验证码">
-							<button type="button" class="codeButton fl">获取验证码</button>
-						</div>
-						<div class="phone newNumber">
-							<label class="din" for="newNumber">新手机号</label>
-							<input type="text" id="newNumber" placeholder="请输入新的手机号码">
-						</div>
-						<div class="phone newCode clearfix">
-							<label class="din fl" for="newCode">新手机验证码</label>
-							<input class="mobileCode fl" type="text" id="newCode" placeholder="请填写新手机验证码">
-							<button type="button" class="codeButton fl">获取验证码</button>
-						</div>
-					</div>
-					<button class="confirm sub" type="submit">提交</button>
-				</form>
+			<div class="personal-collect fr">
+				<ul class="clearfix" >
+					<li class="fr" productId = "123456" >
+						<a href = "./item.html" target="blank">
+							<img src="../../images_mdh/r1.png" height="260" width="260">
+							<p>运动设备
+								<span>1024</span>
+							</p>
+							<div class="top">
+								<div class="intop"></div>
+								<h3>兔子储物盒</h3>
+								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>
+								<span>￥325.00</span>
+								<div class="collect">
+									<button data-tag="addCart" ></button>
+									<button class="last" ></button>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="fr" productId = "123456" >
+						<a href = "./item.html" target="blank">
+							<img src="../../images_mdh/r2.png" height="260" width="260">
+							<p>运动设备
+								<span>1</span>
+							</p>
+							<div class="top">
+								<div class="intop"></div>
+								<h3>兔子储物盒</h3>
+								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>
+								<span>￥160.00</span>
+								<div class="collect">
+									<button data-tag="addCart" ></button>
+									<button class="last" ></button>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="fr" productId = "123456" >
+						<a href = "./item.html" target="blank">
+							<img src="../../images_mdh/r3.png" height="260" width="260">
+							<p>运动设备
+								<span>95</span>
+							</p>
+							<div class="top">
+								<div class="intop"></div>
+								<h3>兔子储物盒</h3>
+								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>\
+								<span>￥280.00</span>
+								<div class="collect">
+									<button data-tag="addCart" ></button>
+									<button class="last" ></button>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
-
-		<!-- 底部开始 -->
+		 <!-- 底部开始 -->
 		<div id="footer">
       		<ul class="clearfix features">
       		  <li>
