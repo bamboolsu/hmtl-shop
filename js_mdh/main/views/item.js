@@ -271,7 +271,7 @@ $(function () {
     if (!self.options.usernameId)
       location.href = self.options.urlLogin;
 
-    var data = $.extend({}, this.options.shoppingForm.data(), self.options.data);
+    var data = $.extend({quantity: $('[data-tag="number"]').val()}, self.options.data);
 
     console.log("BuyImmediatelyPost: ");
     console.log(data);

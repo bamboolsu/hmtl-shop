@@ -42,19 +42,21 @@
     $(this).children(".mp_tooltip").css("visibility","hidden");
     $(this).children(".mp_tooltip").animate({right: -46,queue:true});
   });
- 
-    $(".quick_links_panel li[data-cart='shoppingcart']").mouseenter(function(){
+
+   $(".quick_links_panel li[data-cart='shoppingcart']").bind({
+    mouseenter: function (e) {
       var _this = this;
       setTimeout(function () {
         $(_this).children(".tooltip").animate({right: 0,queue:true});
         $(_this).children(".tooltip").css("visibility","visible");
       }, 100);
-    });
+    },
 
-   $(".quick_links_panel li[data-cart='shoppingcart']").mouseleave(function(){
+    mouseleave: function () {
       $(this).children(".tooltip").css("visibility","hidden");
       $(this).children(".tooltip").animate({right: -307,queue:true});
-   });
+    }
+   })
 
    $(".quick_links_panel li").mouseenter(function(){
      $(this).children(".wx_tooltip").animate({right: 46,queue:true});
@@ -64,7 +66,7 @@
 
    $(".quick_links_panel li").mouseleave(function(){
      $(this).children(".wx_tooltip").css("visibility","hidden");
-     $(this).children(".wx_tooltip").animate({right: 80,queue:true});
+     $(this).children(".wx_tooltip").animate({right: 0,queue:true});
    });
 
 
@@ -274,4 +276,47 @@ function removeCookie(name, options) {
 
   window.layer = Layer;
 })(window, jQuery);
+
+
+/**
+ * 基本功能
+ */
+;(function ($, window) {
+
+  function Klass (options) {
+    if (!(this instanceof Klass)) return new Klass(options);
+  };
+
+  Klass.fn = Klass.prototype = {
+    constructor: constructor,
+
+    init: function (options) {
+      this.options = options;
+    },
+    // 收藏
+    enshrine: function (options) {
+      var options = options;
+      $('body').delegate('[data-goods="enshrine"]', 'click', function(event) {
+        event.stopPropagation();
+        var id = $(event.target).attr('goods');
+        console.log(event);
+        $.ajax({
+          url: options,
+          type: "POST",
+          data: {goodsId: id},
+          dataType: "json",
+          cache: false,
+          success: function(message) {
+            //$.message(message);
+            layer(message);
+          }
+        });
+        return false;
+      });
+    }
+  };
+
+  window.init = new Klass;
+ 
+})(jQuery, window);
 

@@ -98,6 +98,10 @@ body {
 .dl {
 	display: block;
 }
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset;
+border: 1px solid #CCC!important;
+}
 
 /*  common layer */
 .common-shielding {
@@ -664,6 +668,7 @@ div.flicking_con a.on {
 	display: block;
 	position: relative;
 	z-index: 9999999;
+	width: 46px;
 }
 .fix a.ico i{
 	width: 46px;
@@ -743,7 +748,7 @@ div.flicking_con a.on {
 .shopping-list2{
 	width: 246px;
 	height: 100%;
-	padding:15px 46px 0 0px;
+	padding:15px 0px 0 0px;
 	position:fixed;
 	top:0px;
 	z-index: 5;
@@ -824,7 +829,7 @@ div.flicking_con a.on {
     width: 120px;
     position: absolute;
     z-index: 2;
-    right: 80px;
+    right: -80px;
     top: 0;
     background: #444851;
     color: #d8d8d8;
@@ -837,7 +842,7 @@ div.flicking_con a.on {
 	height: 45px;
 	position:absolute;
 	top: 0px;
-	right: 80px;
+	right: -80px;
 	z-index:5;
 	font-size:16px;
 	background: @background;
@@ -853,7 +858,7 @@ div.flicking_con a.on {
 	background: @background;
 	position:absolute;
 	top: 0px;
-	right: 80px;
+	right: -80px;
 	z-index:53;
 	text-align: center;
 	visibility: hidden;
@@ -876,7 +881,7 @@ div.flicking_con a.on {
 	background: @background;
 	position:absolute;
 	top:0;
-	right: 180px;
+	right: -180px;
 	z-index: 5;
 	visibility: hidden;
 	h6{
@@ -886,6 +891,12 @@ div.flicking_con a.on {
 		color:#ffc900;
 		text-align: center;
 		border-bottom:1px solid #ccc;
+		white-space: nowrap;
+　　overflow: hidden;
+　　text-overflow: ellipsis;
+		width: 180px;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	.logged-news{
 		display: block;
@@ -2191,7 +2202,7 @@ body.emailverification {
 			font-size: @font;
 			padding-left:10px;
 			line-height: 45px;
-			background:@inputBackground; 
+			background:#e2e2e2; 
 			color:@inputColor;
 		}
 		textarea {
