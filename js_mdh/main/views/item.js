@@ -35,15 +35,8 @@ $(function () {
   };
   // 初始化视图
   ShoppingForm.fn.views = function () {
-
-    // 多项选择中默认选择第一个
-    $('[data-tag="formList"] ul').each(function (e) {
-      var $this = $(this).find('li:first');
-      var context = $this.find('span').html();
-      $this.find('a').attr('aria-label', context);
-      $this.addClass('tb-selected');
-    });
-
+	  
+	  
   };
 
   // 初始化事件
@@ -54,8 +47,7 @@ $(function () {
     $('[data-tag="plus"]').bind('click', this.plusProductClick);
     // 数量框输入
     $('[data-tag="number"]').bind('change keyup', this.numberProductClick);
-    // 选择类型
-    $('[data-tag="formList"] ul li').bind('click', this.selectedProductClick);
+
   };
 
   // 提起表单数据
@@ -92,6 +84,7 @@ $(function () {
     var $number = $('[data-tag="number"]');
     var num = parseInt($number.val());
     if (num > 0 ) $number.val(++num);
+    
   };
 
   // 数量框输入
@@ -107,17 +100,7 @@ $(function () {
     }
   };
 
-  // 选择框选择
-  ShoppingForm.fn.selectedProductClick = function () {
-    var context = $(this).find('span').html();
-    $(this).find('a').attr('aria-label', context);
-    $(this)
-      .addClass('tb-selected')
-      .siblings()
-      .removeClass('tb-selected')
-      .find('a')
-      .removeAttr('aria-label');
-  };
+
 
   window.ShoppingForm = ShoppingForm;
 
@@ -166,30 +149,22 @@ $(function () {
   ShoppingCart.fn.clickCart = function (event) {
     var self = this;
     // 判断用户是否登录,不存在跳到用户登录页面
-    if (!self.options.usernameId)
-      location.href = self.options.urlLogin;
-    
-    var data = $.extend({}, this.options.shoppingForm.data(), self.options.data);
-
-    console.log("cartPostData: ");
-    console.log(data);
-
+    if (!$.checkLogin()){    	
+    	location.href = self.options.urlLogin;
+    }
     $.ajax({
       url: self.options.urlCartPost,
       type: "POST",
-      data: data,
+      data: self.options.data(),
       dataType: "json",
       cache: false,
       success: function(message) {
 
-        console.log("message: ");
-        console.log(message);
-
         if (message.type == "success") {
           self.getSuccess(message);
         }
-        else if (message.type == 'error') {
-          self.getError(message);
+        else {
+          layer(message.content);
         }
        }
     });
@@ -268,22 +243,16 @@ $(function () {
   BuyImmediately.fn.clickBuyImmediately = function (event) {
     var self = this;
     // 判断用户是否登录,不存在跳到用户登录页面
-    if (!self.options.usernameId)
+    if (!$.checkLogin())
       location.href = self.options.urlLogin;
-
-    var data = $.extend({quantity: $('[data-tag="number"]').val()}, self.options.data);
-
-    console.log("BuyImmediatelyPost: ");
-    console.log(data);
 
     $.ajax({
       url: self.options.urlBuyImmediatelyPost,
       type: "POST",
-      data: data,
+      data: self.options.data(),
       dataType: "json",
       cache: false,
       success: function(message) {
-
         console.log("message: ");
         console.log(message);
 
@@ -291,7 +260,7 @@ $(function () {
           location.href = self.options.urlOrder;
         }
         else if (message.type == 'error') {
-          self.getError(message);
+        	layer(message.content);
         }
        }
     });
@@ -304,7 +273,7 @@ $(function () {
       location.href = this.options.urlLogin;
     }
     else {
-      console.log(message.content);
+      layer(message.content);
     }
   };
 
