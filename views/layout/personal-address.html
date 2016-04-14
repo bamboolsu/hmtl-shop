@@ -31,7 +31,7 @@
 				<div class="nav">
 				<ul class="clearfix">
 					<li>
-						<a  class="current" href="javascript:;">主页</a>
+						<a  class="current" href="./index.html">主页</a>
 					</li>
 					<li>
 						<a href="./list.html" target="blank">菜单</a>
@@ -86,44 +86,82 @@
 			<!-- 个人中心左侧导航开始 -->
 			<ul class="personal-nav fl">
 				<li><a href="./personal.html">我的信息</a></li>
-				<li><a href="./personal-item.html">我的订单</a></li>
+				<li class="nav"><a href="javascript:;">我的订单</a>
+					<div class="innav dn">
+						<a href="./personal-item.html">现有订单</a>
+						<a href="javascript:;">退货</a>
+						<a href="javascript:;">换货维修</a>
+					</div>
+				</li>
 				<li><a href="./personal-collect.html">我的收藏</a></li>
-				<li class="current"><a href="javascript:;">收件地址</a></li>
+				<li><a class="current" href="javascript:;">收件地址</a></li>
 				<li><a href="./personal-security.html">安全中心</a></li>
 			</ul>
 			<!-- 收件地址开始 -->
 			<div class="personal-address fr">
-				<ol class="address">
-					<li class="first">
-						<div class="message din">
-							<span>小明</span>
-							<strong>610430199108055484</strong>
-							<em>18717273568</em>
-							<p><b>上海市</b>，上海市，浦东新区，祖冲之路2305号，天之骄子B栋508室</p>
-						</div>
-						<span>默认地址</span>
-						<strong>编辑</strong>
-						<em class="din">删除</em>
-					</li>
-					<li>
-						<div class="message din">
-							<span>小明</span>
-							<strong>610430199108055484</strong>
-							<em>18717273568</em>
-							<p><b>上海市</b>，上海市，浦东新区，祖冲之路2305号，天之骄子B栋508室</p>
-						</div>
-						<a href="javascript:;">设为默认地址</a>
-						<strong>编辑</strong>
-						<em class="din">删除</em>
-					</li>
-				</ol>
+				<div class = "scroll-address">
+				<h5>收货地址</h5>
+  				<ul class="clearfix">
+  					<li class="fl selected">
+  						<p class="information">小明1
+  							<span class="fr" >152xxxx5268</span>
+  						</P>
+  						<strong>410183198509055311</strong>
+  						<div class="address">
+  							<span><b>上海</b>浦东新区</span>
+  							<p>祖冲之路2305号</p>
+  						</div>
+  						<p class="about">
+  							<a href="javascript:;" class = "default fl" data-address="default">设为默认地址</a>
+  							<a class="editor fl" href="javascript:;" data-address="edit" >编辑</a>
+  							<a class="last fr" href="javascript:;" data-address="delete">删除</a>
+  						</p>
+  					</li>
+            		<li class="fl" data-id="12">
+            		  <p class="information">小明2
+            		    <span class="fr" >152xxxx5268</span>
+            		  </P>
+            		  <strong>410183198509055311</strong>
+            		  <div class="address">
+  							<span><b>上海</b>浦东新区</span>
+  							<p>祖冲之路2305号</p>
+  						</div>
+            		  <p class="about clearfix">
+            		    <a href="javascript:;" class = "default fl" data-address="default">设为默认地址</a>
+            		    <a class="editor fl" href="javascript:;" data-address="edit" >编辑</a>
+            		    <a class="last fr" href="javascript:;" data-address="delete">删除</a>
+            		  </p>
+            		</li>
+            		<li class="fl">
+            			<button type="button">
+            			新增收货地址</button>
+            		</li>
+  				</ul>
+       		</div>
 				<div class="add">
 					<h6>新增地址信息</h6>
 					<form>
 						<div class="name">
-							<label class="din" for="usename">收件人</label>
+							<label class="din" for="usename">收件人姓名</label>
 							<input type="text" id="usename" placeholder="请输入与身份证一致的姓名">
 							<span>5-150个字符，一个汉字为两个字符</span>
+						</div>
+						<div class="city">
+							<label class="din" for="province_id">省/市</label>
+							<select id="selProvance" onchange="chgProvinces(selProvance,selCity,selArea)">
+        						<option></option>
+   			 				</select>
+    						<select id="selCity" onchange="chgCitys(selCity,selArea)">
+        						<option></option>
+    						</select>
+    						<select id="selArea">
+        						<option></option>
+   				 			</select>
+							<span>请选择区域</span>
+						</div>
+						<div class="place">
+							<label class=din for="place">详细地址</label>
+							<input type="text" id="place" placeholder="请输入详细的收货地址">
 						</div>
 						<div class="number">
 							<label class="din" for="number">身份证号</label>
@@ -134,26 +172,6 @@
 							<label class="din" for="mobile">手机号码</label>
 							<input id="mobile" type="text" placeholder="请输入您的手机号码">
 							<span></span>
-						</div>
-						<div class="city">
-							<label class="din" for="province_id">省/市</label>
-							<!-- <select id="selProvance" onchange="chgProvinces(selProvance,selCity,selArea)">
-        						<option></option>
-   			 				</select>
-    						<select id="selCity" onchange="chgCitys(selCity,selArea)">
-        						<option></option>
-    						</select>
-    						<select id="selArea">
-        						<option></option>
-   				 			</select> -->
-   				 			<div class="din" id="region">
-   				 				
-   				 			</div>
-							<span></span>
-						</div>
-						<div class="place">
-							<label class=din for="place">详细地址</label>
-							<input type="text" id="place" placeholder="请输入详细的收货地址">
 						</div>
 						<button type="button">新增</button>
 					</form>

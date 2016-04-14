@@ -54,6 +54,7 @@ input,button,select,option,textarea {
 }
 button{
 	cursor: pointer;
+	font-family: "Microsoft YaHei";
 }
 a {
 	color: #515151;
@@ -169,10 +170,9 @@ h1{
 	text-indent: -9999px;
 }
 .search{
-	width: 475px;
+	width: 434px;
 	height:37px;
 	margin:0 auto;
-	padding-top: 35px;
 }
 .search form.current{
 	position:fixed;
@@ -181,7 +181,7 @@ h1{
 	z-index: 500;
 }
 .search input{
-   width:430px;
+   width:365px;
    height: 35px;
    border:1px solid #ccc;
    outline: none;
@@ -484,9 +484,6 @@ div.flicking_con a.on {
 	margin-bottom:16px;
 	position:relative;
 }
-.moods ul li:nth-child(4n){
-	margin-right: 0;
-}
 .moods ul li .top{
 	position:absolute;
 	top:0;
@@ -495,6 +492,7 @@ div.flicking_con a.on {
 	height: 200px;
 	padding:50px 20px 20px 20px;
 	display: none;
+
 }
 .moods ul li .top .intop{
 	position:absolute;
@@ -2027,13 +2025,23 @@ body.emailverification {
 		color: #828282;
 	}
 	.wechat{
+		width:400px;
+		height: 355px;
+		border:1px solid #A4A4A4;
 		text-align:center;
-		margin-top:30px;
+		margin:30px auto;
+		position:relative;
 		p{
+			height: 40px;
+			background: #444;
 			font-size: 18px;
-			color:#444444;
+			color:#F1A223;
 			text-align:center;
-			line-height:60px;
+			line-height:40px;
+		}
+		img{
+			display:block;
+			margin:28px auto;
 		}
 		span{
 			display: block;
@@ -2041,13 +2049,23 @@ body.emailverification {
 			height: 36px;
 			margin:20px auto;
 			text-align:left;
+			font-size: @font;
+			color:#808080;
 			padding-left:45px;
 			background: url(../images_mdh/icon/wechat-1.png) no-repeat left center;
 		}
-		a{
-			font-size:@font;
-			color:#00aaef;
-			margin-bottom:100px;
+		strong{
+			position:absolute;
+			top:0;
+			right:0;
+			width: 40px;
+			height: 40px;
+			font-size: 20px;
+			color:#fff;
+			font-weight:normal;
+			line-height: 40px;
+			text-align:center;
+			cursor: pointer;
 		}
 	}
 }
