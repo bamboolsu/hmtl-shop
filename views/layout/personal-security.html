@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
+        <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
     </head>
     <body>
     	<!-- 头部开始 -->
@@ -28,7 +29,7 @@
 				<div class="nav">
 				<ul class="clearfix">
 					<li>
-						<a  class="current" href="javascript:;">主页</a>
+						<a  class="current" href="./index.html">主页</a>
 					</li>
 					<li>
 						<a href="./list.html" target="blank">菜单</a>
@@ -83,10 +84,16 @@
 			<!-- 个人中心左侧导航开始 -->
 			<ul class="personal-nav fl">
 				<li><a href="./personal.html">我的信息</a></li>
-				<li><a href="./personal-item.html">我的订单</a></li>
+				<li class="nav"><a href="javascript:;">我的订单</a>
+					<div class="innav dn">
+						<a href="./personal-item.html">现有订单</a>
+						<a href="javascript:;">退货</a>
+						<a href="javascript:;">换货维修</a>
+					</div>
+				</li>
 				<li><a href="./personal-collect.html">我的收藏</a></li>
 				<li><a href="./personal-address.html">收件地址</a></li>
-				<li  class="current"><a href="javascript:;">安全中心</a></li>
+				<li><a class="current" href="javascript:;">安全中心</a></li>
 			</ul>
 			<!-- 安全中心开始 -->
 			<div class="personal-security fr">
@@ -104,36 +111,6 @@
 						<label>两次输入的密码不一致，请重新输入</label>
 					</div>
 					<button class="confirm" type="submit">确认修改</button>
-					<div class="phone pattern">
-						<label class="din" for="mobile">验证方式</label>
-						<select>
-							<option value="mobile" selected="selected">手机短信验证</option>
-							<option value="email">
-								通过邮箱验证
-							</option>
-						</select>
-					</div>
-					<div class="phoneVerification">
-						<div class="phone number">
-							<label class="din" for="number">手机号</label>
-							<input type="text" class="mobileNumber" id="number" placeholder="请输入您的手机号码">
-						</div>
-						<div class="phone code clearfix">
-							<label class="din fl" for="code">手机验证码</label>
-							<input class="mobileCode fl" type="text" id="code" placeholder="请填写手机验证码">
-							<button type="button" class="codeButton fl">获取验证码</button>
-						</div>
-						<div class="phone newNumber">
-							<label class="din" for="newNumber">新手机号</label>
-							<input type="text" id="newNumber" placeholder="请输入新的手机号码">
-						</div>
-						<div class="phone newCode clearfix">
-							<label class="din fl" for="newCode">新手机验证码</label>
-							<input class="mobileCode fl" type="text" id="newCode" placeholder="请填写新手机验证码">
-							<button type="button" class="codeButton fl">获取验证码</button>
-						</div>
-					</div>
-					<button class="confirm sub" type="submit">提交</button>
 				</form>
 			</div>
 		</div>
