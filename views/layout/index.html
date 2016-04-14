@@ -9,6 +9,7 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
+		<script src = "../../js_mdh/main/views/common.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
 		<script src = "../../js_mdh/main/views/index.js"></script>
 		<script>
@@ -16,31 +17,66 @@
 				// 收藏
 				init.enshrine('${base}/member/favorite/add.jhtml');  // 里面收藏地址
 
-
 			})
 		</script>
 	</head>
 	<body>
 	<!-- 头部开始 -->
 		<div id = "header">
-			<a href = "javascript:;">
-				<h1>买德好</h1>
-			</a>
-			<div class="search">
-				<form>
-					<input type="text" placeholder="请输入内容.....">
-					<button type="submit"></button>
-				</form>
+			<div id = "top" class = "clearfix" >
+				<div class = "fl"></div>
+				<div class = "fr right">
+					<div class = "is-login" >
+						<a href = "javascript:;" >退出</a>
+						<i></i>
+						<a href = "javascript:;" >消息</a>
+						<i></i>
+						<a href = "javascript:;" >个人中心</a>
+						<i></i>
+						<a href = "javascript:;" >购物车3件</a>
+						<i></i>
+						<a href = "javascript:;" >我的订单</a>
+						<i></i>
+						<a href = "javascript:;" >小康</a>
+					</div>
+					<div class = "no-login dn" >
+						<a href = "javascript:;" class = "last">消息</a>
+						<i></i>
+						<a href = "javascript:;" >注册</a>
+						<i></i>
+						<a href = "javascript:;" >登录</a>
+					</div>
+				</div>
 			</div>
+			<div class = "clearfix" >
+				<div>
+					<a href = "/" class = "fl">
+						<h1>买德好</h1>
+					</a>
+					<div class="search fr" >
+						<input type="text" >
+						<button type="button"></button>
+						<div class = "keyword">
+							<a href = "javascript:;" >爱他美</a>
+							<a href = "javascript:;" >滤水壶</a>
+							<a href = "javascript:;" >辅食</a>
+							<a href = "javascript:;" >儿童座椅</a>
+							<a href = "javascript:;" >剃须刀</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
 			<!-- 导航开始 -->
 			<div class="index-nav">
 				<div class="nav">
 				<ul class="clearfix">
 					<li>
-						<a  class="current" href="javascript:;">主页</a>
+						<a  class="current" href="javascript:;">首&nbsp;页</a>
 					</li>
 					<li>
-						<a href="./list.html" target="blank">菜单</a>
+						<a href="./list.html" target="blank">类&nbsp;目</a>
 						<div class="innav">
 							<ol class="clearfix">
 								<li>
@@ -91,20 +127,44 @@
 			<!-- 轮播图开始 -->
 
 		<div class="main_visual">
-				<div class="flicking_con">
-					<div class="flicking_inner">
-						<!-- js 插入a循环标签 -->
-					</div>
-				</div>
+				
 				<div class="main_image">
 					<ul>
-						<li><a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner.png" width = "1100" height = "550" alt = "banner"></a></li>
-						<li><a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner1.jpg" width = "1100" height = "550" alt = "banner"></a></li>
-						<li><a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner2.jpg" width = "1100" height = "550" alt = "banner"></a></li>
-						<li><a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner3.jpg" width = "1100" height = "550" alt = "banner"></a></li>
+						<li>
+							<a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner.png" width = "1100" height = "360" alt = "banner"></a>
+						</li>
+						<li>
+							<a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner1.jpg" width = "1100" height = "360" alt = "banner"></a>
+						</li>
+						<li>
+							<a href="./goodsList.html" target="blank"><img src="../../images_mdh/banner2.jpg" width = "1100" height = "360" alt = "banner"></a>
+						</li>
 					</ul>
-					<a id="btn_prev" href="javascript:;"></a>
-					<a id="btn_next" href="javascript:;"></a>
+					<a id="btn_prev" href="javascript:;" class = "dn"></a>
+					<a id="btn_next" href="javascript:;" class = "dn"></a>
+				</div>
+				<div class="flicking_con">
+					<div class="flicking_inner">
+						<a href = "javascript: void 0;" >
+							<h5>pb0110新款上架</h5>
+							<p>植鞣牛皮手工缝制而成</p>
+							<i></i>
+							<span class = "selected"></span>
+						</a>
+						<a href = "javascript: void 0;" >
+							<h5>pb0110新款上架</h5>
+							<p>植鞣牛皮手工缝制而成</p>
+							<i></i>
+							<span class = "selected"></span>
+						</a>
+						<a href = "javascript: void 0;" >
+							<h5>pb0110新款上架</h5>
+							<p>植鞣牛皮手工缝制而成</p>
+							<i></i>
+							<span class = "selected"></span>
+						</a>
+						<!-- js 插入a循环标签 -->
+					</div>
 				</div>
 			</div>
 		<!-- 图片一区开始 -->
@@ -124,7 +184,7 @@
 		</div> 
 		<!-- 新品上架开始 -->
 		<div class="news" data-tag=news>
-			<h2 class="mian-h2">新品上架
+			<h2 class="mian-h2 clearfix" >新品上架
 				<span>
 					<a href="./goodsList.html" target="blank">更多></a>
 				</span>
@@ -228,37 +288,38 @@
 		<div class="main1">
 			<ul class="clearfix">
 				<li class="big">
-					<a href="./item.html" target="blank">
-						<img src="../../images_mdh/content7.png" height="547" width="710">
+					<a href="./item.html" target="_blank">
+						<img src="../../images_mdh/index1.png" height="544" width="368">
 					</a>
 				</li>
-				<li>
-					<a href="./item.html" target="blank">
-						<img src="../../images_mdh/content8.png" height="264" width="370">
+				<li class="fl">
+					<a href="./item.html" target="_blank">
+						<img src="../../images_mdh/index2.png" height="262" width="714">
 					</a>
 				</li>
-				<li>
-					<a href="./item.html" target="blank">
-						<img src="../../images_mdh/content9.png" height="264" width="370">
+				<li class="fl">
+					<a href="./item.html" target="_blank">
+						<img src="../../images_mdh/index3.png" height="264" width="714">
 					</a>
 				</li>
 			</ul>
 			<ol class="clearfix">
 				<li>
-					<a href="./item.html" target="blank">
-						<img src="../../images_mdh/content10.png" height="265" width="368">
+					<a href="./item.html" target="_blank">
+						<img src="../../images_mdh/index4.png" height="265" width="715">
 					</a>
 				</li>
 				<li>
-					<a href="./item.html" target="blank">
-						<img src="../../images_mdh/content11.png" height="265" width="714">
+					<a href="./item.html" target="_blank">
+						<img src="../../images_mdh/index5.png" height="265" width="370">
 					</a>
 				</li>
+				
 			</ol>
 		</div>
 		<!-- 人气商品开始 -->
 		<div class="moods">
-			<h2 class="mian-h2">人气商品
+			<h2 class="mian-h2 clearfix">人气商品
 				<span>
 					<a href="javascript:;" target="blank">更多></a>
 				</span>
@@ -675,7 +736,7 @@
       	</div>
 
       		<!-- 窗口固定区开始 -->
-			<div class="fix">
+			<!-- <div class="fix">
 				<ul class = "quick_links_panel" >
 					<li>
 						<a href="javascript:;" class="one ico"><i></i></a>
@@ -725,103 +786,77 @@
 						<a href="javascript:;" class="five ico"><i></i></a>
 					</li>
 				</ul>
-			</div>
-		</div>
-			<script>
+			</div> -->
+		
 
-				$(function () {
-					// 购物车加减产品事件
-				  function minusPlusShopping(data) {
-
-				    console.log("post: ");
-				    console.log(data);
-
-				    $.ajax({
-				      url: '../../test/minusplus.json',
-				      type: "POST",
-				      data: data,
-				      dataType: "json",
-				      cache: false,
-				      success: function(message) {
-				      	console.log(message)
-				      }
-				    });
-				  };
-
-				   // 加
-	        $('[data-right="plus"]').bind('click', function (e) {
-	          var times = 100;
-	          var $number = $(this).siblings('[data-right="num"]');
-	          var $priceAll = $(this).siblings('[data-right="priceAll"]');
-	          var num = parseInt($number.html());
-	          var priceAll = parseInt($priceAll.html())*times;
-	          var price = priceAll/num;
-	          if (num > 0 ) {
-	            $number.html(++num);
-	            $priceAll.html(((priceAll+price)/times).toFixed(2));
-	            // ajax 收集数据
-	            data = {
-	            	productId: $(this).parents('.warp').attr('data-product'),
-	            	num: num
-	            }
-	            minusPlusShopping(data);  // ajax
-	          }
-	        });
-
-	        // 减
-	        $('[data-right="minus"]').bind('click', function () {
-	          var times = 100;
-	          var $number = $(this).siblings('[data-right="num"]');
-	          var $priceAll = $(this).siblings('[data-right="priceAll"]');
-	          var num = parseInt($number.html());
-	          var priceAll = parseInt($priceAll.html())*times;
-	          var price = priceAll/num;
-	          if (num >= 2 ) {
-	            $number.html(--num);
-	            $priceAll.html(((priceAll-price)/times).toFixed(2));
-
-	             // ajax 收集数据
-	            data = {
-	            	productId: $(this).parents('.warp').attr('data-product'),
-	            	num: num
-	            }
-	            minusPlusShopping(data);  // ajax
-	          }
-	        });
-
-	        $('[data-right="delete"]').bind('click', function () {
-	        	var target = $(this).parents('.warp');
-				    var productId = target.attr('data-product');
-				    var checked = target.find('[data-tag="select"]').is(':checked');
-				    var self = this;
-				    var data = {
-				    	productId: productId
-				    };
-
-				    console.log("post: ");
-				    console.log(data);
-
-				    $.ajax({
-				      url: "../../test/test.json",
-				      type: "POST",
-				      data: data,
-				      dataType: "json",
-				      cache: false,
-				      success: function(message) {
-
-				        console.log("message: ");
-				        console.log(message);
-
-				        if (message.type == "success") {
-				          target.remove();
-				        }
-				      }
-				    });
-	        });
+		<!-- <div class = "right-side" > -->
+			<div class = "fix" data-side="main">			
+					
+					<ul data-side="isShow">
+						<li data-side="login">
+							<a href="javascript:;" class="one ico" ><i></i></a>
+							<div class="infix" data-side="noLogin">
+								<a href="./landing.html"  >登陆</a>
+								<a href="./register.html" >注册</a>
+							</div>
+							<div class="logged" data-side="isLogin">
+								<h6>156326985</h6>
+								<a class="logged-news" href="./personal.html" target="blank">个人中心</a>
+								<a class="logged-news" href="./personal-security.html" target="blank">账号安全</a>
+								<a class="logged-news" href="./personal-item.html" target="blank">我的订单</a>
+								<span>退出</span>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;" class="two ico" data-side="cart" data-isshow = "1" >
+								<i></i>
+								<span class = "selected" >2</span>
+							</a>	
+							<div style = "position: relative">
+								<div class="shopping-list tooltip" data-side="noCart">
+									<p>来都来了，不买点德国货吗~</p>
+									<a href="javascript:;" class = "no"><i></i>查看我的购物车</a>
+								</div>
+								<div class="shopping-list2 tooltip" data-side="isCart">
+									<div>
+										<div class="warp clearfix" data-product = "123456">
+											<img class="fl" src="../../images_mdh/content3.png" height="60" width="60">
+											<span class="fl" data-right="minus">-</span>
+											<strong class="fl" data-right="num">1</strong>
+											<span class="fl" data-right="plus">+</span>
+											<p class="fr" data-right="priceAll">2365.00</p>
+											<b data-right="delete">x</b>
+										</div>
+									</div>
+									<a href="./shoppingcart.html"><i></i>查看我的购物车</a>
+								</div>
+							</div>
+						</li>
+						<li data-side="mobile">
+							<a href="javascript:;" class="three ico" ><i></i></a>
+							<div class="tell" data-side="isMobile">
+								846546848465
+							</div>
+						</li>
+						<li data-side="weixin">
+							<a href="javascript:;" class="fore ico" ><i></i></a>
+							<div class="images" data-side="isWeixin">
+								<img src="../../images_mdh/wechat.png" height="190" width="190">
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;" class="five ico"><i></i></a>
+						</li>
+					</ul>
+				</div>
+	<!-- 	</div> -->
+		<script>
+			$(function () {
 
 
-				});
-			</script>
+				Side({});
+			});
+		</script>
 
 	</body>
 </html>
