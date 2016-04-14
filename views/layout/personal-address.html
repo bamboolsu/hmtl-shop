@@ -9,8 +9,10 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
-        <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
+       	<script type="text/javascript" src="../../js_mdh/third/jquery.province.js"></script>
+       	<script type="text/javascript" src="../../js_mdh/third/provincesdata.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
+        <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
     </head>
     <body>
     	<!-- 头部开始 -->
@@ -85,7 +87,7 @@
 			<ul class="personal-nav fl">
 				<li><a href="./personal.html">我的信息</a></li>
 				<li><a href="./personal-item.html">我的订单</a></li>
-				<li><a href="javascript:;">我的收藏</a></li>
+				<li><a href="./personal-collect.html">我的收藏</a></li>
 				<li class="current"><a href="javascript:;">收件地址</a></li>
 				<li><a href="./personal-security.html">安全中心</a></li>
 			</ul>
@@ -133,11 +135,20 @@
 							<input id="mobile" type="text" placeholder="请输入您的手机号码">
 							<span></span>
 						</div>
-						<div class="city" id="city">
+						<div class="city">
 							<label class="din" for="province_id">省/市</label>
-							<select class="prov"></select>  
-							<select class="city"></select> 
-							<select class="dist"></select> 
+							<!-- <select id="selProvance" onchange="chgProvinces(selProvance,selCity,selArea)">
+        						<option></option>
+   			 				</select>
+    						<select id="selCity" onchange="chgCitys(selCity,selArea)">
+        						<option></option>
+    						</select>
+    						<select id="selArea">
+        						<option></option>
+   				 			</select> -->
+   				 			<div class="din" id="region">
+   				 				
+   				 			</div>
 							<span></span>
 						</div>
 						<div class="place">
@@ -270,6 +281,4 @@
 			</div>
 		</div>
     </body>
-</html>
-</body>
 </html>
