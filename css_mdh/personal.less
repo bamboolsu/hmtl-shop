@@ -3,7 +3,7 @@
  */
 
 @background: #231815;
-@color: blue;
+@color: #1e1e1e;
 @font: 14px;
 @mainWidth: 1100px;
 @itemBoxColor: #505050;
@@ -240,6 +240,7 @@ h1{
 	/* 个人中心页面左侧导航开始 */
 	.personal-nav{
 		width: 150px;
+		margin-top:-10px;
 		cursor:pointer;
 		li{
 			font-size: 18px;
@@ -261,7 +262,7 @@ h1{
 		}
 		.current{
 			font-weight:bold;
-			color:#f1a233;
+			color:#505050;
 		}
 		.nav{
 			background: url(../images_mdh/icon/personal-item.png) no-repeat right 20px;
@@ -277,6 +278,11 @@ h1{
 			span{
 				color:#f1a223;
 				cursor: pointer;
+			}
+			a{
+				font-size: @font;
+				color:#ae340d;
+				margin-left:70px;
 			}
 
 		}
@@ -421,6 +427,106 @@ h1{
 		text-align: center;
 	}
 }
+/* 修改个人信息开始 */
+.personal-change{
+	width: 820px;
+	.images{
+		border-bottom:1px solid #ccc;
+		p{
+			font-size: 20px;
+			coloe:#444;
+			line-height: 50px;
+		}
+		img{
+			margin:20px;
+		}
+		label{
+			display:block;
+			line-height: 50px;
+		}
+		button{
+			font-size: 18px;
+			color:#444;
+			width: 100px;
+			height: 40px;
+			background: #f1a223;
+			margin:20px 20px 80px 20px;
+		}
+	}
+	.message{
+		p{
+			font-size: 20px;
+			coloe:#444;
+			line-height: 80px;	
+		}
+		div{
+			margin-bottom:20px;
+		}
+		label{
+			width:70px;
+			font-size: @font;
+			color:#808080;
+			line-height: 40px;
+			text-align:right;
+			margin-right:20px;
+		}
+		label.describe{
+			vertical-align: top;
+		}
+		input{
+			width: 270px;
+			height: 40px;
+			background: #f1f1f1;
+			font-size: @font;
+			color:#808080;
+			padding-left:15px;
+			line-height: 40px;
+		}
+		span{
+			font-size: @font;
+			color:#ae340d;
+			line-height: 40px;
+			margin-left:15px;
+			padding-left:25px;
+			background: url(../images_mdh/icon/falsh.png) no-repeat left center;
+		}
+		select{
+			width:135px;
+			height: 40px;
+			font-size: @font;
+			color:#808080;
+			line-height: 40px;
+			line-height: 40px;
+			margin-right:15px;
+			padding-left:15px;
+			background: #f1f1f1;
+		}
+		.gender span,.birthday span,.address span{
+			margin-left:0px;
+		}
+		textarea{
+			width: 392px;
+			height:150px;
+			padding:15px;
+			font-size: @font;
+			color:#808080;
+			background: #f1f1f1;
+		}
+		button{
+			width: 200px;
+			height: 45px;
+			font-size: 20px;
+			color:#444;
+			text-align:center;
+			letter-spacing: 20px;
+			padding-left:20px;
+			background:#f1a223;
+			margin-left:200px;
+			margin-top:30px; 
+		}
+	}
+}
+
 /* 订单中心详情开始 */
 .personal-item .order-title{
 	font-size:@font;
@@ -974,6 +1080,27 @@ h1{
 /* 安全中心开始 */
 .personal-security{
 	width:820px;
+	.alter{
+		p{
+			border-bottom:2px solid #c7c7c7;
+			font-size: 18px;
+			color:#444;
+			line-height: 30px;
+			position:relative;
+			a{
+				font-size: @font;
+				color:#804736;
+				line-height: 30px;
+			}
+		}
+		span{
+			display: block;
+			font-size: @font;
+			color:#9b9c9c;
+			line-height: 35px;
+			margin-bottom:40px;
+		}
+	}
 	.password{
 		margin-left:112px;
 		input{
@@ -1065,6 +1192,36 @@ h1{
 		letter-spacing: 25px;
 		text-align:center;
 	}
+	.popup{
+		width: 400px;
+		height: 144px;
+		border:1px solid #ccc;
+		position:relative;
+		h6{
+			height: 42px;
+			text-indent:-9999px;
+			background: #444 url(../images_mdh/icon/pop.png) no-repeat center center;
+		}
+		p{
+			font-size:16px;
+			color:#727171;
+			line-height: 100px;
+			text-align:center;
+		}
+		span{
+			display:block;
+			width: 42px;
+			height:42px;
+			position:absolute;
+			top:0;
+			right:0;
+			font-size: 20px;
+			color:#fff;
+			cursor:pointer;
+			text-align:center;
+			line-height: 42px;
+		}
+	}
 
 }
 /* 收货地址开始 */
@@ -1145,7 +1302,7 @@ h1{
 	h6{
 		font-size: 18px;
 		color:#505050;
-		margin:45px 0;
+		margin-top:45px;
 	}
 	label{
 		width: 80px;
@@ -1159,15 +1316,18 @@ h1{
 		line-height: 45px;
 		font-size: @font;
 		color:#808080;
-		background: #e2e2e2;
 		margin-top:22px;
 		padding-left:15px;
+		border:1px solid #D0D0D0;
+	}
+	.place input{
+		width: 423px;
 	}
 	select{
 		width: 137px;
 		height: 45px;
 		line-height:45px;
-		background: #e2e2e2;
+		border:1px solid #D0D0D0;
 		margin-top:22px;
 		padding-left:15px;
 		margin-right:10px;
@@ -1184,20 +1344,33 @@ h1{
 		margin-left:15px;
 		background: url(../images_mdh/icon/falsh.png) no-repeat left center;
 	}
+	.city span{
+		margin-left:5px;
+	}
 	button{
 		width: 203px;
 		height: 45px;
 		font-size: 18px;
-		color:#444;
-		background: #f1a223;
-		margin:30px 0 0 84px;
-		letter-spacing: 10px;
+		color:#fff;
+		background: #444;
+		margin:35px 0 0 100px;
+		letter-spacing: 20px;
 		text-align:center;
+		padding-left:20px;
 	}
 }
 /* 收藏列表开始 */
 .personal-collect{
 	width:820px;
+	.without{
+		font-size:18px;
+		coolor:#808080;
+		line-height: 100px;
+		text-align:center;
+		a{
+			color:#804736;
+		}
+	}
 	li{
 		margin-right: 20px;
 		position:relative;
@@ -1209,6 +1382,8 @@ h1{
 			height: 190px;
 			padding:50px 20px 20px 20px;
 			display: none;
+			z-index: 5;
+			text-align:center;
 			.intop{
 				position:absolute;
 				background: #000;
@@ -1224,22 +1399,29 @@ h1{
 				font-size: 18px;
 				color:#fff;
 				text-align: center;
-				padding-top: 38px;
+				padding-top: 28px;
 				line-height: 40px;
 				z-index: 5;
 				position: relative;
 			}
 			p{
 				font-size: 14px;
-				line-height: 20px;
+				line-height:18px;
 				color:#fff;
 				z-index: 5;
 				position:relative;
 			}
+			span{
+				font-size: 26px;
+				color:#fff;
+				z-index: 5;
+				position:relative;
+				top:6px;
+			}
 			.collect{
 				position:absolute;
-				bottom:20px;
-				right:20px;
+				bottom:18px;
+				right:11px;
 				width: 80px;
 				z-index: 5;
 				button {
@@ -1258,12 +1440,12 @@ h1{
 		p{
 			font-size: 14px;
 			color:#727171;
-			line-height: 50px;
+			line-height: 42px;
 			padding-left: 5px;
 			span{
 				font-size: 18px;
 				background: url(../images_mdh/icon/personal-collect.png) no-repeat right center;
-				color:#e58e29;
+				color:@color;
 				float:right;
 				padding-right: 25px;
 				margin-right:10px;
