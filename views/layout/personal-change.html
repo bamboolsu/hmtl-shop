@@ -11,7 +11,15 @@
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
+       	<script type="text/javascript" src="../../js_mdh/third/YMDClass.js"></script>
+       	<script>
+       		window.onload=function(){
+  			new YMDselect('year1','month1','day1');
+
+       		}
+ 		 </script>
     </head>
+
     <body>
     	<!-- 头部开始 -->
 		<div id = "header">
@@ -80,63 +88,85 @@
 			</div>			
 		</div>
 		<!-- 主体内容开始 -->
-		<div class="personal clearfix">
 			<!-- 个人中心左侧导航开始 -->
+		<div class="personal clearfix">
 			<ul class="personal-nav fl">
-				<li><a href="./personal.html">我的信息</a></li>
+				<li><a class="current" href="javascript:;">我的信息</a></li>
 				<li class="nav"><a href="javascript:;">我的订单</a>
 					<div class="innav dn">
-						<a href="./personal-item.html">所有订单</a>
+						<a href="./personal-item.html">现有订单</a>
 						<a href="javascript:;">退货</a>
 						<a href="javascript:;">换货维修</a>
 					</div>
 				</li>
 				<li><a href="./personal-collect.html">我的收藏</a></li>
 				<li><a href="./personal-address.html">收件地址</a></li>
-				<li><a class="current" href="./personal-security.html">安全中心</a></li>
+				<li><a href="./personal-security.html">安全中心</a></li>
 			</ul>
-			<!-- 安全中心开始 -->
-			<div class="personal-security fr">
-				<form>
-					<div class="phone pattern">
-						<label class="din" for="mobile">验证方式</label>
-						<select>
-							<option value="mobile" selected="selected">手机短信验证</option>
-							<option value="email">
-								通过邮箱验证
-							</option>
-						</select>
-					</div>
-					<div class="phoneVerification">
-						<div class="phone number">
-							<label class="din" for="number">手机号</label>
-							<input type="text" class="mobileNumber" id="number" placeholder="请输入您的手机号码">
-						</div>
-						<div class="phone code clearfix">
-							<label class="din fl" for="code">手机验证码</label>
-							<input class="mobileCode fl" type="text" id="code" placeholder="请填写手机验证码">
-							<button type="button" class="codeButton fl">获取验证码</button>
-						</div>
-						<div class="phone newNumber">
-							<label class="din" for="newNumber">新手机号</label>
-							<input type="text" id="newNumber" placeholder="请输入新的手机号码">
-						</div>
-						<div class="phone newCode clearfix">
-							<label class="din fl" for="newCode">新手机验证码</label>
-							<input class="mobileCode fl" type="text" id="newCode" placeholder="请填写新手机验证码">
-							<button type="button" class="codeButton fl">获取验证码</button>
-						</div>
-					</div>
-					<button class="confirm sub" type="submit">提交</button>
-					<div class="popup">
-					<h6>买德好</h6>
-					<p>您的手机号码修改成功</p>
-					<span>x</span>
+			<!-- 个人信息详情开始 -->
+			<div class="personal-change fr">
+				<div class="images">
+					<p>更换图像</p>
+					<img src="../../images_mdh/icon/personal-img.png" height="239" width="239">
+					<form class="img-form">
+						<input type="file" >
+						<label>仅限于jpg、gif、png的图片文件</label>
+						<button type="submit">保存</button>
+						<button type="button">取消</button>
+					</form>
 				</div>
-				</form>
-			</div>
+				<div class="message">
+					<p>修改基本信息</p>
+					<form class="message-form">
+						<div class="usename">
+							<label class="din" for="usename">用户名:</label>
+							<input type="text" id="usename">
+							<span></span>
+						</div>
+						<div class="mobile">
+							<label class="din" for="mobile">手机号:</label>
+							<input type="text" id="mobile" >
+							<span></span>
+						</div>
+						<div clas="nickname">
+							<label class="din" for="nickname">昵称:</label>
+							<input type="text" id="nickname" >
+							<span>4~15位字符，包含英文、数字和中文</span>
+						</div>
+						<div class="gender">
+							<label class="din" for="gender">性别:</label>
+							<select id="gender">
+								<option value="男" selected="selected">男</option>
+								<option value="女" >女</option>
+							</select>
+							<span></span>
+						</div>
+						<div class="birthday">
+							<label class="din" for="birthday">生日:</label>
+							<select id="birthday" name="year1"></select>
+							<select name="month1"></select>
+							<select name="day1"></select>
+							<span></span>
+						</div>
+						<div class="address">
+							<label class="din" for="address">所在地:</label>
+							<select id="address">
+								<option>所在省份</option>
+							</select>
+							<select>
+								<option>所在城市</option>
+							</select>
+							<span></span>
+						</div>
+						<div class="describe">
+							<label class="describe din">个人描述:</label>
+							<textarea id="describe" placeholder="介绍下你自己，让更多的人认识你！(1~200个字符)"></textarea>
+						</div>
+						<button type="submit">保存</button>
+					</form>
+				</div>
+			</div>	
 		</div>
-
 		<!-- 底部开始 -->
 		<div id="footer">
       		<ul class="clearfix features">

@@ -146,10 +146,10 @@
 		</div>
 		<!-- 主体部分开始 -->
 		<div class="buy">
-			<div class="buyForm dn body-color" data-tag="addressForm" >
+			<div class="buyForm dn" data-tag="addressForm" >
     		<div class = "title clearfix" >
      			<span class = "fl" data-tag="title">新增地址</span>
-      		<strong class = "fr" data-tag="popupClose">x</strong>
+      			<strong class = "fr" data-tag="popupClose">x</strong>
     		</div>
 				<div class="username">
 					<label for="username">收货人姓名</label>
@@ -157,7 +157,7 @@
 				</div>
 				<div class="city">
 					<label for="city">省/市</label>
-					<select class="provinciala" data-tag="province" province = "2">
+					<select id="city" class="provinciala" data-tag="province" province = "2">
             			<option>所在省</option>
         			  </select>
  					<select class="provinciala" data-tag="city" disabled="disabled">
@@ -186,7 +186,7 @@
 					<button type = "button" data-tag="addressSubmit">保存地址</button>
 				</div>
 			</div>
-      <div class = "shielding-layer" data-tag="shieldingLayer"></div>
+      		<div class = "shielding-layer" data-tag="shieldingLayer"></div>
 			<!-- 收货地址开始 -->
 			<div class="buy-address dn" data-tag="butAddress" >
 				<h5 class = "clearfix">收货地址<a herf = "javascript:;" data-tag="addAddress" class = "fr">添加</a></h5>
@@ -293,8 +293,8 @@
 				<h5>备注</h5>
 				<textarea data-tag="note" placeholder="您可在此写下订单备注，不得超过350字符"></textarea>
 			</div>
-			<div class="settlement">
-				<!-- <h5>激活代金劵
+			<!-- <div class="settlement">
+				 <h5>激活代金劵
 					<a href="javascript:;">代金劵使用方法</a>
 				</h5>
 				<ul class="clearfix">
@@ -333,15 +333,15 @@
 							<em class="small dn"></em>
 						</em>
 					</li>
-				</ul> -->
+				</ul> 
 				<p>
-				<!-- 	代金券减免：-10.00元<br> -->
+					代金券减免：-10.00元<br>
 					付款总额:<span>￥800.00</span><br>
-					<!-- 为您节省：10.00元 -->
+					为您节省：10.00元 
 				</p>
 				<form class="buy-pay" action = "#" method = "post">
-          <input type = "hidden" value = "" name = "note" data-tag="inputNote" />
-          <input type = "hidden" value = "" name = "addressId" data-tag="inputAddressId" />
+          			<input type = "hidden" value = "" name = "note" data-tag="inputNote" />
+         			<input type = "hidden" value = "" name = "addressId" data-tag="inputAddressId" />
 					<label for="buy">结算方式</label>
 					<input id="buy" type="radio" checked="checked" name="pay">
 					<img src="../../images_mdh/icon/buy-pay-1.png" height="56" width="55">
@@ -350,7 +350,7 @@
 					<button type="button" data-tag="formSubmit">结算</button>
 				</form>
 			</div>
-		</div>
+		</div> -->
 		<!-- 底部开始 -->
 		<div id="footer">
       		<ul class="clearfix">
