@@ -91,37 +91,56 @@
 			<!-- 个人中心左侧导航开始 -->
 		<div class="personal clearfix">
 			<ul class="personal-nav fl">
-				<li><a class="current" href="javascript:;">我的信息</a></li>
-				<li class="nav"><a href="javascript:;">我的订单</a>
-					<div class="innav dn">
-						<a href="./personal-item.html">现有订单</a>
-						<a href="javascript:;">退货</a>
-						<a href="javascript:;">换货维修</a>
-					</div>
-				</li>
+				<li class="me"><a href="./personal.html">我的</a></li>
+				<li><a href="./personal-item.html">我的订单</a></li>
 				<li><a href="./personal-collect.html">我的收藏</a></li>
 				<li><a href="./personal-address.html">收件地址</a></li>
 				<li><a href="./personal-security.html">安全中心</a></li>
+				<li><a class="current" href="javascript:;">我的信息</a></li>
 			</ul>
 			<!-- 个人信息详情开始 -->
 			<div class="personal-change fr">
+				<p class="statement">请您放心填写，我们承诺妥善保管您的个人信息的隐私权</p>
 				<div class="images">
-					<p>更换图像</p>
-					<img src="../../images_mdh/icon/personal-img.png" height="239" width="239">
-					<form class="img-form">
-						<input type="file" >
-						<label>仅限于jpg、gif、png的图片文件</label>
-						<button type="submit">保存</button>
-						<button type="button">取消</button>
-					</form>
+					<img src="../../images_mdh/icon/personal-img.png" height="126" width="126">
+					<p class="din">昵称
+						<span>15269832985</span>
+					</p>
 				</div>
 				<div class="message">
-					<p>修改基本信息</p>
 					<form class="message-form">
-						<div class="usename">
-							<label class="din" for="usename">用户名:</label>
-							<input type="text" id="usename">
-							<span></span>
+						<div class="birthday">
+							<p> 
+								<span>生日</span>
+								(填写生日，小德会为你准备惊喜哦！)
+							</p>
+							<select id="birthday" name="year1"></select>
+							<select name="month1"></select>
+							<select name="day1"></select>
+						</div>
+						<div class="gender">
+							<span class="man din">男</span>
+							<span class="woman din">女</span>
+						</div>
+						<div class="genre">
+							<p>
+								<span class="din">细节控</span>
+								<span class="din">生活家</span>
+								<span class="din">厨艺达人</span>
+								<span class="din">剁手党</span>
+							</p>
+							<p>
+								<span class="din">萌妹纸</span>
+								<span class="din">大龄儿童</span>
+								<span class="din">女王大人</span>
+								<span class="din">准妈妈</span>
+								<span class="din">新晋妈妈</span>
+							</p>
+							<p>
+								<span class="din">品质男神</span>
+								<span class="din">极客怪咖</span>
+								<span class="din">新晋奶爸</span>
+							</p>
 						</div>
 						<div class="mobile">
 							<label class="din" for="mobile">手机号:</label>
@@ -142,10 +161,7 @@
 							<span></span>
 						</div>
 						<div class="birthday">
-							<label class="din" for="birthday">生日:</label>
-							<select id="birthday" name="year1"></select>
-							<select name="month1"></select>
-							<select name="day1"></select>
+							
 							<span></span>
 						</div>
 						<div class="address">
