@@ -9,8 +9,8 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
-        <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
+        <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
     </head>
     <body>
     	<!-- 头部开始 -->
@@ -80,138 +80,129 @@
 			</div>			
 		</div>
 		<!-- 主体内容开始 -->
-		<div class="personal clearfix">
 			<!-- 个人中心左侧导航开始 -->
+		<div class="personal clearfix">
 			<ul class="personal-nav fl">
 				<li><a href="./personal.html">我的信息</a></li>
-				<li class="nav"><a href="javascript:;">我的订单</a>
-					<div class="innav dn">
-						<a href="./personal-item.html">现有订单</a>
-						<a href="./personal-returngoods.html">退货</a>
-						<a href="./personal-exchange.html">换货维修</a>
+				<li class="nav">我的订单
+					<div class="innav">
+						<a class="current" href="javascrtpt:;">现有订单</a>
+						<a href="javascript:;">订单状态</a>
+						<a href="javascript:;">退货</a>
+						<a href="javascript:;">换货维修</a>
 					</div>
 				</li>
-				<li><a class="current" href="javascript:;">我的收藏</a></li>
+				<li><a href="./personal-collect.html">我的收藏</a></li>
 				<li><a href="./personal-address.html">收件地址</a></li>
-				<li><a href="./personal-security.html">安全中心</a></li>
+				<li class="nav">安全中心
+					<div class="innav dn">
+						<a href="./personal-security.html">修改密码</a>
+						<a href="./personal-mobile.html">修改手机</a>
+					</div>
+				</li>
 			</ul>
-			<div class="personal-collect fr">
-				<div class="without">
-					<p>您还没有收藏德国的好产品，<a href="./index.html">快去商城采购吧！</a></p>
+			<!-- 我的订单详情开始 -->
+			<div class="personal-item fr">
+					<!-- 订单基础信息开始 -->
+				<div class="personal-information">
+					<h5>订单基础信息</h5>
+					<div class="place">
+						<span>收货地址:</span>
+						<strong>陈xx</strong>
+						<em>15292045468</em>
+						<p>上海市，浦东新区，祖冲之路2305号，天之骄子B栋501室</p>
+					</div>
+					<div class="identity">
+						<span>身份证号码:</span>
+						<p>410185198807015488 </p>
+					</div>
+					<div class="item">
+						<p>
+							<span>订单编号:</span>
+							<strong>5236987125</strong>
+							<em>订单状态:</em>
+							<b>已收货</b>
+						</p>
+						<p>
+							<span>支付流水号:</span>
+							<strong>25689521</strong>
+							<em>支付方式:</em>
+							<b>微信支付</b>
+						</p>
+					</div>
+					<ul class="order-item bt clearfix">
+						<li>
+							<img src="../../images_mdh/content8.png" height="90" width="90">
+						</li>
+						<li class="goods">
+							<h6>小岛老师的蛋糕教师<span>小岛留美</span>烹饪美食与酒书籍</h6>
+							<div class="number din">
+								<span>240ml</span>
+								<p>x<em>10件</em></p>
+							</div>
+							<div class="pirce din">
+								<span>单价:￥<em>440.00</em></span>
+								<p>税率:11.9%</p>
+							</div>
+							<div class="place din">
+								<span>上海保税区发货</span>
+								<p>已送达</p>
+							</div>
+						</li>
+						<li class="money">
+							<div class="pay">
+								<strong>实付</strong>
+								<p class="cash">￥<span>800.00</span></p>
+							</div>
+							<p class="contain">
+								<span>包含税金</span>
+								<strong>￥<em>12.00</em></strong>
+								<span>运费</span>
+								<strong>￥<em>10.00</em></strong>
+							</p>
+							<b>已共优惠</b>
+							<span class="favorable">￥<em>10.00</em></span>
+						</li>
+					</ul>
+					<ul class="order-item clearfix">
+						<li>
+							<img src="../../images_mdh/content8.png" height="90" width="90">
+						</li>
+						<li class="goods">
+							<h6>小岛老师的蛋糕教师<span>小岛留美</span>烹饪美食与酒书籍</h6>
+							<div class="number din">
+								<span>240ml</span>
+								<p>x<em>10件</em></p>
+							</div>
+							<div class="pirce din">
+								<span>单价:￥<em>440.00</em></span>
+								<p>税率:11.9%</p>
+							</div>
+							<div class="place din">
+								<span>上海保税区发货</span>
+								<p>已送达</p>
+							</div>
+						</li>
+						<li class="money">
+							<div class="pay">
+								<strong>实付</strong>
+								<p class="cash">￥<span>800.00</span></p>
+							</div>
+							<p class="contain">
+								<span>包含税金</span>
+								<strong>￥<em>12.00</em></strong>
+								<span>运费</span>
+								<strong>￥<em>10.00</em></strong>
+							</p>
+							<b>已共优惠</b>
+							<span class="favorable">￥<em>10.00</em></span>
+						</li>
+					</ul>
 				</div>
-				<ul class="clearfix" >
-					<li class="fl" productId = "123456" >
-						<a href = "./item.html" target="blank">
-							<img src="../../images_mdh/r1.png" height="260" width="260">
-							<p>运动设备
-								<span>1024</span>
-							</p>
-							<div class="top">
-								<div class="intop"></div>
-								<h3>兔子储物盒</h3>
-								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>
-								<span>￥325.00</span>
-								<div class="collect">
-									<button data-tag="addCart" ></button>
-									<button class="last" ></button>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="fl" productId = "123456" >
-						<a href = "./item.html" target="blank">
-							<img src="../../images_mdh/r2.png" height="260" width="260">
-							<p>运动设备
-								<span>1</span>
-							</p>
-							<div class="top">
-								<div class="intop"></div>
-								<h3>兔子储物盒</h3>
-								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>
-								<span>￥160.00</span>
-								<div class="collect">
-									<button data-tag="addCart" ></button>
-									<button class="last" ></button>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="fl" productId = "123456" >
-						<a href = "./item.html" target="blank">
-							<img src="../../images_mdh/r3.png" height="260" width="260">
-							<p>运动设备
-								<span>95</span>
-							</p>
-							<div class="top">
-								<div class="intop"></div>
-								<h3>兔子储物盒</h3>
-								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>\
-								<span>￥280.00</span>
-								<div class="collect">
-									<button data-tag="addCart" ></button>
-									<button class="last" ></button>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="fl" productId = "123456" >
-						<a href = "./item.html" target="blank">
-							<img src="../../images_mdh/r1.png" height="260" width="260">
-							<p>运动设备
-								<span>1024</span>
-							</p>
-							<div class="top">
-								<div class="intop"></div>
-								<h3>兔子储物盒</h3>
-								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>
-								<span>￥325.00</span>
-								<div class="collect">
-									<button data-tag="addCart" ></button>
-									<button class="last" ></button>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="fl" productId = "123456" >
-						<a href = "./item.html" target="blank">
-							<img src="../../images_mdh/r2.png" height="260" width="260">
-							<p>运动设备
-								<span>1</span>
-							</p>
-							<div class="top">
-								<div class="intop"></div>
-								<h3>兔子储物盒</h3>
-								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>
-								<span>￥160.00</span>
-								<div class="collect">
-									<button data-tag="addCart" ></button>
-									<button class="last" ></button>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="fl" productId = "123456" >
-						<a href = "./item.html" target="blank">
-							<img src="../../images_mdh/r3.png" height="260" width="260">
-							<p>运动设备
-								<span>95</span>
-							</p>
-							<div class="top">
-								<div class="intop"></div>
-								<h3>兔子储物盒</h3>
-								<p>为城市骑行设计的后街会带你轻盈穿梭街头，做一个城市骑行家！</p>\
-								<span>￥280.00</span>
-								<div class="collect">
-									<button data-tag="addCart" ></button>
-									<button class="last" ></button>
-								</div>
-							</div>
-						</a>
-					</li>
-				</ul>
 			</div>
+
 		</div>
-		 <!-- 底部开始 -->
+   <!-- 底部开始 -->
 		<div id="footer">
       		<ul class="clearfix features">
       		  <li>
