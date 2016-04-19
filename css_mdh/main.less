@@ -204,6 +204,8 @@ body {
 			color: #828282;
 			padding-left: 10px;
 			padding-top: 10px;
+			height: 18px;
+			overflow:hidden;
 		}
 		.search .keyword-search a {
 			display: inline-block;
@@ -216,7 +218,7 @@ body {
 	padding-bottom: 18px;
 	padding-top: 18px;
 	.right {
-		width: 50%;
+		width: 100%;
 		a {
 			padding: 0 8px;
 			line-height: 18px;
@@ -382,6 +384,8 @@ div.flicking_con .flicking_inner {
 	// position: absolute; 
 	// z-index: 20;
 	// text-indent:-9999px;
+	height: 82px;
+  overflow: hidden;
 }
 div.flicking_con a {
 	// width: 10px;
@@ -2281,12 +2285,10 @@ body.emailverification {
 			button{
 				width: 200px;
 				height: 45px;
-				margin:78px 0 78px 100px;
-				padding-left:20px;
+				margin:78px 0;
 				font-size: 18px;
 				text-align:center;
 				color:#fff;
-				letter-spacing: 20px;
 				background: #444;
 			}
 		}
@@ -2334,7 +2336,7 @@ body.emailverification {
   position:fixed;
   top:0;
   left:0;
-  z-index:999;
+  z-index:9999999999;
   opacity:0.3;
   filter:alpha(opacity=30);
 }
@@ -2345,18 +2347,18 @@ body.emailverification {
 	background: #F3F3F3;
 	position: fixed;
 	display: none;
-	z-index: 99999;
+	z-index: 99999999999;
 	.title {
 		width: 100%;
 		height: 40px;
 		background:#444;
 		border-bottom: 1px solid #D2D2D2;
+		text-align: center;
 		span {
 			line-height: 40px;
 			font-size: 20px;
 			color: #FFF;
 			display: inline-block;
-			padding-left: 32px;
 		}
 		strong {
 			font-size: 20px;
@@ -2369,7 +2371,7 @@ body.emailverification {
 	}
 	.context {
 		padding: 32px 10px 20px;
-		p {
+		dl {
 			text-align: center;
 			font-size: 16px;
 			color: #727171;
