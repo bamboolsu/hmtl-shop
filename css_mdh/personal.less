@@ -482,6 +482,33 @@ h1{
 		text-align: center;
 	}
 }
+/* 个人信息开始 */
+.personal-message{
+	width: 820px;
+	img{
+		margin-bottom:19px;
+	}
+	p{
+		font-size:@font;
+		color:#808080;
+		line-height: 35px;
+	}
+	.sex{
+		b{
+			font-weight: normal;
+		}
+		em{
+			margin:0 25px;
+		}
+	}
+	a{
+		font-size: 12px;
+		color:#804736;
+	}
+}
+
+
+
 /* 修改个人信息开始 */
 .personal-change{
 	width: 820px;
@@ -517,6 +544,8 @@ h1{
 					border:1px solid #B5B5B5;
 					margin:25px 12px 25px 0;
 					padding-left:10px;
+					font-size: 14px;
+					color:#808080;
 				}	
 		}
 		.gender{
@@ -530,15 +559,26 @@ h1{
 				padding-left:44px;
 				margin:0 12px 25px 0;
 				cursor:pointer;
+				background: url(../images_mdh/icon/man.png) no-repeat 12px center;
+			}
+			.woman{
+				background: url(../images_mdh/icon/woman.png) no-repeat 12px center;
+			}
+			span:hover{
+				background: url(../images_mdh/icon/mans.png) no-repeat 12px center;
+			}
+			.woman:hover{
+				background: url(../images_mdh/icon/womans.png) no-repeat 12px center;
 			}
 		}
 		.genre{
+			margin-bottom:78px;
 			p{
 				margin-bottom:25px;
 				span{
 					width: 75px;
 					height: 25px;
-					border:1px solid #B5B5B5;
+					border:1px solid #EBEBEB;
 					font-size: @font;
 					color:#808080;
 					text-align:center;
@@ -548,51 +588,75 @@ h1{
 				}
 			}
 		}
-		label{
-			width:70px;
-			font-size: @font;
-			color:#808080;
-			line-height: 40px;
-			text-align:right;
-			margin-right:20px;
+		.term{
+			p{
+				font-size: @font;
+				color:#808080;
+			}
+			select{
+				width: 87px;
+				height: 25px;
+				border:1px solid #B5B5B5;
+				margin:17px 12px 35px 0;
+				padding-left:10px;
+				font-size: 14px;
+				color:#808080;
+			}
 		}
-		label.describe{
-			vertical-align: top;
+		.baby{
+			p{
+				font-size: @font;
+				color:#808080;
+			}
+			span{
+				width: 29px;
+				height: 25px;
+				line-height: 25px;
+				border:1px solid #B5B5B5;
+				font-size: @font;
+				color:#808080;
+				padding-left:44px;
+				margin:17px 12px 35px 0;
+				cursor:pointer;
+				background: url(../images_mdh/icon/man.png) no-repeat 12px center;
+			}
+			.woman{
+				background: url(../images_mdh/icon/woman.png) no-repeat 12px center;
+			}
+			span:hover{
+				background: url(../images_mdh/icon/mans.png) no-repeat 12px center;
+			}
+			.woman:hover{
+				background: url(../images_mdh/icon/womans.png) no-repeat 12px center;
+			}
 		}
-		input{
-			width: 270px;
-			height: 40px;
-			background: #f1f1f1;
-			font-size: @font;
-			color:#808080;
-			padding-left:15px;
-			line-height: 40px;
-		}
-		
-		
-		
-		textarea{
-			width: 392px;
-			height:150px;
-			padding:15px;
-			font-size: @font;
-			color:#808080;
-			background: #f1f1f1;
+		.baby-birthday{
+			p{
+				font-size: @font;
+				color:#808080;
+			}select{
+				width: 87px;
+				height: 25px;
+				border:1px solid #B5B5B5;
+				margin:17px 12px 35px 0;
+				padding-left:10px;
+				font-size: 14px;
+				color:#808080;
+			}
 		}
 		button{
-			width: 200px;
-			height: 45px;
-			font-size: 20px;
-			color:#444;
-			text-align:center;
-			letter-spacing: 20px;
+			width: 203px;
+			height: 43px;
+			background: #444;
+			color:#fff;
+			font-size: 18px;
+			line-height: 43px;
 			padding-left:20px;
-			background:#f1a223;
-			margin-left:200px;
-			margin-top:30px; 
+			letter-spacing: 20px;
 		}
 	}
 }
+
 
 /* 订单中心详情开始 */
 .personal-item .order-title{

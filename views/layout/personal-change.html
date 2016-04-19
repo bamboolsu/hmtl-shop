@@ -11,7 +11,7 @@
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
-       	<script type="text/javascript" src="../../js_mdh/third/YMDClass.js"></script>
+       	<script type="text/javascript" src="../../js_mdh/third/YMDClass.mini.js"></script>
        	<script>
        		window.onload=function(){
   			new YMDselect('year1','month1','day1');
@@ -142,41 +142,25 @@
 								<span class="din">新晋奶爸</span>
 							</p>
 						</div>
-						<div class="mobile">
-							<label class="din" for="mobile">手机号:</label>
-							<input type="text" id="mobile" >
-							<span></span>
+						<p class="statement">我们希望了解您的更多个人信息，以便为您提供更加贴心的的服务体验</p>
+						<div class="term">
+							<p>
+								预产期
+							</p>
+							<select name="year1"></select>
+							<select name="month1"></select>
+							<select name="day1"></select>
 						</div>
-						<div clas="nickname">
-							<label class="din" for="nickname">昵称:</label>
-							<input type="text" id="nickname" >
-							<span>4~15位字符，包含英文、数字和中文</span>
+						<div class="baby">
+							<p>宝宝性别</p>
+							<span class="man din">男</span>
+							<span class="woman din">女</span>
 						</div>
-						<div class="gender">
-							<label class="din" for="gender">性别:</label>
-							<select id="gender">
-								<option value="男" selected="selected">男</option>
-								<option value="女" >女</option>
-							</select>
-							<span></span>
-						</div>
-						<div class="birthday">
-							
-							<span></span>
-						</div>
-						<div class="address">
-							<label class="din" for="address">所在地:</label>
-							<select id="address">
-								<option>所在省份</option>
-							</select>
-							<select>
-								<option>所在城市</option>
-							</select>
-							<span></span>
-						</div>
-						<div class="describe">
-							<label class="describe din">个人描述:</label>
-							<textarea id="describe" placeholder="介绍下你自己，让更多的人认识你！(1~200个字符)"></textarea>
+						<div class="baby-birthday">
+							<p>宝宝生日</p>
+							<select name="year1"></select>
+							<select name="month1"></select>
+							<select name="day1"></select>
 						</div>
 						<button type="submit">保存</button>
 					</form>
