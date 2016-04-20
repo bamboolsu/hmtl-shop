@@ -7,8 +7,10 @@
     <meta name="keywords" content="test" />
     <meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" href="../../css_mdh/common.css" />
     <link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
     <script src = "../../js_mdh/third/jquery.js"></script>
+    <script src = "../../js_mdh/third/common.js"></script>
     <script src = "../../js_mdh/third/jqueryzoom.js"></script>
     <script src = "../../js_mdh/main/views/base.js"></script>
     <script src = "../../js_mdh/main/views/item.js"></script>
@@ -55,10 +57,24 @@
           }
         });
 
+
+        $('#footer').load('index.html');
+
       });
     </script>
   </head>
   <body>
+
+ <!-- 头部开始 -->
+  <div data-load="headerData" ></div>
+  <script>
+    $('[data-load="headerData"]').load('header.html', {}, function (data) {
+      $('[data-load="headerData"]').after(data);
+      $('[data-load="headerData"]').remove();
+    });
+  </script>
+  <!-- end -->
+
   
     <!-- main start -->
     <div class = "item-main">
@@ -102,7 +118,7 @@
 
           </div>
         </div>
-        <div class = "item-right fl">
+       <!--  <div class = "item-right fl">
           <div class = "title" >
             <h2>法国原装下午茶茶壶</h2>
             <p>
@@ -206,6 +222,91 @@
               </button>
             </div>
           </div>
+        </div> -->
+        <div class="item-right fl">
+      <div class="title">
+        <h2>苹果六</h2>
+        <p>
+            苹果小标题
+        </p>
+      </div>
+      
+      <div class="price">
+      <h5 id="price">￥5000.00</h5>
+        <p>
+          <span>
+            <em>市场价:</em>
+            <del id="marketPrice">￥6000.00</del>
+          </span>
+        </p>
+      </div>
+      <div class="item-sku" data-tag="formList">
+        
+                        <div id="specification" class="specification clearfix">
+                <div class="title">请选择商品规格</div>
+                  <dl class="clearfix">
+                    <dt>
+                      <span title="color">color:</span>
+                    </dt>
+                        <dd>
+                          <a href="javascript:;" class="locked" val="0">
+                            白色<span title="点击取消选择">&nbsp;</span>
+                            <i></i>
+                          </a>
+                        </dd>
+                        <dd>
+                          <a href="javascript:;" val="1" class="locked selected">
+                            黑色<span title="点击取消选择">&nbsp;</span>
+                            <i></i>
+                          </a>
+                        </dd>
+                  </dl>
+              </div>
+        
+          
+        <dl class="amount clearfix">
+                <dt>数量</dt>
+                <dd>
+                  <a href="javascript:void(0)" data-tag="minus">-</a>
+                  <input data-tag="number" value="1">
+                  <a href="javascript:void(0)" data-tag="plus">+</a>
+                </dd>
+              </dl>
+            
+        <dl class="share clearfix">
+                <dt>分享</dt>
+                <dd>   
+                   
+            <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+              <a class="bds_qzone" title="分享到QQ空间" href="#"></a>
+              <a class="bds_tsina" title="分享到新浪微博" href="#"></a>
+              <a class="bds_tqq" title="分享到腾讯微博" href="#"></a>
+              <a class="bds_renren" title="分享到人人网" href="#"></a>
+              <a class="bds_t163" title="分享到网易微博" href="#"></a>
+              <span class="bds_more"></span>
+              <a class="shareCount" href="#" title="累计分享0次">0</a>
+            </div>
+          
+                </dd>
+              </dl>
+              <form method="post" action="/jshop/order/checkout.jhtml">
+              <div class="button" data-tag="button"><img src="http://127.0.0.1:8080/jshop/upload/image/201604/2bfdc5b7-32f6-4986-bf7b-2ba0fed617d8-thumbnail.jpg" largeimg="http://127.0.0.1:8080/jshop/upload/image/201604/2bfdc5b7-32f6-4986-bf7b-2ba0fed617d8-large.jpg" jqimg="http://127.0.0.1:8080/jshop/upload/image/201604/2bfdc5b7-32f6-4986-bf7b-2ba0fed617d8-source.jpg" title="小图标" style="width: 0px; height: 0px;">
+                
+                <button type="button" class="add" data-tag="addCart">
+                   加入购物车
+                </button>
+              
+                <input type="hidden" id="productId" name="productId" value="">
+                <input type="hidden" id="quantity" name="quantity" value="">
+                <input type="hidden" name="type" value="buy">
+                <button type="button" class="submit" data-tag="buyImmediately">
+                   立即购买
+                </button>
+                
+              </div>
+              </form>
+            </div>
+            
         </div>
       </div>
       <div class = "item-main-grid clearfix" >
@@ -238,101 +339,16 @@
       </div>
     </div>
     <!-- main end -->
-    
+
+    <!-- 底部开始 -->
+    <div data-load="footerData" >
       <script>
-
-        $(function () {
-          // 购物车加减产品事件
-          function minusPlusShopping(data) {
-
-            console.log("post: ");
-            console.log(data);
-
-            $.ajax({
-              url: '../../test/minusplus.json',
-              type: "POST",
-              data: data,
-              dataType: "json",
-              cache: false,
-              success: function(message) {
-                console.log(message)
-              }
-            });
-          };
-
-           // 加
-          $('[data-right="plus"]').bind('click', function (e) {
-            var times = 100;
-            var $number = $(this).siblings('[data-right="num"]');
-            var $priceAll = $(this).siblings('[data-right="priceAll"]');
-            var num = parseInt($number.html());
-            var priceAll = parseInt($priceAll.html())*times;
-            var price = priceAll/num;
-            if (num > 0 ) {
-              $number.html(++num);
-              $priceAll.html(((priceAll+price)/times).toFixed(2));
-              // ajax 收集数据
-              data = {
-                productId: $(this).parents('.warp').attr('data-product'),
-                num: num
-              }
-              minusPlusShopping(data);  // ajax
-            }
-          });
-
-          // 减
-          $('[data-right="minus"]').bind('click', function () {
-            var times = 100;
-            var $number = $(this).siblings('[data-right="num"]');
-            var $priceAll = $(this).siblings('[data-right="priceAll"]');
-            var num = parseInt($number.html());
-            var priceAll = parseInt($priceAll.html())*times;
-            var price = priceAll/num;
-            if (num >= 2 ) {
-              $number.html(--num);
-              $priceAll.html(((priceAll-price)/times).toFixed(2));
-
-               // ajax 收集数据
-              data = {
-                productId: $(this).parents('.warp').attr('data-product'),
-                num: num
-              }
-              minusPlusShopping(data);  // ajax
-            }
-          });
-
-          $('[data-right="delete"]').bind('click', function () {
-            var target = $(this).parents('.warp');
-            var productId = target.attr('data-product');
-            var checked = target.find('[data-tag="select"]').is(':checked');
-            var self = this;
-            var data = {
-              productId: productId
-            };
-
-            console.log("post: ");
-            console.log(data);
-
-            $.ajax({
-              url: "../../test/test.json",
-              type: "POST",
-              data: data,
-              dataType: "json",
-              cache: false,
-              success: function(message) {
-
-                console.log("message: ");
-                console.log(message);
-
-                if (message.type == "success") {
-                  target.remove();
-                }
-              }
-            });
-          });
-
-
+        $('[data-load="footerData"]').load('footer.html', {}, function (data) {
+          $('[data-load="footerData"]').after(data);
+          $('[data-load="footerData"]').remove();
         });
       </script>
+    </div>
+    <!-- end -->
   </body>
 </html>

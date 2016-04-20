@@ -7,44 +7,186 @@
 		<meta name="keywords" content="test" />
 		<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="../../css_mdh/common.css" />
         <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
         <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
+        <script src = "../../js_mdh/third/common.js"></script>
+        <script type="text/javascript" src="../../js_mdh/main/third/ajaxFileUpload.js"></script>
+        <script type="text/javascript" src="../../js_mdh/third/jquery.validate.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
         <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
+        <script>
+            $(function () {
+                var $submitForm = $('#submitForm');
+                var $inputForm = $('#inputForm');
+                var $fileButton = $('[data-file="button"]');
+
+                 // 表单验证
+                $submitForm.validate({
+                    rules: {
+                      reason: {
+                        required: true
+                      },
+
+                      goodsId: {
+                        required: true,
+                      },
+
+                      state: {
+                        required: true,
+                        pattern: /.{4,}/
+                      }
+
+                    },
+
+                    messages: {
+                      reason: {
+                        required : "请选择退货原因"
+                      },
+
+                      goodsId: {
+                        required : "请选择退货商品"
+                      },
+
+                      state: {
+                        required : "请填写说明",
+                        pattern: "说明不能为空"
+                      }
+
+                    },
+
+                    groups: {
+                        username: "reason goodsId state"
+                    },
+
+                    errorPlacement: function (error, element) {
+                        if (element.attr('name') == 'reason' || element.attr('name') == 'goodsId' || element.attr('name') == 'state') {
+                            error.insertAfter("#error");
+                        }
+                        else {
+                            error.insertAfter(element);
+                        }
+                    },
+                    submitHandler: function(form) {
+                       $inputForm.submit(); 
+                    }
+                });
+
+                // 添加图片
+                $fileButton.bind('click', function (event) {  
+                    $('#imgfile').click();
+                });
+                $('#imgfile').bind('change', function () {
+                    uploadImg('imgfile', 'imgContainer');
+                });
+
+                // function change(event) {
+                //     console.log('event');
+                //     var pic = document.getElementById("preview"),
+                //         file = event.target;
+                 
+                //     var ext = file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
+                 
+                //      // gif在IE浏览器暂时无法显示
+                //      if(ext != 'png' && ext != 'jpg' && ext != 'jpeg'){
+                //          alert("图片的格式必须为png或者jpg或者jpeg格式！"); 
+                //          return;
+                //     }
+                //     var isIE = navigator.userAgent.match(/MSIE/)!= null,
+                //          isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
+                 
+                //      if(isIE) {
+                //         file.select();
+                //         var reallocalpath = document.selection.createRange().text;
+                 
+                //         // IE6浏览器设置img的src为本地路径可以直接显示图片
+                //          if (isIE6) {
+                //             pic.src = reallocalpath;
+                //          }else {
+                //             pic.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + reallocalpath + "\")";
+                //             pic.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+                //          }
+                //      }else {
+                //         html5Reader(file);
+                //     }
+                // }
+                 
+                // function html5Reader(file){
+                //      var file = file.files[0];
+                //      var reader = new FileReader();
+                //      reader.readAsDataURL(file);
+                //      reader.onload = function(e){
+                //          var pic = document.getElementById("preview");
+                //          pic.src=this.result;
+                //      }
+                // }
+
+                function uploadImg(imgfileId, imgcontainerId) {
+                    $.ajaxFileUpload({
+                      fileElementId: imgfileId,
+                      url: '/UploadImage',
+                      dataType: 'json',
+                      beforeSend: function (XMLHttpRequest) {
+                        
+                      },
+                      success: function (data, textStatus) {
+                        if (typeof data.error == 'undefined') {
+                            var img = "<img src='"+data+"' width='90' height='97' />";
+                            $("#" + imgcontainerId).append(img);
+                            $('#imgState').append('<span class="din">添加凭证说明</span>');
+                        } else {
+                            layer('图片上传失败！');
+                        }
+                       
+                      },
+                      error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        layer('图片上传失败！');
+                      }
+                    });
+                }
+            });
+        </script>
     </head>
     <body>
+         <!-- 头部开始 -->
+        <div data-load="headerData" ></div>
+        <script>
+            $('[data-load="headerData"]').load('../layout/header.html', {}, function (data) {
+                $('[data-load="headerData"]').after(data);
+                $('[data-load="headerData"]').remove();
+            });
+        </script>
+        <!-- end -->
+
         <!-- 主体内容开始 -->
             <!-- 个人中心左侧导航开始 -->
         <div class="personal clearfix">
-            <ul class="personal-nav fl">
-                <li><a href="./personal.html">我的信息</a></li>
-                <li class="nav"><a class="current" href="javascript:;">我的订单</a>
-                    <div class="innav">
-                        <a href="javascript:;" class="current">所有订单</a>
-                        <a href="javascript:;">退货</a>
-                        <a href="./personal-exchange.html">换货维修</a>
-                    </div>
-                </li>
-                <li><a href="./personal-collect.html">我的收藏</a></li>
-                <li><a href="./personal-address.html">收件地址</a></li>
-                <li><a href="./personal-security.html">安全中心</a></li>
-            </ul>
+            <!-- 左侧 -->
+            <div data-load="loadData" ></div>
+            <script>
+                $('[data-load="loadData"]').load('../personal/personalLeft.html', {}, function (data) {
+                    $('[data-load="loadData"]').after(data);
+                    $('[data-load="loadData"]').remove();
+                });
+            </script>
+            <!-- end -->
             <!-- 我的订单详情开始 -->
             <div class="personal-returngoods fr ">
                 <h5>退货退款</h5>
-                <form class="return-form">
+                <form class="return-form" action = "#" method = "post" id = "submitForm" enctype="multipart/form-data">
                     <div class="return">
-                        <label class="din" for="return">退货退款原因</label>
-                        <select id="return">
-                            <option>快递公司丢件</option>
+                        <label class="din" >退货退款原因</label>
+                        <select name = "reason">
+                            <option selected="selected">快递公司丢件</option>
+                            <option>包装有所损坏</option>
                         </select>
                     </div>
                     <p class="warn">由于保税仓发货的特殊性，暂时无法换货，请您谅解。若仍有需要，重新下单即可</p>
                     <div class="order">
-                    <input class="check din" type="checkbox" >
+                        <input value = "123456" class="check din" type="checkbox" name="goodsId">
                         <ul class="order-item bt clearfix">
                             <li>
-                                <img src="../../images_mdh/content8.png" height=    "90" width="90">
+                                <img src="../../images_mdh/content8.png" height= "90" width="90">
                             </li>
                             <li class="goods">
                                 <h6>小岛老师的蛋糕教师<span>小岛留美</span>  烹饪美食与酒书籍</h6>
@@ -75,11 +217,11 @@
                                 <b>已共优惠</b>
                                 <span class="favorable">￥<em>10.00</em></span>
                             </li>
-                    </ul>
+                        </ul>
                     </div>
                     <div class="order">
-                    <input class="check din" type="checkbox" >
-                       <ul class="order-item clearfix">
+                        <input value = "123456" class="check din" type="checkbox" name = "goodsId" >
+                        <ul class="order-item clearfix">
                             <li>
                                 <img src="../../images_mdh/content8.png" height=    "90" width="90">
                             </li>
@@ -115,24 +257,31 @@
                         </ul>
                     </div>
                     <div class="state">
-                        <label class="din" for="state">说明</label>
-                        <textarea id="state" placeholder="0-200字"></textarea>
+                        <label class="din" >说明</label>
+                        <textarea placeholder="0-200字" name = "state"></textarea>
                     </div>
                     <div class="prove">
                         <div class="inprove">
-                            <label class="din" for="prove">上传凭证</label>
-                            <input type="file" id="prove" placeholder="选择凭证照片">
+                            <label class="din" >上传凭证</label>
+                            <button type = "button" class = "files-button" data-file="button" >选择凭证照片</button>
+                            <input name="imgfile" id="imgfile" type="file" />
                             <a href="javascript:;">上传帮助</a>
                         </div>
-                        <img class="one" src="../../images_mdh/icon/return.png" height="90" width="97">
-                        <img src="../../images_mdh/icon/return.png" height="90" width="97">
-                        <div class="append">
-                            <span class="din">添加凭证说明</span>
-                            <span class="din">添加凭证说明</span>
+                        <div class="one" id="imgContainer">
+                            <!-- <img src="../../images_mdh/icon/return.png" height="90" width="97">
+                            <img src="../../images_mdh/icon/return.png" height="90" width="97"> -->
+                        </div> 
+                        <div class="append" id = "imgState">
+                           <!--  <span class="din">添加凭证说明</span>
+                            <span class="din">添加凭证说明</span> -->
                         </div>
                     </div>
-                    <button class="sub" type="submit">提交申请</button>
-                    <button type="button" class="back">取消并返回</button>
+                    
+                    <div class = "return-goods">
+                        <div id = "error"></div>
+                        <button class="sub" type="submit" id = "inputSubmit">提交申请</button>
+                        <a class="back" href = "./personal-item.html">取消并返回</a>
+                    </div>
                 </form>
                 <div class="service">
                     <P>若您的上述问题未能解决，请您直接联系我们客服</P>
@@ -141,5 +290,16 @@
                 </div>
             </div>
         </div>
+
+        <!-- 底部开始 -->
+        <div data-load="footerData" >
+            <script>
+                $('[data-load="footerData"]').load('../layout/footer.html', {}, function (data) {
+                    $('[data-load="footerData"]').after(data);
+                    $('[data-load="footerData"]').remove();
+                });
+            </script>
+        </div>
+        <!-- end -->
     </body>
 </html>

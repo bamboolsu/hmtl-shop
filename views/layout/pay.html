@@ -7,8 +7,10 @@
 		<meta name="keywords" content="test" />
 		<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
+		<link type="text/css" rel="stylesheet" href="../../css_mdh/common.css" />
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/main.css" />
 		<script src = "../../js_mdh/third/jquery.js"></script>
+		<script src = "../../js_mdh/third/common.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
 		<script src = "../../js_mdh/main/views/pay.js"></script>
 		<script>
@@ -41,7 +43,16 @@
 		</script>
 	</head>
     <body>
-    
+    <!-- 头部开始 -->
+			<div data-load="headerData" ></div>
+			<script>
+				$('[data-load="headerData"]').load('header.html', {}, function (data) {
+					$('[data-load="headerData"]').after(data);
+					$('[data-load="headerData"]').remove();
+				});
+			</script>
+			<!-- end -->
+
 		<!-- 主体部分开始 -->
 		<div class="pay">
 			<div class="pay-order">
@@ -86,7 +97,7 @@
 			
 		</div>
 
-		<div class = "wechat-refresh" data-tag="wechatRefresh" >
+		<!-- <div class = "wechat-refresh" data-tag="wechatRefresh" >
 			<h3>微信支付</h3>
 			<p>你的二维码已过期<br/>请刷新页面</p>
 			<a href = "javascript:;" data-tag="refreshClick">刷&nbsp;新</a>
@@ -102,8 +113,19 @@
 			<div class = "context" >
 				<a href="./personal-item.html">查看我的订单</a>
 			</div>
-			
-		</div>
+		</div> -->
+
 		
+		<!-- 底部开始 -->
+		<div data-load="footerData" >
+			<script>
+				$('[data-load="footerData"]').load('footer.html', {}, function (data) {
+					$('[data-load="footerData"]').after(data);
+					$('[data-load="footerData"]').remove();
+				});
+			</script>
+		</div>
+		<!-- end -->
+
     </body>
 </html>
