@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-    <meta charset = "utf-8" />
+    <head>
+        <meta charset = "utf-8" />
 		<title>买德好</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="keywords" content="test" />
@@ -13,8 +13,11 @@
     <script src = "../../js_mdh/third/common.js"></script>
     <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
     <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
-</head>
-<body>
+       	
+    </head>
+
+    <body>
+
     <!-- 头部开始 -->
 		<div data-load="headerData" ></div>
 		<script>
@@ -25,75 +28,37 @@
 		</script>
 		<!-- end -->
 
-		<!-- 主体内容开始 -->
-		<div class="personal clearfix">
+    	<div class="personal clearfix">
+    	
 			<!-- 左侧 -->
 			<div data-load="loadData" ></div>
 			<script>
-				$('[data-load="loadData"]').load('../personal/personalLeft.html', {}, function (data) {
+				$('[data-load="loadData"]').load('personalLeft.html', {}, function (data) {
 					$('[data-load="loadData"]').after(data);
 					$('[data-load="loadData"]').remove();
 				});
 			</script>
 			<!-- end -->
-			<!-- 我的订单详情开始 -->
-			<div class="personal-item fr">
-				
-				<!-- 退货开始 -->
-				<div class="personal-return">
-					<h5 class="personal-state-title">退货</h5>
-					<div class="personal-state-plan">
-						<span class="plan one din">
-							<strong class="current">1</strong>
-							<p class="smt">提交申请</p>
-							<div class="time">
-								<span>2016-3-28</span>
-								<em>15：32</em>
-							</div>
-						</span>
-						<p class="next din">
-						</p>
-						<span class="plan two din">
-							<strong class="current">2</strong>
-							<p class="smt">申请通过请寄回</p>
-							<div class="time">
-								<span>2016-3-28</span>
-								<em>15：2</em>
-							</div>
-						</span>
-						<p class="next din">
-						</p>
-						<span class="plan threen din">
-							<strong class="current">3</strong>
-							<p class="smt">退货商品已收到</p>
-							<div class="time">
-								<span>2016-11-28</span>
-								<em>15：32</em>
-							</div>
-						</span>
-						<p class="next din"></p>
-						<span class="plan four din">
-							<strong>4</strong>
-							<p class="smt">订单退款中</p>
-							<div class="time">
-								<span>2016-3-28</span>
-								<em>15：32</em>
-							</div>
-						</span>
-						<p class="next din"></p>
-						<span class="plan four din">
-							<strong>5</strong>
-							<p class="smt">已完成</p>
-							<div class="time">
-								<span>2016-3-28</span>
-								<em>15：32</em>
-							</div>
-						</span>
-					</div>
-				</div>
-				
-			</div>
 
+			<!-- 个人信息详情开始 -->
+			<div class="personal-message fr">
+				<div class="message">
+					<img src="../../images_mdh/icon/personal-img.png" height="126" width="126">
+					<p>昵称</p>
+					<p>15289365896</p>
+					<p>1987-08-12</p>
+					<p class="sex">
+						<span>女</span>
+						<em>新晋妈妈</em>
+						<b>剁手党</b>
+					</p>
+					<p class="term">
+						<span>预产期</span>
+						<em>2016-6-23</em>
+					</p>
+					<a href="./personal-change.html">修改</a>
+				</div>
+			</div>
 		</div>
 
 		<!-- 底部开始 -->
@@ -106,6 +71,5 @@
 			</script>
 		</div>
 		<!-- end -->
-		
-  </body>
+    </body>
 </html>
