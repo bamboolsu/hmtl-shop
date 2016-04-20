@@ -299,8 +299,11 @@ body {
 #header .nav ul>li.fr{
 	float:right;
 }
-#header .nav ul>li>a:hover{
-	color:#323232;
+#header .nav ul>li:hover{
+	background: #000;
+	a{
+		color:#fff;
+	}
 }
 #header .nav ul li .innav{
 	width: 1060px;
@@ -470,7 +473,7 @@ div.flicking_con a.on {
 .main{
 	width: 1100px;
 	height: 200px;
-	margin: 35px auto 18px;
+	margin: 35px auto 0px;
 }
 .main ul li:first-child{
 	margin-left: 20px;
@@ -490,8 +493,6 @@ div.flicking_con a.on {
 	line-height: 75px;
 	color:#505050;
 	text-align: center;
-	margin-bottom: 18px;
-	// border-bottom:4px solid #ffc900;
 }
 .mian-h2 span{
 	float:right;
@@ -556,7 +557,7 @@ div.flicking_con a.on {
 /* 图片区域2开始 */
 .main1{
 	width: 1100px;
-	margin:20px auto 15px;
+	margin:20px auto 0px;
 }
 .main1 ul li.big{
 	float: left;
@@ -680,7 +681,7 @@ div.flicking_con a.on {
 }
 #footer .features li a{
 	font-size: 18px;
-	color:#454545;
+	color:#333;
 	padding:0 70px 0 80px;
 	line-height: 73px;
 	display: block;
@@ -701,32 +702,38 @@ div.flicking_con a.on {
 #footer ol{
 	width: 1100px;
 	margin:0 auto;
+	padding-left:95px;
 }
 #footer ol li{
 	float: left;
-	line-height: 40px;
 	color:#505050;
-	margin:0 55px;
+	margin:0 35px;
 }
 #footer ol li.last{
-	margin-right:0;
+	margin-left:200px;
 	height: 100%;
 	margin-top:40px;
 }
 #footer ol li h4{
-	font-size: 14px;
+	font-size: 16px;
+	color:#616161;
+	margin-bottom:23px;
 }
 #footer ol li a{
 	font-size: 12px;
 	display: block;
-	color:#505050;
-	line-height:25px;
+	color:#707070;
+	line-height:23px;
+}
+#footer ol li a:hover{
+	text-decoration: underline;
 }
 #footer .copy{
 	width: 100%;
 	background: #000;
 	height: 65px;
 	margin-top: 80px;
+	position:relative;
 }
 #footer .copy p{
 	width: 1020px;
@@ -735,6 +742,7 @@ div.flicking_con a.on {
 	line-height: 65px;
 	color:#B2B2B2;
 	padding:0 40px;
+	
 }
 #footer .copy p span{
 	float: right;
@@ -749,6 +757,18 @@ div.flicking_con a.on {
 }
 #footer .copy p span a.last{
 	background: url(../images_mdh/icon/copy2.png) no-repeat center center;
+
+}
+#footer .copy .scan{
+	width: 118px;
+	height: 123px;
+	position: absolute;
+	top:-123px;
+	right:420px;
+	background: url(../images_mdh/icon/copy.png) no-repeat center center;
+	img{
+		margin:10px 0 0 7px;
+	}
 }
 /* 窗口固定区域开始 */
 .fix{
@@ -1027,7 +1047,7 @@ div.flicking_con a.on {
 
 
 
-/* 登陆页面开始 */
+/* 登录页面开始 */
 /* #header.landing{
 	width:100%;
 	height: 95px;
@@ -1162,7 +1182,7 @@ div.landing p{
 	text-align: center;
 	margin:20px auto;
 	font-size:@font;
-	color:#9FA0A0;
+	color:#6e6e6e;
 }
 .login .username,
 .login .password,
@@ -1202,7 +1222,10 @@ div.landing .register input.tet{
 .form .code{
 	.tet{
 		width: 185px;
-		margin-right: 10px;
+		height: 45px;  
+		margin-right: 12px;
+		border:none;
+		background: #f1f1f1;
 	}
 	.register{
 		width: 88px;
@@ -1333,7 +1356,14 @@ div.landing #registerForm input.tet {
 	margin: 0 auto;
 	.item-main-detail {
 		width: 100%;
-		margin-top: 38px;
+		p{
+			font-size: @font;
+			color:#727171;
+			line-height: 70px;
+			b{
+				font-weight:normal;
+			}
+		}
 		.item-left {
 			width: 122px;
 			margin-right: 15px;
@@ -1615,22 +1645,44 @@ div.landing #registerForm input.tet {
 .list-content{
 	width: 1100px;
 	margin:15px auto;
+	padding-top:50px;
+}
+.nav{
+	width: 242px;
+	cursor:pointer;
+	h2{
+		font-size: 16px;
+		color:#505050;
+		margin-bottom:35px;
+		padding-left:33px;
+	}
 }
 .list-nav{
-	width:242px; 
-	float:left;
-	font-size: 18px;
+	width:242px;
+	font-size: 16px;
 	color:#505050;
 	padding-left:33px;
 	position:relative; 
 }
 .list-nav li{
-	background: url(../images_mdh/icon/list.png) no-repeat 180px 8px;
+	background: url(../images_mdh/icon/list.png) no-repeat 160px 8px;
 }
-.list-nav .brand li{
-	background:none;
+.nav .brand{
+	font-size: 16px;
+	color:#505050;
+	padding-left:33px;
+	cursor:pointer;
+	h3{
+		font-size: 16px;
+		color:#505050;
+		margin:20px 0 40px 0;
+	}
+	a{
+		display: block;
+		margin-bottom:20px;
+	}
 }
-.list-twoCategory{
+/* .list-twoCategory{
 	display: none;
 	width: 870px;
 	position:absolute;
@@ -1673,24 +1725,24 @@ div.landing #registerForm input.tet {
 }
 .list-twoCategory p a:hover{
 	color: #ffc900;
-}
-.list-nav .category{
-	margin:30px 0;
-	background: none;
+} */
+.nav .brand .category{
+	margin:40px 0;
 }
 .list-nav li{
 	padding-bottom: 20px;
 	cursor:pointer;
 }
-.list-images{
-	float: right;
+.content{
 	width: 825px;
+
 }
-.list-images .moods{
+.content .moods{
 	width: 825px;
-	h2{
+	h3{
 		width: 825px;
-		margin:25px 0;
+		text-align:left;
+		margin:0;
 	}
 	li{
 		padding-right:15px;
@@ -2098,6 +2150,7 @@ body.emailverification {
 	.pay-order{
 		width: 1000px;
 		padding:50px 50px 20px 50px;
+		margin-bottom:80px;
 		p{
 			font-size:@font;
 			color:#828282;
@@ -2131,16 +2184,13 @@ body.emailverification {
 	}
 	.wechat{
 		width:400px;
-		height: 355px;
-		border:1px solid #A4A4A4;
 		text-align:center;
 		margin:30px auto;
 		position:relative;
 		p{
 			height: 42px;
-			background: #444;
 			font-size: 18px;
-			color:#fff;
+			color:#444;
 			text-align:center;
 			line-height:42px;
 		}
@@ -2171,6 +2221,10 @@ body.emailverification {
 			line-height: 42px;
 			text-align:center;
 			cursor: pointer;
+		}
+		a{
+			font-size: @font;
+			color:#00a6eb;
 		}
 	}
 		.settlement{
@@ -2245,7 +2299,7 @@ body.emailverification {
 		.buy-pay{
 			width:1000px;
 			text-align: center;
-			margin:100px auto;
+			margin:0 auto;
 			label{
 				display: inline-block;
 				font-size: 18px;
@@ -2285,7 +2339,7 @@ body.emailverification {
 			button{
 				width: 200px;
 				height: 45px;
-				margin:78px 0;
+				margin:78px 0 78px 100px;
 				font-size: 18px;
 				text-align:center;
 				color:#fff;
@@ -2369,12 +2423,22 @@ body.emailverification {
 	    cursor: pointer;
 		}
 	}
+	p{
+		font-size: 16px;
+		color:#727171;
+		margin:35px 0 25px 0;
+		text-align:center;
+	}
 	.context {
-		padding: 32px 10px 20px;
-		dl {
-			text-align: center;
-			font-size: 16px;
-			color: #727171;
+		margin:0 auto;
+		width: 203px;
+		height: 43px;
+		background: #444;
+		text-align: center;
+		line-height: 43px;
+		a{
+			font-size: 18px;
+			color:#fff;	
 		}
 	}
 	.button {
@@ -2386,8 +2450,8 @@ body.emailverification {
 			line-height: 42px;
 			border: 1px solid #F4D6A6;
 			font-size: 18px;
-			color: #444;
-			background: #f5a623;
+			color: #fff;
+			background: #444;
 			padding: 0px 46px;
 		}
 	}
@@ -2670,6 +2734,12 @@ body.emailverification {
 			font-size: 18px;
 			color:#444444;
 			line-height: 50px;
+			span{
+				width: 55px;
+				height: 50px;
+				cursor:pointer;
+				background: url(../images_mdh/icon/details.png) no-repeat center center;
+			}
 		}
 		button{
 			display: block;
@@ -3114,10 +3184,7 @@ body.emailverification {
 /* 页面加载错误 */
 .lose{
 	width: 250px;
-	position:fixed;
-	top:50%;
-	left:50%;
-	margin:-80px 0 0 -125px;
+	margin:150px auto;
 	font-size: 16px;
 	line-height: 30px;
 	color:#505050;
