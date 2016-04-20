@@ -8,7 +8,7 @@
 	<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
 	<link href="favicon.ico" rel="icon" type="image/x-icon" />
 	<link type="text/css" rel="stylesheet" href="../../css_mdh/common.css" />
-  <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
+  <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css" />
   <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
   <script type="text/javascript" src="../../js_mdh/third/common.js"></script>
   <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
@@ -50,6 +50,7 @@
   		$('[data-close="layer"]').click(function() {
 				$('[data-tag="popupLayer"]').hide();
     		$('[data-tag="shieldingLayer"]').hide();
+    		$(window).unbind('resize', windowSize);
 			});
 
 			$('[data-order="close"]').bind('click', function (e) {
@@ -64,201 +65,206 @@
 </head>
 <body>
 
-	 <!-- 头部开始 -->
-		<div data-load="headerData" ></div>
+  <!-- 头部开始 -->
+	<div data-load="headerData" >
 		<script>
 			$('[data-load="headerData"]').load('../layout/header.html', {}, function (data) {
 				$('[data-load="headerData"]').after(data);
 				$('[data-load="headerData"]').remove();
 			});
 		</script>
-		<!-- end -->
+	</div>
+	
+	<!-- end -->
 
-		<!-- 主体内容开始 -->
-		<!-- 个人中心左侧导航开始 -->
-		<div class="personal clearfix">
-			<!-- 左侧 -->
-			<div data-load="loadData" ></div>
+	<!-- 主体内容开始 -->
+	<!-- 个人中心左侧导航开始 -->
+	<div class="personal clearfix">
+		<!-- 左侧 -->
+		<div data-load="loadData" >
 			<script>
 				$('[data-load="loadData"]').load('../personal/personalLeft.html', {}, function (data) {
 					$('[data-load="loadData"]').after(data);
 					$('[data-load="loadData"]').remove();
 				});
 			</script>
-			<!-- end -->
-			<!-- 我的订单详情开始 -->
-			<div class="personal-item fr">
-				
-				<!-- <p class="order-title">您目前暂无订单，您可以前往：
-					<a href="javascript:;">新近单品</a>
-					<a href="javascript:;">我的购物车</a>
-					<a href="javascript:;">我的收藏</a>
-				</p> -->
-				
-				<div class = "personal-top clearfix" >	
-					<div class = "fl" >
-						<form class="order-search" action = "" method = "post">
-							<input type="text" value = "">
-							<button type="submit">搜索订单</button>
-						</form>
-					</div>
-				</div>
-				<!-- <p class="order-title">没有此订单号，您可以前往：
-					<a href="javascript:;">新近单品</a>
-					<a href="javascript:;">我的购物车</a>
-					<a href="javascript:;">我的收藏</a>
-				</p> -->
-				<div class="personal-order">
-					<table>
-						<thead class="order-list-title">
-							<tr>
-								<th>
-									<span class="goods">德国好物</span>
-								</th>
-								<th>
-									<span class="price">单价/元</span>
-								</th>
-								<th>
-									<span class="number">数量</span>
-								</th>
-								<th>
-									<span class="money">实付金额</span>
-								</th>
-								<th>
-									<span class="state">状态</span>
-								</th>
-								<th>
-									<span class="state">操作</span>
-								</th>
-							</tr>
-						</thead>
-						<tbody class="order-list">
-							<tr class="message">
-								<td colspan = "6" >
-									<span class="date">2016-03-28</span>
-									<span class="time">15:32</span>
-									<strong>订单号：</strong>
-									<span class="no">201603281432</span>
-								</td>
-							</tr>
-							<tr class="list">
-								<td class="list-goods">
-									<img class="din" src="../../images_mdh/content8.png" height="90" width="90">
-									<div class="item din">
-										<h6>小岛老师的蛋糕教师</h6>
-										<p><span>小岛留美</span>烹饪美食与酒书籍</p>
-										<b>240ml</b>
-									</div>
-								</td>
-								<td class="list-price">
-									<span class="dl">￥440.00</span>
-								</td>
-								<td class="list-number" >
-									<span class="dl">x10件</span>
-								</td>
-								<td rowspan="2" class="list-money">
-									<p>￥4400.00</p>
-									<span class="dl">含税金￥12.00</span>
-									<strong class="dl">含运费￥10.00</strong>
-									<em class="dl">已共优惠￥10.00</em>
-								</td>
-								<td rowspan="2" class="list-state">
-									<div class = "dn">
-										<span>已取消</span>
-										<a href="./order-item.html" target="_blank">订单详情</a>
-									</div>
-									<div class = "dn">
-										<span>待支付</span>
-										<a href="./order-item.html" target="_blank">订单详情</a>
-									</div>
-									<div class = "">
-										<span>等待收货</span>
-										<a href = "./order-state.html" target="_blank" data-logistics="mouse">配送中
-											<div class = "logistics dn" data-logistics="showHide">
-												<ul>
-													<li>圆通单号8521619608  2016-3-28 15:32<li>
-													<li>已到达浦东新区分拣中心</li>
-												</ul>
-												<i></i>
-											</div>
-										</a>
-										<a href="./order-item.html" target="_blank">订单详情</a>
-									</div>
-									<div class = "dn">
-										<span>已完成</span>
-										<a href="./order-item.html" target="_blank">订单详情</a>
-									</div>
-									<div class = "dn">
-										<span>退货</span>
-										<a href="./returnflow.html" target="_blank">退货详情</a>
-									</div>
-									<div class = "dn">
-										<span>换货/维修</span>
-										<a href="./exchangeflow.html" target="_blank">换货/维修详情</a>
-									</div>
-								</td>
-								<td rowspan="2" class="list-operation">
-									<div class = "dn" >
-										<a dref = "javascript:;" target="_blank">立即购买</a>
-									</div>
-									<div class = "dn" >
-										<a href = "javascript:;">付款</a>
-										<a href = "javascript:;" data-order="close">取消订单</a>
-									</div>
-									<div class = "" >
-										<a href = "javascript:;" data-order="close" >取消订单</a>
-									</div>
-									<div class = "dn" >
-										<a href = "./personal-returngoods.html" >退货</a>
-									</div>
-									<div class = "dn" >
-										<a href = "./personal-exchange.html">换货/维修</a>
-									</div>
-									<div class = "dn" >
-										<a href = "javascript:;">取消退货</a>
-									</div>
-									<div class = "dn" >
-										<a href = "javascript:;">取消换货/维修</a>
-									</div>
-								</td>
-							</tr>
-							<tr class="list">
-								<td class="list-goods">
-									<img class="din" src="../../images_mdh/content8.png" height="90" width="90">
-									<div class="item din">
-										<h6>小岛老师的蛋糕教师</h6>
-										<p><span>小岛留美</span>烹饪美食与酒书籍</p>
-										<b>240ml</b>
-									</div>
-								</td>
-								<td class="list-price">
-									<span class="dl">￥440.00</span>
-								</td>
-								<td class="list-number">
-									<span class="dl">x10件</span>
-								</td>
-							</tr>
-						</tbody>	
-					</table>	
-					<div class="pagin fr">
-						<a href = "javascript:;" class="prev-disabled">上一页<b></b></a>
-            <a class="current">1</a>                    
-    				<a href = "javascript:;" class="next-disabled">下一页<b></b></a>    
-          </div>
-				</div>
-				<div class = "shielding-layer" data-tag="shieldingLayer"></div>
-				<div class = "popup-layer" data-tag="popupLayer" >
-					<div class = "title clearfix" >
-						<span>买德好</span>
-						<strong class = "fr" data-close="layer" >x</strong>
-					</div>
-					<div class = "context" >确定取消订单?</div>
-					<div class = "button" >
-						<a href = "javascript:;" >确定</a>
-					</div>
+		</div>
+			
+		<!-- end -->
+		<!-- 我的订单详情开始 -->
+		<div class="personal-item fr">
+			
+			<!-- <p class="order-title">您目前暂无订单，您可以前往：
+				<a href="javascript:;">新近单品</a>
+				<a href="javascript:;">我的购物车</a>
+				<a href="javascript:;">我的收藏</a>
+			</p> -->
+			
+			<div class = "personal-top clearfix" >	
+				<div class = "fl" >
+					<form class="order-search" action = "#" method = "post">
+						<input type="text" value = "">
+						<button type="submit">搜索订单</button>
+					</form>
 				</div>
 			</div>
+			<!-- <p class="order-title">没有此订单号，您可以前往：
+				<a href="javascript:;">新近单品</a>
+				<a href="javascript:;">我的购物车</a>
+				<a href="javascript:;">我的收藏</a>
+			</p> -->
+			<div class="personal-order">
+				<table>
+					<thead class="order-list-title">
+						<tr>
+							<th>
+								<span class="goods">德国好物</span>
+							</th>
+							<th>
+								<span class="price">单价/元</span>
+							</th>
+							<th>
+								<span class="number">数量</span>
+							</th>
+							<th>
+								<span class="money">实付金额</span>
+							</th>
+							<th>
+								<span class="state">状态</span>
+							</th>
+							<th>
+								<span class="state">操作</span>
+							</th>
+						</tr>
+					</thead>
+					<tbody class="order-list">
+						<tr class="message">
+							<td colspan = "6" >
+								<span class="date">2016-03-28</span>
+								<span class="time">15:32</span>
+								<strong>订单号：</strong>
+								<span class="no">201603281432</span>
+							</td>
+						</tr>
+						<tr class="list">
+							<td class="list-goods">
+								<img class="din" src="../../images_mdh/content8.png" height="90" width="90">
+								<div class="item din">
+									<h6>小岛老师的蛋糕教师</h6>
+									<p><span>小岛留美</span>烹饪美食与酒书籍</p>
+									<b>240ml</b>
+								</div>
+							</td>
+							<td class="list-price">
+								<span class="dl">￥440.00</span>
+							</td>
+							<td class="list-number" >
+								<span class="dl">x10件</span>
+							</td>
+							<td rowspan="2" class="list-money">
+								<p>￥4400.00</p>
+								<span class="dl">含税金￥12.00</span>
+								<strong class="dl">含运费￥10.00</strong>
+								<em class="dl">已共优惠￥10.00</em>
+							</td>
+							<td rowspan="2" class="list-state">
+								<div class = "dn">
+									<span>已取消</span>
+									<a href="./order-item.html" target="_blank">订单详情</a>
+								</div>
+								<div class = "dn">
+									<span>待支付</span>
+									<a href="./order-item.html" target="_blank">订单详情</a>
+								</div>
+								<div class = "">
+									<span>等待收货</span>
+									<a href = "./order-state.html" target="_blank" data-logistics="mouse">配送中
+										<div class = "logistics dn" data-logistics="showHide">
+											<ul>
+												<li>圆通单号8521619608  2016-3-28 15:32<li>
+												<li>已到达浦东新区分拣中心</li>
+											</ul>
+											<i></i>
+										</div>
+									</a>
+									<a href="./order-item.html" target="_blank">订单详情</a>
+								</div>
+								<div class = "dn">
+									<span>已完成</span>
+									<a href="./order-item.html" target="_blank">订单详情</a>
+								</div>
+								<div class = "dn">
+									<span>退货</span>
+									<a href="./returnflow.html" target="_blank">退货详情</a>
+								</div>
+								<div class = "dn">
+									<span>换货/维修</span>
+									<a href="./exchangeflow.html" target="_blank">换货/维修详情</a>
+								</div>
+							</td>
+							<td rowspan="2" class="list-operation">
+								<div class = "dn" >
+									<a dref = "javascript:;" target="_blank">立即购买</a>
+								</div>
+								<div class = "dn" >
+									<a href = "javascript:;">付款</a>
+									<a href = "javascript:;" data-order="close">取消订单</a>
+								</div>
+								<div class = "" >
+									<a href = "javascript:;" data-order="close" >取消订单</a>
+								</div>
+								<div class = "dn" >
+									<a href = "./personal-returngoods.html" >退货</a>
+								</div>
+								<div class = "dn" >
+									<a href = "./personal-exchange.html">换货/维修</a>
+								</div>
+								<div class = "dn" >
+									<a href = "javascript:;">取消退货</a>
+								</div>
+								<div class = "dn" >
+									<a href = "javascript:;">取消换货/维修</a>
+								</div>
+							</td>
+						</tr>
+						<tr class="list">
+							<td class="list-goods">
+								<img class="din" src="../../images_mdh/content8.png" height="90" width="90">
+								<div class="item din">
+									<h6>小岛老师的蛋糕教师</h6>
+									<p><span>小岛留美</span>烹饪美食与酒书籍</p>
+									<b>240ml</b>
+								</div>
+							</td>
+							<td class="list-price">
+								<span class="dl">￥440.00</span>
+							</td>
+							<td class="list-number">
+								<span class="dl">x10件</span>
+							</td>
+						</tr>
+					</tbody>	
+				</table>	
+				<div class="pagin fr">
+					<a href = "javascript:;" class="prev-disabled">上一页<b></b></a>
+          <a class="current">1</a>                    
+  				<a href = "javascript:;" class="next-disabled">下一页<b></b></a>    
+        </div>
+			</div>
 		</div>
+	</div>
+	<div class = "shielding-layer" data-tag="shieldingLayer"></div>
+	<div class = "popup-layer" data-tag="popupLayer" >
+		<div class = "title clearfix" >
+			<span>买德好</span>
+			<strong class = "fr" data-close="layer" >x</strong>
+		</div>
+		<div class = "context" >确定取消订单?</div>
+		<div class = "button" >
+			<a href = "javascript:;" >确定</a>
+		</div>
+	</div>
+
 
 				<!-- 底部开始 -->
 		<div data-load="footerData" >
