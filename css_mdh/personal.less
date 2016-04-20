@@ -1840,7 +1840,7 @@ h1{
 			.inprove{
 				margin-bottom:30px;
 			}
-			img.one{
+			div.one{
 				margin-left:105px;
 			}
 			.append{
@@ -1853,6 +1853,19 @@ h1{
 					color:#727171;
 				}
 			}
+			.files-button {
+				width: 110px;
+				height: 30px;
+				font-size: 14px;
+				border: 1px solid #D1D1D0;
+				color: #727171;
+				padding: 3px 5px;
+				background: #FFF;
+				margin: 0px;
+			}
+			input {
+				display: none;
+			}
 		}
 		button{
 			width: 204px;
@@ -1862,16 +1875,40 @@ h1{
 			color:#fff;
 			margin:45px 0;
 		}
+		.return-goods {
+			position: relative;
+			#error {
+				display: none;
+			}
+			.error {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				font-size: 14px;
+		    color: #ae340d;
+		    background: url(../images_mdh/icon/falsh.png) no-repeat left center;
+		    padding-left: 25px;
+		    margin-left: 105px;
+		    width: 700px;
+		    display: inline-block;
+		    text-align: left;
+			}
+		}
 		.sub{
 			margin-left:105px;
 			margin-right:15px;
 		}
-		.back{
+		a.back{
+			margin:45px 0;
 			width: 202px;
 			height: 40px;
+			line-height: 40px;
 			background: #fff;
 			border:1px solid #737373;
 			color:#444;
+			font-size: 18px;
+			display: inline-block;
+			text-align: center;
 		}
 	}
 	.service{
