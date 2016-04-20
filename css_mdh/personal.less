@@ -529,6 +529,9 @@ h1{
 			}
 		}
 	}
+
+	
+
 	.message{
 		.birthday{
 			p{
@@ -564,11 +567,14 @@ h1{
 			.woman{
 				background: url(../images_mdh/icon/woman.png) no-repeat 12px center;
 			}
-			span:hover{
+			span:hover {
 				background: url(../images_mdh/icon/mans.png) no-repeat 12px center;
 			}
 			.woman:hover{
 				background: url(../images_mdh/icon/womans.png) no-repeat 12px center;
+			}
+			span.selected {
+				border: 1px solid #03A7E2;
 			}
 		}
 		.genre{
@@ -585,6 +591,9 @@ h1{
 					line-height: 25px;
 					margin-right:12px;
 					cursor:pointer;
+				}
+				span.selected {
+					border: 1px solid #03A7E2;
 				}
 			}
 		}
@@ -628,6 +637,9 @@ h1{
 			}
 			.woman:hover{
 				background: url(../images_mdh/icon/womans.png) no-repeat 12px center;
+			}
+			span.selected {
+				border: 1px solid #03A7E2;
 			}
 		}
 		.baby-birthday{
@@ -1132,6 +1144,7 @@ h1{
 		.number{
 			width: 180px;
 			margin:0 30px;
+			position: relative;
 			p{
 				padding-left:10px;
 				margin-bottom:10px;
@@ -1144,6 +1157,16 @@ h1{
 				line-height: 25px;
 				padding-left:10px;
 				border:1px solid #ccc;
+			}
+			label {
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				font-size: 14px;
+    		color: #ae340d;
+    		line-height: 20px;
+    		padding-left: 25px;
+    		background: url(../images_mdh/icon/falsh.png) no-repeat left center;
 			}
 		}
 		button{

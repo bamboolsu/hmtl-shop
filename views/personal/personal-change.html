@@ -7,16 +7,60 @@
 		<meta name="keywords" content="test" />
 		<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
-        <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
-        <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
-        <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
-       	<script type="text/javascript" src="../../js_mdh/third/YMDClass.mini.js"></script>
-       	<script>
-       		window.onload=function(){
-  			new YMDselect('year1','month1','day1');
+    <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
+    <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
+    <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
+    <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
+   	<script type="text/javascript" src="../../js_mdh/third/YMDClass.mini.js"></script>
+   	<script>
 
-       		}
+   		$(function () {
+   			/**
+   			 * 年月日
+   			 */
+   			new YMDselect('year1','month1','day1'); // 生日
+				new YMDselect('year2','month2','day2'); // 预产期
+				new YMDselect('year3','month3','day3'); // 宝宝生日
+
+
+				/**
+				 * 切换选择
+				 */
+				$.fn.tabs = function (control) {
+					var element = $(this);
+				
+					element.delegate('span', 'click', function () {
+						var tabName = $(this).attr('data-tab');
+						element.trigger('change.tabs', tabName);
+					});
+
+					element.bind('change.tabs', function (e, tabName) {
+						element.find('span').removeClass('selected');
+						element.find('[data-tab="'+tabName+'"]').addClass('selected');
+					});
+					if (typeof control != 'boolean') {
+						control = $(control);
+						element.bind('change.tabs', function (e, tabName) {
+							control.find('>[data-tab]').hide();
+							control.find('>[data-tab="'+tabName+'"]').slideDown();
+						});
+					}
+
+					//var firstName = element.find('li:first').attr('data-tab');
+					//element.trigger('change.tabs', firstName);
+
+					return this;
+				}
+
+				// 性格选择
+				$('[data-tag="select"]').tabs('[data-tag="selected"]');
+
+				// 男女选择
+				$('[data-tag="sex"]').tabs(true);
+				// 宝宝男女选择
+				$('[data-tag="babysex"]').tabs(true);
+   		});
+   	
  		 </script>
     </head>
 
@@ -118,50 +162,58 @@
 							<select name="month1"></select>
 							<select name="day1"></select>
 						</div>
-						<div class="gender">
-							<span class="man din">男</span>
-							<span class="woman din">女</span>
+						<div class="gender" data-tag="sex">
+							<span class="man din" data-tab="man">男</span>
+							<span class="woman din" data-tab="woman">女</span>
 						</div>
-						<div class="genre">
+						<div class="genre" data-tag="select">
 							<p>
-								<span class="din">细节控</span>
-								<span class="din">生活家</span>
-								<span class="din">厨艺达人</span>
-								<span class="din">剁手党</span>
+								<span class="din" data-tab="1">细节控</span>
+								<span class="din" data-tab="2">生活家</span>
+								<span class="din" data-tab="3">厨艺达人</span>
+								<span class="din" data-tab="4">剁手党</span>
 							</p>
 							<p>
-								<span class="din">萌妹纸</span>
-								<span class="din">大龄儿童</span>
-								<span class="din">女王大人</span>
-								<span class="din">准妈妈</span>
-								<span class="din">新晋妈妈</span>
+								<span class="din" data-tab="5">萌妹纸</span>
+								<span class="din" data-tab="6">大龄儿童</span>
+								<span class="din" data-tab="7">女王大人</span>
+								<span class="din" data-tab="8">准妈妈</span>
+								<span class="din" data-tab="9">新晋妈妈</span>
 							</p>
 							<p>
-								<span class="din">品质男神</span>
-								<span class="din">极客怪咖</span>
-								<span class="din">新晋奶爸</span>
+								<span class="din" data-tab="10">品质男神</span>
+								<span class="din" data-tab="11">极客怪咖</span>
+								<span class="din" data-tab="12">新晋奶爸</span>
 							</p>
 						</div>
 						<p class="statement">我们希望了解您的更多个人信息，以便为您提供更加贴心的的服务体验</p>
-						<div class="term">
-							<p>
-								预产期
-							</p>
-							<select name="year1"></select>
-							<select name="month1"></select>
-							<select name="day1"></select>
-						</div>
-						<div class="baby">
-							<p>宝宝性别</p>
-							<span class="man din">男</span>
-							<span class="woman din">女</span>
-						</div>
-						<div class="baby-birthday">
-							<p>宝宝生日</p>
-							<select name="year1"></select>
-							<select name="month1"></select>
-							<select name="day1"></select>
-						</div>
+						<ul data-tag="selected">
+							<li data-tab="8" class = "dn">
+								<div class="term">
+									<p>
+										预产期
+									</p>
+									<select name="year3"></select>
+									<select name="month3"></select>
+									<select name="day3"></select>
+								</div>
+							</li>
+							<li data-tab="9" class = "dn">
+								<div class="baby" data-tag="babysex">
+									<p>宝宝性别</p>
+									<span class="man din" data-tab="man">男</span>
+									<span class="woman din" data-tab="woman">女</span>
+								</div>
+								<div class="baby-birthday">
+									<p>宝宝生日</p>
+									<select name="year2"></select>
+									<select name="month2"></select>
+									<select name="day2"></select>
+								</div>
+							</li>
+						</ul>
+						
+						
 						<button type="submit">保存</button>
 					</form>
 				</div>
