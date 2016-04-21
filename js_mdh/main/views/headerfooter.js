@@ -44,6 +44,14 @@
       		$fd.css("visibility","hidden");
       	}
       });
+      
+
+      // 底部效果
+      $('#footer .copy p span a.last').hover(function() {
+        $('#footer .copy .scan').css('display', 'block');
+      }, function() {
+        $('#footer .copy .scan').css('display', 'none');
+      });
 
       // 底部鼠标移上出现二维码
     $('#footer .copy p span a.last').hover(function() {
