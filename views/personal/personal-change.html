@@ -7,15 +7,17 @@
 		<meta name="keywords" content="test" />
 		<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
+
 		<link type="text/css" rel="stylesheet" href="../../css_mdh/common.css" />
-    <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
-    <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
-    <script type="text/javascript" src="../../js_mdh/third/common.js"></script>
-    <script type="text/javascript" src="../../js_mdh/third/ajaxFileUpload.js"></script>
-    <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
-    <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
-   	<script type="text/javascript" src="../../js_mdh/third/YMDClass.mini.js"></script>
-   	<script>
+	    <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
+	    <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
+	    <script type="text/javascript" src="../../js_mdh/third/common.js"></script>
+	    <script type="text/javascript" src="../../js_mdh/third/ajaxFileUpload.js"></script>
+	    <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
+	    <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
+	   	<script type="text/javascript" src="../../js_mdh/third/YMDClass.mini.js"></script>
+	   	<script>
+
 
    		$(function () {
    			/**
@@ -64,41 +66,42 @@
 				$('[data-tag="babysex"]').tabs(true);
 
 				// 头像上传
-        $('#imgContainer').bind('click', function (event) {  
-            $('#imgfile').click();
-        });
-        $('#imgfile').bind('change', function () {
-            uploadImg('imgfile', 'imgContainer');
-        });
+		        $('#imgContainer').bind('click', function (event) {  
+		            $('#imgfile').click();
+		        });
+		        $('#imgfile').bind('change', function () {
+		            uploadImg('imgfile', 'imgContainer');
+		        });
 
-        function uploadImg(imgfileId, imgcontainerId) {
-          $.ajaxFileUpload({
-            fileElementId: imgfileId,
-            url: '/UploadImage',
-            dataType: 'json',
-            beforeSend: function (XMLHttpRequest) {
-              
-            },
-            success: function (data, textStatus) {
-              if (typeof data.error == 'undefined') {  
-                  $("#" + imgcontainerId).attr('src', data)
-              } 
-              else {
-                  layer('图片上传失败！');
-              }
-             
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-              layer('图片上传失败！');
-            }
-          });
-        }
+		        function uploadImg(imgfileId, imgcontainerId) {
+		          $.ajaxFileUpload({
+		            fileElementId: imgfileId,
+		            url: '/UploadImage',
+		            dataType: 'json',
+		            beforeSend: function (XMLHttpRequest) {
+		              
+		            },
+		            success: function (data, textStatus) {
+		              if (typeof data.error == 'undefined') {  
+		                  $("#" + imgcontainerId).attr('src', data)
+		              } 
+		              else {
+		                  layer('图片上传失败！');
+		              }
+		             
+		            },
+		            error: function (XMLHttpRequest, textStatus, errorThrown) {
+		              layer('图片上传失败！');
+		            }
+		          });
+		        }
    		});
    	
  		 </script>
     </head>
 
     <body>
+
     	<!-- 头部开始 -->
 		<div data-load="headerData" ></div>
 		<script>
@@ -109,6 +112,7 @@
 		</script>
 		<!-- end -->
 		
+
 		<!-- 主体内容开始 -->
 			<!-- 个人中心左侧导航开始 -->
 		<div class="personal clearfix">
@@ -167,6 +171,7 @@
 							</p>
 						</div>
 						<p class="statement">我们希望了解您的更多个人信息，以便为您提供更加贴心的的服务体验</p>
+
 						<ul data-tag="selected">
 							<li data-tab="8" class = "dn">
 								<div class="term">
@@ -193,12 +198,13 @@
 							</li>
 						</ul>
 						
-						
+
 						<button type="submit">保存</button>
 					</form>
 				</div>
 			</div>	
 		</div>
+
 		<!-- 底部开始 -->
 		<div data-load="footerData" >
 			<script>
@@ -209,5 +215,6 @@
 			</script>
 		</div>
 		<!-- end -->
+
     </body>
 </html>

@@ -15,16 +15,18 @@
 		<script src = "../../js_mdh/main/views/index.js"></script>
 	</head>
 	<body>
+
+	
 	
 		<!-- 头部开始 -->
-			<div data-load="headerData" ></div>
-			<script>
-				$('[data-load="headerData"]').load('header.html', {}, function (data) {
-					$('[data-load="headerData"]').after(data);
-					$('[data-load="headerData"]').remove();
-				});
-			</script>
-			<!-- end -->
+		<div data-load="headerData" ></div>
+		<script>
+			$('[data-load="headerData"]').load('header.html', {}, function (data) {
+				$('[data-load="headerData"]').after(data);
+				$('[data-load="headerData"]').remove();
+			});
+		</script>
+		<!-- end -->
 
 		<!-- 轮播图开始 -->
 			<div class="main_visual">

@@ -18,10 +18,23 @@
       }
 
 
-  $('.nav ul li').hover(function() {
-    $(this).find('.innav').stop().slideDown(300);
+  $('.nav>ul>li').hover(function() {
+	    var num=$('.innav ul li').length;
+	    if(num>0){
+	    	$('.innav ol li').eq(0).css('display','block').siblings().css('display','none');
+	    	$('.innav ul li').eq(0).addClass('current');
+	    }
+    $(this).find('.innav').slideDown(300);
   }, function() {
-    $(this).find('.innav').stop().slideUp(300);
+    $(this).find('.innav').slideUp(300);
+  });
+  
+  
+
+  $('.innav>ul>li').mouseover(function(event) {
+    var n=$(this).index();
+    $(this).addClass('current').siblings().removeClass('current');
+    $('.innav>ol>li').eq(n).css('display', 'block').siblings().css('display', 'none');;
   });
 
  
@@ -41,23 +54,11 @@
   $('.list-images li').eq(4).css('margin-right', '0');
 
   // 侧边栏悬停效果
-  $('.list-nav li').mouseover(function() {
-    var num = $(this).index();
-    $(this).find('.list-twoCategory').show();
-    $(this).find('.list-twoCategory ul li').eq(num - 1).addClass('current').siblings().removeClass('current');
-  }).mouseout(function() {
-    $(this).find('.list-twoCategory').hide();
-  });
+    $('[data-list="nav"]').click(function(event) {
+      $(this).toggleClass('current').find('ol').toggle();
 
- $('.list-innav li').mouseover(function() {
-    var num=$(this).index();
-    event.stopPropagation();
-    $(this).addClass('current').siblings().removeClass('current');
-    $('.list-twoCategory').eq(num).show().siblings().hide();
-  });
-  $('.list-twoCategory').mouseout(function(event) {
-    $(this).hide();
-  });
+    });
+
 
    // placehloder兼容处理
   if (!('placeholder' in document.createElement('input'))) {
@@ -86,13 +87,6 @@
     });
   }
 
-  // 底部效果
-  $('#footer .copy p span a.last').hover(function() {
-    $('#footer .copy .scan').css('display', 'block');
-  }, function() {
-    $('#footer .copy .scan').css('display', 'none');
-  });
-
 
 
   // list初始化
@@ -103,4 +97,19 @@
     $('.form .password input').focus(function(event) {
       $('.form .register-fix').css('display', 'block');
     });
+
+    // 详情页分享效果
+    $('[data-share="btn"]').click(function(event) {
+      
+      var num=$('[data-share="way"]').css('margin-left');
+
+      if(num>0){
+        $('[data-share="way"]').stop().animate({'margin-left': -215}, 300)
+      }else{
+        $('[data-share="way"]').stop().animate({'margin-left': 20}, 300)
+      };
+      
+    });
+
+
 });

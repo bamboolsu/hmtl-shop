@@ -2,7 +2,7 @@
 * @Author: maidehao
 * @Date:   2016-04-12 16:11:46
 * @Last Modified by:   maidehao
-* @Last Modified time: 2016-04-14 17:16:38
+* @Last Modified time: 2016-04-21 20:08:39
 */
 
 'use strict';
@@ -54,4 +54,25 @@ $(function() {
   }, function(e) {
     $(this).find('img').attr('src', '../../images_mdh/icon/personal-about4.png');
   });
+
+
+   // 修改我的信息选中状态
+   $('.gender span').click(function(event) {
+     $(this).addClass('current').siblings().removeClass('current');
+   });
+
+   $('.genre p span').click(function(event) {
+     $(this).addClass('current');
+   });
+
+    // 查看钱款去向
+    $('[data-return="where"]').click(function(event) {
+      $('.shielding-layer').css('display', 'block');
+      $('[data-return="returnd"]').css('display', 'block');
+    });
+
+    $('[data-return="btn"]').click(function(event) {
+      $('.shielding-layer').css('display', 'none');
+      $('[data-return="returnd"]').css('display', 'none');
+    });
 });

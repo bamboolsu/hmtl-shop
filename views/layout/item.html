@@ -57,33 +57,32 @@
           }
         });
 
-
-        $('#footer').load('index.html');
-
       });
     </script>
   </head>
   <body>
+
  <!-- 头部开始 -->
-      <div data-load="headerData" ></div>
-      <script>
-        $('[data-load="headerData"]').load('header.html', {}, function (data) {
-          $('[data-load="headerData"]').after(data);
-          $('[data-load="headerData"]').remove();
-        });
-      </script>
-      <!-- end -->
+  <div data-load="headerData" ></div>
+  <script>
+    $('[data-load="headerData"]').load('header.html', {}, function (data) {
+      $('[data-load="headerData"]').after(data);
+      $('[data-load="headerData"]').remove();
+    });
+  </script>
+  <!-- end -->
+
   
     <!-- main start -->
     <div class = "item-main">
       <div class = "item-main-detail clearfix" data-tag="item" >
-      <p>
+        <p class="nav">
         <span>买德好</span>
         &gt
         <em>家居</em>
         &gt
         <b>法国原装下午茶茶壶</b>
-      </p>
+        </p>
         <div class = "item-left fl">
           <ul data-tag="small">
             <li>
@@ -116,7 +115,7 @@
 
           </div>
         </div>
-       <!--  <div class = "item-right fl">
+      <div class = "item-right fl">
           <div class = "title" >
             <h2>法国原装下午茶茶壶</h2>
             <p>
@@ -132,20 +131,20 @@
             <dl class = "size clearfix">
               <dt>尺码</dt>
               <dd>
-                <ul data-property="尺码">
-                  <li>
+                <ul class="clearfix" data-property="尺码">
+                  <li class="fl">
                     <a href = "javascript:void(0)" >
                       <span>120ml</span>
                       <i></i>
                     </a>
                   </li>
-                  <li>
+                  <li class="fl">
                     <a href = "javascript:void(0)" >
                       <span>240ml</span>
                       <i></i>
                     </a>
                   </li>
-                  <li>
+                  <li class="fl">
                     <a href = "javascript:void(0)" >
                       <span>360ml</span>
                       <i></i>
@@ -154,27 +153,27 @@
                 </ul>
               </dd>
             </dl>
-            <p class = "sku-p">运费免运费     （订单满288免运费）</p>
+            <p class = "sku-p">免运费     （订单满288免运费）</p>
             <p class = "sku-p">该商品由上海自贸区发出</p>
             <dl class = "color clearfix">
               <dt>颜色</dt>
               <dd>
-                <ul data-property="颜色">
-                  <li class="grap" >
+                <ul class="clearfix" data-property="颜色">
+                  <li class="grap fl" >
                     <a href = "javascript:void(0)" >
-                      <span>灰色</span>
+                      <span class="din">灰色</span>
                       <i></i>
                     </a>
                   </li>
-                  <li class = "white">
+                  <li class = "white fl">
                     <a href = "javascript:void(0)" >
-                      <span>白色</span>
+                      <span class="din">白色</span>
                       <i></i>
                     </a>
                   </li>
-                  <li class = "yellow">
+                  <li class = "yellow fl">
                     <a href = "javascript:void(0)" >
-                      <span>黄色</span>
+                      <span class="din">黄色</span>
                       <i></i>
                     </a>
                   </li>
@@ -191,10 +190,24 @@
             </dl>
             <dl class = "share clearfix">
               <dt>分享</dt>
-              <dd>
+              <dd data-share="btn">
                   <a href="javascript:;">
-                    <span>分享</span>
-                  </a>   
+                    <span class="btn din">分享</span>
+                  </a> 
+                  <div class="way din" data-share="way">
+                    <a href="javascript:;">
+                      <span class="wechat din">分享</span>
+                    </a> 
+                    <a href="javascript:;">
+                      <span class="weibo din">分享</span>
+                    </a>
+                    <a href="javascript:;">
+                      <span class="circle din">分享</span>
+                    </a>
+                    <a href="javascript:;">
+                      <span class="other din">分享</span>
+                    </a>   
+                  </div> 
               </dd>
             </dl>
             <div class = "button" data-tag="button" >
@@ -206,8 +219,8 @@
               </button>
             </div>
           </div>
-        </div> -->
-        <div class="item-right fl">
+        </div>
+        <!-- <div class="item-right fl">
       <div class="title">
         <h2>苹果六</h2>
         <p>
@@ -291,7 +304,7 @@
               </form>
             </div>
             
-        </div>
+        </div> -->
       </div>
       <div class = "item-main-grid clearfix" >
         <div class = "item-right fr" >
@@ -301,8 +314,13 @@
           
         </div>
         <div class = "item-middle" >
-          <div class = "item-box" >
-            <h3 class = "item-title">商品参数</h3>
+          <ul class="clearfix">
+            <li class="fl"><a href="javascript:;">商品参数</a></li>
+            <li class="fl"><a href="javascript:;">品牌介绍</a></li>
+            <li class="fl"><a href="javascript:;">购买流程</a></li>
+            <li class="fl"><a href="javascript:;">关于买德好</a></li>
+          </ul>
+          <div class="parameter">
             <p>
               分为金色、银色、套装<br>
               扫描本中二维码，可下载整张专辑<br>
@@ -311,28 +329,14 @@
               银色款：亮银光膜 <br>
               内文180P，印刷4色+专金，银色款内文印刷4色+专银，三边滚金滚银；<br>
             </p>
-          </div>
-          <div class = "item-box" >
-            <h3 class = "item-title">品牌介绍</h3>
-            <p>一年一张专辑的频率，羽泉携第11张全新专辑《不服》强势上线。良仓为此次发售亦量身定制专辑载体同名与第六季圣诞演唱会主题同名笔记本套装《不服》、《后台》。金银双面，两个人的故事。</p>
-          </div>
-          <div class = "item-box" >
-            <h3 class = "item-title">购买流程</h3>
-            <p>
-              购买流程 退换货须知
-            </p>
-          </div>
-          <div class = "item-box" >
-            <h3 class = "item-title">关于卖德好</h3>
-            <img src = "../../images_mdh/big.png"  alt = "big" />
-            <br/>
-            <img src = "../../images_mdh/big.png"  alt = "big" />
+            <img src="../../images_mdh/small.png" height="750" width="750">
+            <img src="../../images_mdh/small.png" height="750" width="750">
           </div>
         </div>
       </div>
     </div>
     <!-- main end -->
-    
+
     <!-- 底部开始 -->
     <div data-load="footerData" >
       <script>
