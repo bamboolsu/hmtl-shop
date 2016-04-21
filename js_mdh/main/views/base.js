@@ -18,16 +18,16 @@
       }
 
 
-  $('.nav ul li').hover(function() {
-    $(this).find('.innav').stop().slideDown(300);
+  $('.nav>ul>li').hover(function() {
+    $(this).find('.innav').slideDown(300);
   }, function() {
-    $(this).find('.innav').stop().slideUp(300);
+    $(this).find('.innav').slideUp(300);
   });
 
-  $('.innav ul li').mouseover(function(event) {
+  $('.innav>ul>li').mouseover(function(event) {
     var n=$(this).index();
     $(this).addClass('current').siblings().removeClass('current');
-    $('.innav ol li').eq(n).css('display', 'block').siblings().css('display', 'none');;
+    $('.innav>ol>li').eq(n).css('display', 'block').siblings().css('display', 'none');;
   });
 
  
