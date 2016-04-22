@@ -22,11 +22,12 @@
 	    var num=$('.innav ul li').length;
 	    if(num>0){
 	    	$('.innav ol li').eq(0).css('display','block').siblings().css('display','none');
-	    	$('.innav ul li').eq(0).addClass('current');
+	    	$('.innav ul li').eq(0).addClass('current').siblings().removeClass('current');
 	    }
     $(this).find('.innav').slideDown(300);
   }, function() {
     $(this).find('.innav').slideUp(300);
+    $('.innav ul li').removeClass('current');
   });
   
   
