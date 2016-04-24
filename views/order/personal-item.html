@@ -126,14 +126,10 @@
 							<th>
 								<span class="number">数量</span>
 							</th>
-							<th>
-								<span class="money">实付金额</span>
-							</th>
-							<th>
-								<span class="state">状态</span>
-							</th>
-							<th>
-								<span class="state">操作</span>
+							<th class="gather">
+								<span class="money din fl">实付金额</span>
+								<span class="state din fl">状态</span>
+								<span class="state din fl">操作</span>
 							</th>
 						</tr>
 					</thead>
@@ -161,15 +157,14 @@
 							<td class="list-number" >
 								<span class="dl">x10件</span>
 							</td>
-							<td rowspan="2" class="list-money">
-								<div class="money">
+							<td rowspan="2" class="list-gather">
+								<div class="money din fl">
 									<p>￥4400.00</p>
 									<span class="dl">含税金￥12.00</span>
 									<strong class="dl">含运费￥10.00</strong>
 									<em class="dl">已共优惠￥10.00</em>
 								</div>
-							</td>
-							<td rowspan="2" class="list-state">
+							<div class="list-state din fl">
 								<div class = "dn">
 									<span>已取消</span>
 									<a href="./order-item.html" target="_blank">订单详情</a>
@@ -203,8 +198,8 @@
 									<span>换货/维修</span>
 									<a href="./exchangeflow.html" target="_blank">换货/维修详情</a>
 								</div>
-							</td>
-							<td rowspan="2" class="list-operation">
+							</div>
+							<div rowspan="2" class="list-operation din fl">
 								<div class = "dn" >
 									<a dref = "javascript:;" target="_blank">立即购买</a>
 								</div>
@@ -227,6 +222,7 @@
 								<div class = "dn" >
 									<a href = "javascript:;">取消换货/维修</a>
 								</div>
+							</div>
 							</td>
 						</tr>
 						<tr class="list current">
