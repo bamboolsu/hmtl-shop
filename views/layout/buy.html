@@ -12,21 +12,6 @@
 		<script src = "../../js_mdh/third/jquery.js"></script>
 		<script src = "../../js_mdh/third/common.js"></script>
 		<script src = "../../js_mdh/main/views/base.js"></script>
-    <script>
-      // 地址json
-      var addressJson = [
-        {
-          id: 123,
-          userName: "xiaokang",
-          province: 1,
-          city: 1,
-          town: 1,
-          address: "xiao xiao xiao",
-          idCard: "350821198904143912",
-          mobile: "15801930241"
-        }
-      ]
-    </script>
 		<script src="../../js_mdh/main/views/buy.js"></script>
     <script>
       $(function () {
@@ -94,58 +79,63 @@
 
 		<!-- 主体部分开始 -->
 		<div class="buy">
-			<div class="buyForm dn" data-tag="addressForm" >
-    		<div class = "title clearfix" >
+			<div class="buyForm " data-tag="addressForm" >
+    		<!-- <div class = "title clearfix" >
      			<span class = "fl" data-tag="title">新增地址</span>
-      			<strong class = "fr" data-tag="popupClose">x</strong>
-    		</div>
+      	  <strong class = "fr" data-tag="popupClose">x</strong>
+    		</div> -->
 				<div class="username">
 					<label for="username">收货人姓名</label>
 					<input id="username" data-tag = "userName" type="text" placeholder="请输入与身份证一致的姓名">
+					<span data-error="userName" ></span>
 				</div>
 				<div class="city">
 					<label for="city">省/市</label>
 					<select id="city" class="provinciala" data-tag="province" province = "2">
-            			<option>所在省</option>
-        			  </select>
+        		<option>所在省</option>
+    			</select>
  					<select class="provinciala" data-tag="city" disabled="disabled">
- 				   		<option>所在市区</option>
+ 				   	<option>所在市区</option>
  					</select>
-          			<select class="citya" data-tag="town" disabled="disabled">
-              			<option>所在城镇</option>
-         			 </select>
+    			<select class="citya" data-tag="town" disabled="disabled">
+        		<option>所在城镇</option>
+   			 	</select>
+   			 	<span data-error="province" ></span>
 				</div>
 				<div class="address">
 					<label for="address">详细地址</label>
-         			 <textarea id="address" data-tag = "address" placeholder="请输入详细地址"></textarea>
+         	<textarea id="address" data-tag = "address" placeholder="请输入详细地址"></textarea>
+         	<span data-error="address"></span>
 				</div>
 				<div class="identity">
 					<label for="identity">身份信息</label>
 					<input id="identity" type="text" data-tag="idCard" placeholder="海关清关所需，请填入18位身份证号码">
+					<span data-error="identity"></span>
 				</div>
 				<div class="mobile">
 					<label for="mobile">手机号码</label>
 					<input id="mobile" type="text" data-tag="mobile" placeholder="请输入收货的手机号码">
+					<span data-error="mobile"></span>
 				</div>
-       			<div class = "error hidden" data-tag="error">
-         			 <i></i><span></span>
-       			 </div>
+   			<!-- <div class = "error hidden" data-tag="error">
+     			<i></i><span></span>
+   			</div> -->
 				<div class="btn">
 					<button type = "button" data-tag="addressSubmit">保存地址</button>
 				</div>
 			</div>
-      		<div class = "shielding-layer" data-tag="shieldingLayer"></div>
+     <!--  <div class = "shielding-layer" data-tag="shieldingLayer"></div> -->
 			<!-- 收货地址开始 -->
 			<div class="buy-address dn" data-tag="butAddress" >
 				<h5 class = "clearfix">收货地址<a herf = "javascript:;" data-tag="addAddress" class = "fr">添加</a></h5>
-       			<button class="left" type="button" data-tag="scrollLeft"></button>
-        		<button class="right" type="button" data-tag="scrollRight"></button>
-        		<div class = "scroll-address" data-tag="scroll-address" >
+     			<button class="left" type="button" data-tag="scrollLeft"></button>
+      		<button class="right" type="button" data-tag="scrollRight"></button>
+      		<div class = "scroll-address" data-tag="scroll-address" >
   				<ul class="clearfix" data-address="items">
   					<li class="fl selected" data-id="123">
   						<p class="information">小明1
   							<span class="fr" >152xxxx5268</span>
-  						</P>
+  						</p>
   						<strong>410183198509055311</strong>
   						<em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
   						<p class="about">
@@ -154,57 +144,33 @@
   							<a class="last" href="javascript:;" data-address="delete">删除</a>
   						</p>
   					</li>
-            		<li class="fl" data-id="12">
-            		  <p class="information">小明2
-            		    <span class="fr" >152xxxx5268</span>
-            		  </P>
-            		  <strong>410183198509055311</strong>
-            		  <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
-            		  <p class="about">
-            		    <a href="javascript:;" class = "default" data-address="default">默认地址</a>
-            		    <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
-            		    <a class="last" href="javascript:;" data-address="delete">删除</a>
-            		  </p>
-            		</li>
-            		<li class="fl" data-id="1">
-            		  <p class="information">小明3
-            		    <span class="fr" >152xxxx5268</span>
-            		  </P>
-            		  <strong>410183198509055311</strong>
-            		  <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
-            		  <p class="about">
-            		    <a href="javascript:;" class = "default" data-address="default">默认地址</a>
-            		    <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
-            		    <a class="last" href="javascript:;" data-address="delete">删除</a>
-            		  </p>
-            		</li>
-            		<li class="fl" data-id="4">
-            		  <p class="information">小明4
-            		    <span class="fr" >152xxxx5268</span>
-            		  </P>
-            		  <strong>410183198509055311</strong>
-            		  <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
-            		  <p class="about">
-            		    <a href="javascript:;" class = "default" data-address="default">默认地址</a>
-            		    <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
-            		    <a class="last" href="javascript:;" data-address="delete">删除</a>
-            		  </p>
-            		</li>
-            		<li class="fl" data-id="5">
-            		  <p class="information">小明5
-            		    <span class="fr" >152xxxx5268</span>
-            		  </P>
-            		  <strong>410183198509055311</strong>
-            		  <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
-            		  <p class="about">
-            		    <a href="javascript:;" class = "default" data-address="default">默认地址</a>
-            		    <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
-            		    <a class="last" href="javascript:;" data-address="delete">删除</a>
-            		  </p>
-            		</li>
+        		<li class="fl" data-id="12">
+        		  <p class="information">小明2
+        		    <span class="fr" >152xxxx5268</span>
+        		  </P>
+        		  <strong>410183198509055311</strong>
+        		  <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+        		  <p class="about">
+        		    <a href="javascript:;" class = "default" data-address="default">默认地址</a>
+        		    <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+        		    <a class="last" href="javascript:;" data-address="delete">删除</a>
+        		  </p>
+        		</li>
+        		<li class="fl" data-id="12">
+        		  <p class="information">小明4
+        		    <span class="fr" >152xxxx5268</span>
+        		  </P>
+        		  <strong>410183198509055311</strong>
+        		  <em>上海&nbsp浦东新区<br>祖冲之路2305号</em>
+        		  <p class="about">
+        		    <a href="javascript:;" class = "default" data-address="default">默认地址</a>
+        		    <a class="editor" href="javascript:;" data-address="edit" >编辑</a>
+        		    <a class="last" href="javascript:;" data-address="delete">删除</a>
+        		  </p>
+        		</li>
   				</ul>
-       		</div>
-		</div>
+       	</div>
+			</div>
 			<div class="details clearfix">
 				<h5>订单详情
 					<span class="fr"></span>
