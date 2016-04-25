@@ -1,8 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+<head>
+        <meta charset = "utf-8" />
+		<title>买德好</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="keywords" content="test" />
+		<meta name="description" content="买德好专注打造国内首家德国跨境精品聚集地，只将最具品质及品味的德国正品引入国人生活。涵盖生活多方面的产品体系，带来真正一站式的购物便捷体验。独具特色的知识性模块形式，让你无限贴近德式生活" />
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />
+		<link type="text/css" rel="stylesheet" href="../../css_mdh/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css_mdh/personal.css">
+    <script type="text/javascript" src="../../js_mdh/third/jquery.js"></script>
+    <script src = "../../js_mdh/third/common.js"></script>
+    <script type="text/javascript" src="../../js_mdh/main/views/personal.js"></script>
+    <script type="text/javascript" src="../../js_mdh/main/views/base.js"></script>
     </head>
     <body>
+    	<!-- 头部开始 -->
+		<div data-load="headerData" ></div>
+		<script>
+			$('[data-load="headerData"]').load('../layout/header.html', {}, function (data) {
+				$('[data-load="headerData"]').after(data);
+				$('[data-load="headerData"]').remove();
+			});
+		</script>
+		<!-- end -->
+		
+		<!-- 主体内容开始 -->
+		<div class="personal clearfix">
+			<!-- 个人中心左侧导航开始 -->
+			<!-- 左侧 -->
+			<div data-load="loadData" ></div>
+			<script>
+				$('[data-load="loadData"]').load('personalLeft.html', {}, function (data) {
+					$('[data-load="loadData"]').after(data);
+					$('[data-load="loadData"]').remove();
+				});
+			</script>
+			<!-- end -->
+			<div class="personal-search fr">
+				<div class="search">
+					<div class="error">
+						抱歉，没有找到<span>“您输入的搜索关键字”</span>相关的商品，要不您换个关键字在试试
+					</div>
+					<p class="prompt">
+						您可以看看输入的文字是否有误<br>
+						你还可以拆分要搜索的关键字，分成几个词语再次搜索
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- 底部开始 -->
+		<div data-load="footerData" >
+			<script>
+				$('[data-load="footerData"]').load('../layout/footer.html', {}, function (data) {
+					$('[data-load="footerData"]').after(data);
+					$('[data-load="footerData"]').remove();
+				});
+			</script>
+		</div>
+		<!-- end -->
     </body>
 </html>
