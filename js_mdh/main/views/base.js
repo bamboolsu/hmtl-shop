@@ -114,10 +114,18 @@
 
   // 侧边栏悬停效果
     $('[data-list="nav"]').click(function(event) {
-      $(this).toggleClass('current').siblings().removeClass('current');
+      $(this).toggleClass('current');
 
     });
 
+
+  $(function () {
+    $('[data-list="innav"]').each(function (e) {
+      var isShow = $(this).hasClass('current');
+      if (isShow)
+        $(this).parents('[data-list="nav"]').addClass('current'); 
+    })
+  });
 
 
     // 注册页
