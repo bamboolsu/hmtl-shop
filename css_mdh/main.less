@@ -1150,18 +1150,18 @@ div.landing #registerForm input.tet {
 	padding-left:33px;
 	position:relative; 
 }
-.list-nav>li.current{
-	background: url(../images_mdh/icon/personal-item.png) no-repeat 160px 10px;
-}
 .list-nav>li{
 	padding-bottom: 20px;
 	cursor:pointer;
 	background: url(../images_mdh/icon/list.png) no-repeat 160px 8px;
+	a{
+		color:#505050;
+	}
 	ol{
-			.current{
-				font-weight: bold;
-				background: url(../images_mdh/icon/list.png) no-repeat 130px 19px;
-			}
+		.current{
+			font-weight: bold;
+			background: url(../images_mdh/icon/list.png) no-repeat 130px 19px;
+		}
 		li{
 			padding-top:12px;
 			a{
@@ -1170,6 +1170,14 @@ div.landing #registerForm input.tet {
 				color:#505050;
 			}
 		}
+	}
+}
+.list-nav>li.current{
+	font-weight: bold;
+	background: url(../images_mdh/icon/personal-item.png) no-repeat 160px 10px;
+	ol{
+		display: block;
+		font-weight: normal;
 	}
 }
 .nav .brand{

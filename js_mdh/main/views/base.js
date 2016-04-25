@@ -28,7 +28,7 @@
     var _this = this;
     if(num>0){
       $('.innav ol li').eq(0).css('display','block').siblings().css('display','none');
-      $('.innav ul li').eq(0).addClass('current');
+      $('.innav ul li').eq(0).addClass('current').siblings().removeClass('current');
     }
     clearTimeout(isShowNav);
     isShowNav = setTimeout (function () {
@@ -48,7 +48,7 @@
   $('.innav>ul>li').mouseover(function(event) {
     var n=$(this).index();
     $(this).addClass('current').siblings().removeClass('current');
-    $('.innav>ol>li').eq(n).css('display', 'block').siblings().css('display', 'none');;
+    $('.innav>ol>li').eq(n).css('display', 'block').siblings().css('display', 'none');
   });
 
  
@@ -67,11 +67,6 @@
   $('.list-images li').eq(1).css('margin-right', '0');
   $('.list-images li').eq(4).css('margin-right', '0');
 
-  // 侧边栏悬停效果
-    $('[data-list="nav"]').click(function(event) {
-      $(this).toggleClass('current').find('ol').toggle();
-
-    });
 
 
    // placehloder兼容处理
@@ -107,13 +102,23 @@
   $('[data-items="list"]:nth-child(3n)').addClass('nth-child-three');
 
   // 列表页左侧导航
-    $('[data-list="nav"]').click(function(event) {
+    $('[data-list="innav"]').click(function(event) {
       $(this).addClass('current').siblings().removeClass('current');
+      $(this).parents('[data-list="nav"]').siblings().find('[data-list="innav"]').removeClass('current');
     });
 
     $('[data-list="brand"]').click(function(event) {
       $(this).addClass('current').siblings().removeClass('current');
     });
+
+
+  // 侧边栏悬停效果
+    $('[data-list="nav"]').click(function(event) {
+      $(this).toggleClass('current').siblings().removeClass('current');
+
+    });
+
+
 
     // 注册页
     $('.form .password input').focus(function(event) {
