@@ -51,16 +51,19 @@
     $('.innav>ol>li').eq(n).css('display', 'block').siblings().css('display', 'none');
   });
 
- 
+  // 导航栏初始化
+  var isNumber=$('[data-header="nav"]').text().length;
+      console.log($('[data-header="nav"]').text())
+    if (isNumber<=2) {
+      $('[data-header="nav"]').parent('li').addClass('spacing')
+    };
 
   $('.news ul li:nth-child(4n)').css('margin-right', 0);
   $('.moods ul li:nth-child(4n)').css('margin-right', 0);
 
   // 人气商品开始
   $('.moods ul li').hover(function() {
-    $(this).find('.top').stop().fadeIn(400);
-  }, function() {
-    $(this).find('.top').stop().fadeOut(400);
+    $(this).find('.top').stop().fadeToggle(400);
   });
 
   // 图片区域初始化
@@ -136,15 +139,20 @@
     // 详情页分享效果
     $('[data-share="btn"]').click(function(event) {
       
-      var num=$('[data-share="way"]').css('margin-left');
+      // var num=$('[data-share="way"]').css('margin-left');
+      // console.log(num)
 
-      if(num>0){
-        $('[data-share="way"]').stop().animate({'margin-left': -215}, 300)
-      }else{
-        $('[data-share="way"]').stop().animate({'margin-left': 20}, 300)
-      };
-      
+      // if(num<0){
+      //   $('[data-share="way"]').animate({'margin-left': 20}, 300)
+      // }else{ 
+      //   $('[data-share="way"]').animate({'margin-left': -215}, 300)
+      // };
+      $('[data-share="way"]').toggleClass('current');
     });
-
+    // 详情页含税额计算
+      var money=$('[data-item="pirce"]').html();
+      var rate=$('[data-item="tax"]').html();
+      var isMoney=money*rate;
+      $('[data-item="number"]').html(isMoney)
 
 });
