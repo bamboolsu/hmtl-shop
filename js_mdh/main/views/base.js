@@ -65,13 +65,16 @@
     $(this).find('.top').stop().fadeToggle(400);
     // 人气商品悬浮层的标题
     for (var i = 0; i<$('[data-moods="top"]').length; i++) {
+
       var topHeight=$('[data-moods="top"]').eq(i).height();
+      
       if (topHeight>24) {
         $('[data-moods="top"]').eq(i).css('padding-top', '17px');
       } else{
         $('[data-moods="top"]').eq(i).css('padding-top', '38px');
-      };
-    };
+      }
+    }
+
   });
 
   
