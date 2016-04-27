@@ -452,10 +452,10 @@
     paging : $(".flicking_con a"),
     counter: function (e) {
       $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on"); 
-      if (first)
-        rightEvent();
+      //if (first)
+      //  rightEvent();
 
-      first = true;
+      //first = true;
     }
   });
 

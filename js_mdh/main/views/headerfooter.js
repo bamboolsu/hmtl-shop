@@ -52,17 +52,10 @@
       
 
       // 底部效果
-      $('#footer .copy p span a.last').hover(function() {
+      $('#footer .copy .content span a.last').hover(function() {
         $('#footer .copy .scan').css('display', 'block');
       }, function() {
         $('#footer .copy .scan').css('display', 'none');
-      });
-
-        // 底部鼠标移上出现二维码
-      $('#footer .copy p span a.last').hover(function() {
-        $('#footer .copy .scan').css('display', 'block');
-      }, function() {
-       $('#footer .copy .scan').css('display', 'none');
       });
       
       // 显示加减删除按钮
