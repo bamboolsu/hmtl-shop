@@ -174,7 +174,6 @@ div.flicking_con a.on {
 }
 .main ul li.right{
 	float: right;
-	font-size: 0px;
 }
 /* 新品上架开始 */
 .news{
@@ -191,7 +190,6 @@ div.flicking_con a.on {
 }
 .mian-h2 span{
 	float:right;
-	height: 75px;
 }
 .mian-h2 span a{
 	font-size: 12px;
@@ -201,10 +199,9 @@ div.flicking_con a.on {
 }
 .news ul li{
 	float:left;
-	width: 260px;
-	font-size: 0px;
-	margin-right: 20px;
-	background: #f4f3f3;
+	width: 265px;
+	margin-right: 13.33px;
+	display: inline;
 }
 .news ul li>a {
 	display: block;
@@ -216,20 +213,18 @@ div.flicking_con a.on {
 	text-align: center;
 }
 .news ul li .about{
-	width: 240px;
+	width: 245px;
 	padding:20px 10px;
-	font-size: 0px;
-	background: #fff;
 }
 .news ul li .about>a {
 	display: block;
 }
 .news ul li .about h3{
-	width: 240px;
+	width: 245px;
 	text-align: left;
 	font-size: 14px;
 	line-height: 30px;
-	color:#505050;
+	color:#7A7979;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -237,16 +232,16 @@ div.flicking_con a.on {
 .news ul li .about p{
 	font-size: 12px;
 	text-align: left;
-	color:#505050;
+	color:#7A7979;
 	line-height: 20px;
-	width: 240px;
+	width: 245px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 .news ul li .about span{
 	font-size: 22px;
-	color:#1e1e1e;
+	color:#EB9B42;
 	line-height: 30px;
 	font-weight: normal;
 }
@@ -301,8 +296,6 @@ div.flicking_con a.on {
 	margin-right: 13.3px;
 	margin-bottom:16px;
 	position:relative;
-	background: #f4f3f3;
-	font-size: 0px;
 }
 .moods ul li .top{
 	position:absolute;
@@ -313,12 +306,11 @@ div.flicking_con a.on {
 	font-size: 0px;
 	padding:50px 20px 20px 20px;
 	display: none;
-	z-index: 999;
 
 }
 .moods ul li .top .intop{
 	position:absolute;
-	background: #4a3f3b;
+	background: #000;
 	opacity:0.6;
 	filter:alpha(opacity=60);
 	top:0;
@@ -328,7 +320,8 @@ div.flicking_con a.on {
 	z-index:0;
 }
 .moods ul li .top h3{
-	width: 100%;
+	max-height: 45px;
+	overflow: hidden;
 	font-size: 18px;
 	color:#EDEDED;
 	text-align: center;
@@ -337,12 +330,10 @@ div.flicking_con a.on {
 	position: relative;
 }
 .moods ul li .top p{
-	width: 100%;
 	font-size: 14px;
 	line-height: 20px;
 	color:#EDEDED;
 	z-index: 5;
-	padding:0;
 	position:relative;
 }
 .moods ul li .top .collect{
@@ -363,15 +354,13 @@ div.flicking_con a.on {
 	background: #fff url(../images_mdh/icon/top2.png) no-repeat center center;
 	margin-left: 2px;
 }
-.moods ul li .pirce{
-	height: 44px;
+.moods ul li p{
 	font-size: 14px;
 	color:#505050;
-	line-height: 35px;
+	line-height: 30px;
 	padding-left: 5px;
-	background: #fff;
 }
-.moods ul li .pirce span{
+.moods ul li p span{
 	font-size: 18px;
 	color:#1e1e1e;
 	float:right;
@@ -723,7 +712,6 @@ div.landing #registerForm input.tet {
 			margin-right: 15px;
 		}
 		.item-middle {
-			background: #f1f1f1;
 			width: 533px;
 			margin-right: 27px;
 		}
@@ -752,7 +740,6 @@ div.landing #registerForm input.tet {
 	height: 120px;
 	overflow: hidden;
 	padding: 1px;
-	background: #f4f3f3;
 	img {
 		width: 122px;
 		height: 122px;
@@ -789,11 +776,11 @@ div.landing #registerForm input.tet {
 	}
 	.price {
 		h5 {
-			font-size: 21.73px;
+			font-size: 51.73px;
 			color: #1e1e1e;
 			margin:7px 0 18px 0;
 			span {
-				font-size: 51.73px;
+				font-size: 21.73px;
 			}
 		}
 		p {
@@ -801,9 +788,6 @@ div.landing #registerForm input.tet {
 			color: @itemBoxColor;
 			span {
 				text-decoration:line-through;
-			}
-			b{
-				font-weight: normal;
 			}
 		}
 	}
@@ -943,9 +927,6 @@ div.landing #registerForm input.tet {
 					background: url(../images_mdh/icon/item-way4.png) no-repeat center center;
 				}
 			}
-			.current{
-				margin-left:20px;
-			}
 		}
 	}
 	.button {
@@ -1054,16 +1035,10 @@ div.landing #registerForm input.tet {
 				width: 667px;
 			}
 		}
-		.images{
-			width: 720px;
-			height: 720px;
-			background: #f4f3f3;
-			img{
-				display: block;
-				margin:0 auto;
-				margin:15px;
-			}
-
+		img{
+			display: block;
+			margin:0 auto;
+			margin:15px;
 		}
 	}
 	.brands{
