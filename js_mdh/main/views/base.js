@@ -53,21 +53,29 @@
 
   // 导航栏初始化
   var isNumber=$('[data-header="nav"]').text().length;
-      console.log($('[data-header="nav"]').text())
     if (isNumber<=2) {
       $('[data-header="nav"]').parent('li').addClass('spacing')
     };
 
   $('.news ul li:nth-child(4n)').css('margin-right', 0);
-  $('.moods ul li:nth-child(4n)').css('margin-right', 0);
+  $('.index-moods ul li:nth-child(4n)').css('margin-right', 0);
 
   // 人气商品开始
   $('.moods ul li').hover(function() {
     $(this).find('.top').stop().fadeToggle(400);
+    // 人气商品悬浮层的标题
+    for (var i = 0; i<$('[data-moods="top"]').length; i++) {
+      var topHeight=$('[data-moods="top"]').eq(i).height();
+      if (topHeight>24) {
+        $('[data-moods="top"]').eq(i).css('padding-top', '17px');
+      } else{
+        $('[data-moods="top"]').eq(i).css('padding-top', '38px');
+      };
+    };
   });
 
-    var topHeight=$('[data-moods="top"]').innerHeight();
-    console.log(topHeight)
+  
+    
 
 
   // 图片区域初始化
@@ -106,7 +114,7 @@
 
 
   // list初始化
-  $('[data-items="list"]:nth-child(3n)').addClass('nth-child-three');
+  $('[data-items="list"]:nth-child(3n+3)').addClass('nth-child-three');
 
   // 列表页左侧导航
     $('[data-list="innav"]').click(function(event) {
