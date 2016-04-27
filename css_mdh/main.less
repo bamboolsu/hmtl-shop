@@ -371,12 +371,15 @@ div.landing{
 	margin:0 auto;
 	width: 346px;
 	text-align: center;
+	.logo {
+		display: block;
+	}
 }
 div.landing h1{
-	background: url(../images_mdh/logo.png) no-repeat center center;
+	background: url(../images_mdh/icon/logo.png) no-repeat center center;
 	width: 346px;
 	height: 28px;
-	margin:133px 0 80px 0;
+	margin:50px 0 40px 0;
 	display: inline-block;
 }
 div.landing>span{
@@ -385,26 +388,25 @@ div.landing>span{
 	color:#9FA0A0;
 }
 div.landing form{
-	width: 300px;
+	width: 287px;
 	margin:0 auto;
 	font-size:@font;
 	color:#808080;
 	position:relative;
 }
 div.landing input.tet{
-	width:285px;
+	width:270px;
 	height: 43px;
 	font-size: @font;
 	color:#808080;
 	padding-left:15px;
 	line-height: 43px;; 
-	margin-top: 35px;
+	margin-top: 33px;
 	background: #fff;
 	border:1px solid #ACACAC;
 }
 div.landing .inlanding{
-	width: 300px;
-	height: 35px;
+	width: 287px;
 	margin-top:35px;
 }
 div.landing .inlanding span{
@@ -426,15 +428,15 @@ div.landing .inlanding input{
 	border:1px solid #ACACAC;
 }
 div.landing .inlanding img {
-	height: 30px;
+	height: 45px;
 	display: inline-block;
 	cursor: pointer;
 }
 div.landing button.new{
-	line-height: 30px;
+	line-height: 18px;
 	border:none;
 	background:none;
-	margin-left:258px;
+	margin-left:238px;
 	font-size:@font;
 	color:#9FA0A0;
 }
@@ -442,19 +444,19 @@ div.landing button.new:hover {
 	color: #f5a623;
 }
 div.landing button.landings{
-	width: 300px;
+	width: 287px;
 	height: 45px;
 	background:  #444;
 	text-align:center;
 	line-height: 45px;
 	font-size:18px;
 	color:#fff;
-	margin-top:20px;
+	margin-top:15px;
 }
 div.landing p.pass{
-	width: 300px;
+	width: 287px;
 	line-height: 30px;
-	margin:10px 0;
+	margin:20px 0px 0px;
 	text-align: left;
 }
 div.landing p.pass label{
@@ -469,9 +471,14 @@ div.landing p.pass a{
 }
 div.landing p.pass a.last{
 	color: #444;
+	display: inline-block;
+  padding-right: 10px;
+}
+div.landing p.pass a.last:hover {
+	color: #FFc900;
 }
 div.landing .other{
-	width: 300px;
+	width: 287px;
 	border-bottom:1px solid #666;
 	margin:0 auto;
 }
@@ -480,7 +487,7 @@ div.landing .other a {
 	width: 60px;
 	height: 30px;
 	margin:0 auto;
-	margin-top:57px;
+	margin-top:20px;
 	background:#fff url(../images_mdh/icon/weixin.png) no-repeat center center;
 	position:relative;
 	top:15px;
@@ -505,7 +512,7 @@ div.landing p{
 .login .password label,
 .login .inlanding label {
 	position: absolute;
-	top: 88px;
+	top: 85px;
 	left: 0px;
 	line-height: 20px;
 	color: #ae340d;
@@ -532,11 +539,12 @@ div.landing .register input.tet{
 }
 .form .code{
 	.tet{
-		width: 185px;
-		height: 45px;  
+		width: 170px;
+		height: 43px;  
 		margin-right: 12px;
 		border:none;
-		background: #f1f1f1;
+		//background: #f1f1f1;
+		border: 1px solid #ACACAC;
 	}
 	.register{
 		width: 88px;
@@ -569,7 +577,7 @@ div.landing #registerForm input.tet {
 	padding-left: 5px;
 }
 .form .registered{
-	width: 300px;
+	width: 287px;
 	height: 45px;
 	background:  #444;
 	text-align:center;
