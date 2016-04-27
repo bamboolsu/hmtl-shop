@@ -164,16 +164,16 @@ div.flicking_con a.on {
 /* 正文内容开始 */
 .main{
 	width: 1100px;
-	height: 200px;
 	margin: 35px auto 0px;
 }
 .main ul li:first-child{
 	margin-left: 20px;
+}
+.main ul li {
 	font-size: 0px;
 }
 .main ul li.right{
 	float: right;
-	font-size: 0px;
 }
 /* 新品上架开始 */
 .news{
@@ -190,7 +190,6 @@ div.flicking_con a.on {
 }
 .mian-h2 span{
 	float:right;
-	height: 75px;
 }
 .mian-h2 span a{
 	font-size: 12px;
@@ -200,10 +199,12 @@ div.flicking_con a.on {
 }
 .news ul li{
 	float:left;
-	width: 260px;
-	font-size: 0px;
-	margin-right: 20px;
-	background: #f4f3f3;
+	width: 265px;
+	margin-right: 13.33px;
+	display: inline;
+}
+.news ul li>a {
+	display: block;
 }
 .news ul li:last-child{
 	margin-right: 0;
@@ -212,17 +213,18 @@ div.flicking_con a.on {
 	text-align: center;
 }
 .news ul li .about{
-	width: 240px;
+	width: 245px;
 	padding:20px 10px;
-	font-size: 0px;
-	background: #fff;
+}
+.news ul li .about>a {
+	display: block;
 }
 .news ul li .about h3{
-	width: 240px;
+	width: 245px;
 	text-align: left;
 	font-size: 14px;
 	line-height: 30px;
-	color:#505050;
+	color:#7A7979;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -230,16 +232,16 @@ div.flicking_con a.on {
 .news ul li .about p{
 	font-size: 12px;
 	text-align: left;
-	color:#505050;
+	color:#7A7979;
 	line-height: 20px;
-	width: 240px;
+	width: 245px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 .news ul li .about span{
 	font-size: 22px;
-	color:#1e1e1e;
+	color:#EB9B42;
 	line-height: 30px;
 	font-weight: normal;
 }
@@ -256,6 +258,9 @@ div.flicking_con a.on {
 .main1{
 	width: 1100px;
 	margin:20px auto 0px;
+}
+.main1 ul li {
+	font-size: 0px;
 }
 .main1 ul li.big{
 	float: left;
@@ -282,12 +287,14 @@ div.flicking_con a.on {
 	width: 1100px;
 	margin:0 auto;
 }
+.moods ul li>a {
+	display: block;
+}
 .moods ul li{
 	float: left;
 	margin-right: 13.3px;
+	margin-bottom:16px;
 	position:relative;
-	background: #f4f3f3;
-	font-size: 0px;
 }
 .moods ul li .top{
 	position:absolute;
@@ -297,12 +304,11 @@ div.flicking_con a.on {
 	height: 200px;
 	padding:50px 20px 20px 20px;
 	display: none;
-	z-index: 999;
 
 }
 .moods ul li .top .intop{
 	position:absolute;
-	background: #4a3f3b;
+	background: #000;
 	opacity:0.6;
 	filter:alpha(opacity=60);
 	top:0;
@@ -312,24 +318,19 @@ div.flicking_con a.on {
 	z-index:0;
 }
 .moods ul li .top h3{
-	width: 100%;
 	font-size: 18px;
-	line-height: 18px;
 	color:#EDEDED;
 	text-align: center;
 	padding-top: 38px;
-	margin-bottom:10px;
-	word-wrap: ;
+	line-height: 40px;
 	z-index: 5;
 	position: relative;
 }
 .moods ul li .top p{
-	width: 100%;
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 20px;
 	color:#EDEDED;
 	z-index: 5;
-	padding:0;
 	position:relative;
 }
 .moods ul li .top .collect{
@@ -348,24 +349,22 @@ div.flicking_con a.on {
 }
 .moods ul li .top .collect button.last{
 	background: #fff url(../images_mdh/icon/top2.png) no-repeat center center;
-	margin-left: 2px;
+	margin-left: 0px;
 }
-.moods ul li .pirce{
-	height: 44px;
+.moods ul li p{
 	font-size: 14px;
 	color:#505050;
-	line-height: 35px;
+	line-height: 30px;
 	padding-left: 5px;
-	background: #fff;
 }
-.moods ul li .pirce span{
+.moods ul li p span{
 	font-size: 18px;
 	color:#1e1e1e;
 	float:right;
 	padding-right: 25px;
 }
 .moods button{
-	background: url(../images_mdh/icon/moods.png) no-repeat center center;
+	background: url(../images_mdh/icon/down_button.png) no-repeat center center;
 	width: 22px;
 	height: 15px;
 	margin:50px auto;
@@ -544,14 +543,14 @@ div.landing p{
 
 /* 注册页面开始 */ 
 div.landing .form {
-    width: 300px;
+    width: 287px;
     margin: 0 auto;
     font-size: 14px;
     color: #808080;
     position: relative;
 }
 div.landing .register input.tet{
-	margin-top:30px;
+	margin-top:26px;
 }
 .form .code{
 	.tet{
@@ -565,7 +564,7 @@ div.landing .register input.tet{
 	.register{
 		width: 88px;
 		height: 45px;
-		margin-top:30px;
+		margin-top:26px;
 		color:#808080;
 		background: #c4c4c4;
 	}
@@ -579,7 +578,7 @@ div.landing .register input.tet{
 	}
 }
 div.landing #registerForm input.tet {
-	margin-top: 30px;
+	margin-top: 26px;
 }
 .form p.register{
 	text-align: left;
@@ -606,10 +605,14 @@ div.landing #registerForm input.tet {
 	color:#444;
 	line-height: 30px;
 	text-align: left;
+	margin: 10px auto;
 }
 .form p.last a{
 	color:#804736;
 	cursor:pointer;
+}
+.form p.last a:hover {
+	color: #FFc900;
 }
 .form p.last a.email{
 	float: right;
@@ -617,19 +620,18 @@ div.landing #registerForm input.tet {
 	color:#444;
 }
 .form .register-fix{
-	width: 100px;
+	width: 90px;
 	position:absolute;
-	top:190px;
-	right:-110px;
+	top: 177px;
+  right: -123px;
 }
 .form .register-infix{
-	width: 90px;
-	padding:2px;
-	border:1px solid #9FA0A0;
+	// width: 90px;
+	// padding:2px;
 }
 .form .register-infix span{
 	float: left;
-	width: 30px;
+	width: 28px;
 	height: 10px;
 	background: #ffc900;
 	visibility: hidden;
@@ -644,10 +646,13 @@ div.landing #registerForm input.tet {
 .form .register-fix p{
 	font-size:12px;
 	color:#444444;
-	letter-spacing: 17px;
-	text-align: center;
-	margin:5px 0;
-	padding-left: 13px;
+  letter-spacing: 14px;
+  text-align: center;
+  margin: 3px 0;
+  padding-left: 10px;
+  span {
+		visibility: hidden;
+	}
 }
 
 .form  {
@@ -666,7 +671,7 @@ div.landing #registerForm input.tet {
 .form .agreement label,
 .form .code label {
 	position: absolute;
-	top: 80px;
+	top: 74px;
 	left: 0px;
 	line-height: 20px;
 	color: #ae340d;
@@ -704,7 +709,6 @@ div.landing #registerForm input.tet {
 			margin-right: 15px;
 		}
 		.item-middle {
-			background: #f1f1f1;
 			width: 533px;
 			margin-right: 27px;
 		}
@@ -733,7 +737,6 @@ div.landing #registerForm input.tet {
 	height: 120px;
 	overflow: hidden;
 	padding: 1px;
-	background: #f4f3f3;
 	img {
 		width: 122px;
 		height: 122px;
@@ -770,11 +773,11 @@ div.landing #registerForm input.tet {
 	}
 	.price {
 		h5 {
-			font-size: 21.73px;
+			font-size: 51.73px;
 			color: #1e1e1e;
 			margin:7px 0 18px 0;
 			span {
-				font-size: 51.73px;
+				font-size: 21.73px;
 			}
 		}
 		p {
@@ -782,9 +785,6 @@ div.landing #registerForm input.tet {
 			color: @itemBoxColor;
 			span {
 				text-decoration:line-through;
-			}
-			b{
-				font-weight: normal;
 			}
 		}
 	}
@@ -924,9 +924,6 @@ div.landing #registerForm input.tet {
 					background: url(../images_mdh/icon/item-way4.png) no-repeat center center;
 				}
 			}
-			.current{
-				margin-left:20px;
-			}
 		}
 	}
 	.button {
@@ -1035,16 +1032,10 @@ div.landing #registerForm input.tet {
 				width: 667px;
 			}
 		}
-		.images{
-			width: 720px;
-			height: 720px;
-			background: #f4f3f3;
-			img{
-				display: block;
-				margin:0 auto;
-				margin:15px;
-			}
-
+		img{
+			display: block;
+			margin:0 auto;
+			margin:15px;
 		}
 	}
 	.brands{

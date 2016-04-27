@@ -77,8 +77,6 @@
 		width: 100%;
 		a {
 			padding: 0 8px;
-			font-size: 12px;
-			color:#828282;
 			line-height: 18px;
 			float: right;
 		}
@@ -109,23 +107,19 @@
 }
 #header .index-nav{
 	width: 1100px;
-	height: 56px;
-	margin:57px auto 0 auto;
+	height: 50px;
+	margin:57px auto 10px auto;
 }
 #header .nav{
 	width: 1100px;
-	height: 55px;
+	height: 50px;
 	// background:@background;
-	margin: 0px auto;
+	margin: 0px auto 10px auto;
+	border-top: 2px solid @background;
 	position:relative;
 	top:0;
 	left:0;
 	z-index: 5;
-	.shadow{
-		height: 1px;
-		background: #5e5e5e;
-		box-shadow: 0 0 0 1px #afafaf;
-	}
 }
 #header .nav.current{
 	position: fixed;
@@ -135,33 +129,28 @@
 	z-index: 9999;
 	background: #FFF;
 }
-/* #header .nav ul {
+#header .nav ul {
 	padding-left: 42px;
-} */
+}
 #header .nav ul>li{
 	float:left;
-	margin:0 25px;
+	margin-right: 20px;
 }
 // #header .nav ul li a.current{
 // 	border-bottom:3px solid #ffc800;
 // 	color:#FFC800;
 // }
-
 #header .nav>ul .leve{
-	width: 113px;
+	padding: 0px 47px;
 	height: 37px;
 	padding-top:18px;
 	text-align: center;
 	color:#323232;
-	font-size: 16px;
+	font-size: 14px;
 	display: inline-block;
 	font-weight: 500;
+	word-spacing: 12px;
 	font-family: "Microsoft YaHei";
-}
-#header .nav>ul>li.spacing{
-	letter-spacing:20px;
-	width: 93px;
-	padding-left:20px;
 }
 #header .nav ul>li.fr{
 	float:right;
@@ -177,10 +166,9 @@
 	width: 1100px;
 	background: #fff;
 	position:absolute;
-	top:56px;
+	top:50px;
 	left:0;
 	z-index:999;
-	letter-spacing: 0;
 	text-align: center;
 	word-spacing: 0;
 
@@ -192,7 +180,7 @@
 		li{
 			height: 65px;
 			float: left;
-			margin:0 40px;
+			margin:0 39px;
 			font-size: @font;
 			color:#fff;
 			line-height: 45px;
@@ -209,46 +197,43 @@
 		}
 	}
 	ol{
+		width: 1056px;
 		border:2px solid #d0d0d0;
 		border-top:none;
 		background: #fff;
-		padding-left:42px;
+		padding-left:40px;
 		padding-top:10px;
-		padding-bottom:22px;
 		position:relative;
 		text-align:left;
 		z-index: 100;
 		.content{
 			width:635px;
-			margin-right:75px;
+			margin-right:60px;
 			.goods{
 				width: 272px;
-				margin-bottom:12px;
-				margin-right:40px;
+				margin-bottom:13px;
+				margin-right:42px;
 				vertical-align: top;
-				font-size: 0px;
 				p{
 					font-size: @font;
 					color:#595757;
 					line-height: 28px;
 					border-bottom:1px solid #c4c4c4;
-					margin-bottom:12px;
+					margin-bottom:8px;
 					a{
 						border:none;
-						color:#595757;
 						padding:0;
 						margin:0;
 					}
 				}
 				a{
-					font-size: @font;
+					font-size: 14px;
 					color:#595757;
 					display: inline-block;
 					margin-bottom:8px;
 					line-height:14px;
-					border-right:2px solid #b3b2b2;
-					padding-right:6px;
-					margin-right:6px;
+					//border-right:1px solid #b3b2b2;
+					padding:0 8px 0 3px;
 				}
 				span{
 					font-size: @font;
@@ -262,32 +247,25 @@
 			}
 		}
 		.image{
-			width: 184px;
+			width: 190px;
 			vertical-align: top;
-			border-left:2px solid #e4e4e4;
-			border-top:2px solid #e4e4e4;
 			img{
-				border-bottom:2px solid #e4e4e4;
-				border-right:2px solid #e4e4e4;
+				border:1px solid #e4e4e4;
 				float:left;
 			}
 		}
 		.entrance{
 			margin-left:8px;
-			width: 144px;
+			width: 146px;
 			text-align:center;
 			vertical-align: top;
 			img{
 				display: block;
 				margin-bottom:34px;
-				margin-top:13px;
 			}
 			.into{
 				padding:3px 7px;
 				font-size: @font;
-				display: inline-block;
-				*display:inline;
-				*zoom:1;
 				color:#595757;
 				border:1px solid #a0a0a0;
 			}
@@ -305,11 +283,13 @@
 	width: 1100px;
 	margin:0 auto;
 	margin-bottom:50px;
-	border-bottom:2px solid #DDDDDD;
+	margin-top: 30px;
+	border-bottom:1px solid #E0E0E0;
 }
 #footer .features li{
 	float: left;
-	margin:50px 20px;
+	margin-bottom: 40px;
+	width: 275px;
 }
 #footer .features li a{
 	font-size: 18px;
@@ -318,7 +298,8 @@
 	line-height: 73px;
 	display: block;
 	height: 73px;
-	border-right:2px solid #DDDDDD;
+	margin-left: 28px;
+	border-right:1px solid #E0E0E0;
 	background:url(../images_mdh/icon/foot1.png) no-repeat 20px center;
 }
 #footer .features li a.two{
@@ -363,31 +344,28 @@
 #footer .copy{
 	width: 100%;
 	background: #000;
-	height: 65px;
 	margin-top: 80px;
 	position:relative;
 }
-#footer .copy p{
+#footer .copy div.content{
 	width: 1020px;
 	margin:0 auto;
 	font-size: 12px;
-	line-height: 65px;
 	color:#B2B2B2;
 	padding:0 40px;
 	
 }
-#footer .copy p span{
-	float: right;
-	text-align:center;
+#footer .copy div.content span.first{
+	line-height: 65px;
 }
-#footer .copy p span a{
+#footer .copy div.content span a{
 	background: url(../images_mdh/icon/copy1.png) no-repeat center center;
 	width: 34px;
 	height: 65px;
 	display:inline-block;
 	margin:0 20px 0 0;
 }
-#footer .copy p span a.last{
+#footer .copy div.content span a.last{
 	background: url(../images_mdh/icon/copy2.png) no-repeat center center;
 
 }
