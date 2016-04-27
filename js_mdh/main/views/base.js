@@ -66,6 +66,10 @@
     $(this).find('.top').stop().fadeToggle(400);
   });
 
+    var topHeight=$('[data-moods="top"]').innerHeight();
+    console.log(topHeight)
+
+
   // 图片区域初始化
   $('.list-images li').eq(1).css('margin-right', '0');
   $('.list-images li').eq(4).css('margin-right', '0');
