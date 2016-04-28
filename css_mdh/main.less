@@ -1582,42 +1582,44 @@ body.emailverification {
 		}
 	}
 	.retrieveForm{
-		text-align:center;
 		margin-top:100px;
+		form{
+			width:px;
+			margin:0 auto;
+			padding-left:345px;
+		}
 		label{
+			width: 60px;
+			height: 45px;
 			font-size: 14px;
 			color:#828282;
 			line-height: 45px;
+			float: left;
 		}
 		input{
-			width: 270px;
+			width: 268px;
 			height: 45px;
-			margin-left:30px;
 			padding-left:20px;
 			font-size: 14px;
-			background:@inputBackground;
+			border:1px solid #b8b8b8;
 			line-height: 45px;
 			color:@inputColor;
+			float: left;
 		}
 		.code{
-			width: 360px;
 			height:45px;
-			margin:13px auto 11px;
+			margin:13px 0 11px 0;
 			text-align:left;
-			label{
-				float: left;
-			}
 			input{
 				width: 160px;
-				float: left;
 			}
 			.codeImg{
 				width: 90px;
 				height: 30px;
 				text-align:center;
-				margin-left:15px;
+				margin-left:18px;
 				display: inline-block;
-				float: right;
+				float: left;
 				background:#c4c4c4;
 				img {
 					width: 90px;
@@ -1632,12 +1634,10 @@ body.emailverification {
 			}
 		}
 		.error {
-			width: 370px;
-			margin: 0 auto;
 			text-align: left;
 			font-size: 0px;
 			i {
-				margin-left: 78px;
+				margin-left: 60px;
 				display: inline-block;
 				width: 20px;
 				height: 20px;
@@ -1658,7 +1658,7 @@ body.emailverification {
 			height: 45px;
 			font-size: 18px;
 			color:#f5a623;
-			margin: 11px 0 0 78px; 
+			margin: 11px 0 0 60px; 
 			background: #444;
 			line-height: 45px;
 			letter-spacing: 10px;
@@ -1666,7 +1666,7 @@ body.emailverification {
 		.code {
 			.phone-submit {
 				line-height: 45px;
-				height: 45px;
+				height: 47px;
 				width: 108px;
 				background: #f5a623;
 				color: #444;
@@ -1681,15 +1681,15 @@ body.emailverification {
 	}
 	.reset {
 		input{
-			margin-left:0px;
+			margin-left:60px;
 			margin-bottom: 12px;
 			padding-left:20px;
 		}
 		button.submit {
-			margin: 11px 0px 0px;
+			margin: 11px 0px 0px 60px;
 		}
 		.error i {
-			margin-left: 40px;
+			margin-left: 60px;
 		}
 	}
 	.popup-finish {
@@ -2844,6 +2844,7 @@ body.emailverification {
 				margin:20px auto;
 				font-size: 12px;
 				color:#595757;
+				background: #fff;
 			}
 		}
 	}
