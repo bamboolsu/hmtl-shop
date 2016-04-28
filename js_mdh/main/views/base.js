@@ -117,7 +117,7 @@
 
 
   // list初始化
-  $('[data-items="list"]:nth-child(3n+3)').addClass('nth-child-three');
+  $('[data-items="list"]:nth-child(3n)').addClass('nth-child-three');
 
   // 列表页左侧导航
     $('[data-list="innav"]').click(function(event) {
